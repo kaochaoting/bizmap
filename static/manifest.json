@@ -1,0 +1,11 @@
+{
+  "name": "Bizmap",
+  "short_name": "Bizmap",
+  "description": "Bizmap 是一個地圖平台，提供地圖查詢、路線規劃等功能",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#c8a84b",
+  "lang": "zh-TW"
+}
