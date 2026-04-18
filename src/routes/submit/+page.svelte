@@ -12,17 +12,17 @@
 
   <div class="bg-white rounded-2xl border border-gray-100 p-8">
     <div class="space-y-5">
-      {#each [['商家名稱','text','您的商家全名'],['商家類別','text','例：餐飲美食、美容美髮'],['縣市','text','例：高雄市'],['地址','text','完整地址'],['聯絡電話','tel','市話或手機'],['網站或 Facebook','url','https://'],['Email','email','方便聯絡的信箱']] as [label, type, placeholder]}
+      {#each [['商家名稱','text','您的商家全名'],['商家類別','text','例：餐飲美食、美容美髮'],['縣市','text','例：高雄市'],['地址','text','完整地址'],['聯絡電話','tel','市話或手機'],['網站或 Facebook','url','https://'],['Email','email','方便聯絡的信箱']] as [label, type, placeholder], index}
         <div>
-          <label class="block text-sm font-medium text-gray-700 mb-1.5">{label}</label>
-          <input {type} {placeholder}
+          <label for="field-{index}" class="block text-sm font-medium text-gray-700 mb-1.5">{label}</label>
+          <input id="field-{index}" {type} {placeholder}
             class="w-full px-4 py-3 rounded-xl border border-gray-200 text-sm focus:outline-none focus:border-yellow-400 transition-colors bg-gray-50"
           />
         </div>
       {/each}
       <div>
-        <label class="block text-sm font-medium text-gray-700 mb-1.5">商家簡介</label>
-        <textarea rows="4" placeholder="簡單描述您的商家特色、服務項目..."
+        <label for="business-description" class="block text-sm font-medium text-gray-700 mb-1.5">商家簡介</label>
+        <textarea id="business-description" rows="4" placeholder="簡單描述您的商家特色、服務項目..."
           class="w-full px-4 py-3 rounded-xl border border-gray-200 text-sm focus:outline-none focus:border-yellow-400 transition-colors bg-gray-50 resize-none">
         </textarea>
       </div>

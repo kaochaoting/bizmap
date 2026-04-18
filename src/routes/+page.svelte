@@ -43,7 +43,12 @@
   <div class="absolute inset-0 opacity-5"
     style="background-image: linear-gradient(rgba(200,168,75,0.4) 1px, transparent 1px), linear-gradient(90deg, rgba(200,168,75,0.4) 1px, transparent 1px); background-size: 48px 48px;">
   </div>
-  <div class="relative max-w-4xl mx-auto text-center" class:opacity-100={visible} class:translate-y-0={visible} style="opacity:0; transform:translateY(20px); transition: all 0.6s ease;">
+  <div
+    class="relative max-w-4xl mx-auto text-center"
+    style:opacity={visible ? 1 : 0}
+    style:transform={visible ? 'translateY(0)' : 'translateY(20px)'}
+    style:transition="all 0.6s ease"
+  >
     <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full text-xs font-mono mb-8"
       style="background: rgba(200,168,75,0.15); border: 1px solid rgba(200,168,75,0.3); color: #c8a84b;">
       <span class="w-1.5 h-1.5 rounded-full bg-yellow-400 animate-pulse"></span>
