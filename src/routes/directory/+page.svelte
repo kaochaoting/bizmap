@@ -113,9 +113,9 @@
       {#each filtered as biz}
         <div class="bg-white rounded-2xl border border-gray-100 p-5 hover:border-yellow-300 hover:-translate-y-1 transition-all">
           <div class="flex items-start justify-between mb-3">
-            <div class="min-w-0">
-              <span class="text-xs px-2 py-0.5 rounded-full bg-yellow-50 text-yellow-700 font-mono">{biz.category}</span>
-              <h3 class="font-semibold text-gray-900 mt-2 text-base truncate">{biz.business_name}</h3>
+          <div class="min-w-0">
+            <span class="text-xs px-2 py-0.5 rounded-full bg-yellow-50 text-yellow-700 font-mono">{biz.category}</span>
+            <a href="/business/{biz.business_id}" class="block font-semibold text-gray-900 mt-2 text-base truncate hover:text-yellow-600 transition-colors">{biz.business_name}</a>
               <p class="text-sm text-gray-500">{biz.region || biz.city}</p>
             </div>
           </div>
