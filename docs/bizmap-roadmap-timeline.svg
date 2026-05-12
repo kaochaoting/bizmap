@@ -8,7 +8,7 @@
     </filter>
   </defs>
   <style>
-    text { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, sans-serif; }
+    text { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Noto Sans TC', 'Microsoft JhengHei', sans-serif; }
     .title { font-size: 28px; font-weight: 700; fill: #0f172a; }
     .subtitle { font-size: 15px; font-weight: 400; fill: #64748b; }
     .phase-label { font-size: 16px; font-weight: 700; }
@@ -19,78 +19,78 @@
     .legend-text { font-size: 12px; fill: #475569; }
   </style>
   <rect width="1200" height="700" fill="#f8fafc"/>
-  <text x="80" y="50" class="title">Bizmap.tw — Development Roadmap</text>
-  <text x="80" y="78" class="subtitle">2,887 businesses · 9 categories · 22 cities · 19 datasets · bizmap.tw</text>
+  <text x="80" y="50" class="title">Bizmap.tw — 開發路線圖</text>
+  <text x="80" y="78" class="subtitle">2,887 家商家 · 9 類別 · 22 縣市 · 19 資料集 · bizmap.tw</text>
 
-  <!-- Timeline axis -->
+  <!-- 時間軸 -->
   <line x1="80" y1="130" x2="1120" y2="130" stroke="#e2e8f0" stroke-width="2"/>
   <line x1="80" y1="125" x2="80" y2="135" stroke="#e2e8f0" stroke-width="2"/>
   <line x1="420" y1="125" x2="420" y2="135" stroke="#e2e8f0" stroke-width="2"/>
   <line x1="760" y1="125" x2="760" y2="135" stroke="#e2e8f0" stroke-width="2"/>
   <line x1="1120" y1="125" x2="1120" y2="135" stroke="#e2e8f0" stroke-width="2"/>
-  <text x="80" y="118" class="axis-label">Q1 2026</text>
-  <text x="420" y="118" class="axis-label">Q2 2026</text>
-  <text x="760" y="118" class="axis-label">Q3 2026</text>
-  <text x="1120" y="118" class="axis-label">Q4 2026</text>
+  <text x="80" y="118" class="axis-label">2026 Q1</text>
+  <text x="420" y="118" class="axis-label">2026 Q2</text>
+  <text x="760" y="118" class="axis-label">2026 Q3</text>
+  <text x="1120" y="118" class="axis-label">2026 Q4</text>
 
-  <!-- Phase 1: Data Foundation (DONE - green) -->
+  <!-- Phase 1: 資料基礎建設（已完成） -->
   <rect x="80" y="160" width="340" height="90" rx="8" fill="#dcfce7" stroke="#86efac" stroke-width="2" filter="url(#shadow)"/>
   <rect x="80" y="160" width="8" height="90" rx="4" fill="#22c55e"/>
-  <text x="100" y="185" class="phase-label" fill="#166534">Phase 1: Data Foundation</text>
-  <text x="100" y="205" class="desc">19 datasets from Twinkle Hub MCP</text>
-  <text x="100" y="220" class="desc">Directory · Search · Filter · Detail pages</text>
-  <text x="100" y="235" class="desc">PRD + SSD docs · Cloudflare Pages deploy</text>
+  <text x="100" y="185" class="phase-label" fill="#166534">Phase 1：資料基礎建設</text>
+  <text x="100" y="205" class="desc">Twinkle Hub MCP 串接 19 個政府資料集</text>
+  <text x="100" y="220" class="desc">商家名錄頁 · 搜尋 · 過濾 · 詳細頁面</text>
+  <text x="100" y="235" class="desc">PRD + SSD 文件 · Cloudflare Pages 部署</text>
   <rect x="340" y="168" width="60" height="18" rx="9" fill="#22c55e"/>
-  <text x="370" y="181" class="status" fill="#ffffff" text-anchor="middle">DONE</text>
+  <text x="370" y="181" class="status" fill="#ffffff" text-anchor="middle">已完成</text>
 
-  <!-- Phase 2: Data Expansion (ACTIVE - orange) -->
+  <!-- Phase 2: 資料擴充（進行中） -->
   <rect x="80" y="280" width="510" height="90" rx="8" fill="#ffedd5" stroke="#fed7aa" stroke-width="2" filter="url(#shadow)"/>
   <rect x="80" y="280" width="8" height="90" rx="4" fill="#f97316"/>
-  <text x="100" y="305" class="phase-label" fill="#9a3412">Phase 2: Data Expansion</text>
-  <text x="100" y="325" class="desc">Scale to 10K+ businesses (increase PER_DATASET)</text>
-  <text x="100" y="340" class="desc">Pet services · Daycare · Nurseries · Temples</text>
-  <text x="100" y="355" class="desc">Geocoding · National coverage · Schema.org structured data</text>
+  <text x="100" y="305" class="phase-label" fill="#9a3412">Phase 2：資料擴充</text>
+  <text x="100" y="325" class="desc">擴充至 10,000+ 筆商家（提高 PER_DATASET）</text>
+  <text x="100" y="340" class="desc">全新類別：寵物 · 托嬰 · 幼兒園 · 寺廟</text>
+  <text x="100" y="355" class="desc">地址地理編碼 · 全國覆蓋 · Schema.org 結構化資料</text>
   <rect x="500" y="288" width="80" height="18" rx="9" fill="#f97316"/>
-  <text x="540" y="301" class="status" fill="#ffffff" text-anchor="middle">ACTIVE</text>
+  <text x="540" y="301" class="status" fill="#ffffff" text-anchor="middle">進行中</text>
 
-  <!-- Phase 3: Interactive Features (UPCOMING - blue) -->
+  <!-- Phase 3: 互動功能（即將推出） -->
   <rect x="250" y="400" width="530" height="90" rx="8" fill="#dbeafe" stroke="#bfdbfe" stroke-width="2" filter="url(#shadow)"/>
   <rect x="250" y="400" width="8" height="90" rx="4" fill="#3b82f6"/>
-  <text x="270" y="425" class="phase-label" fill="#1e40af">Phase 3: Interactive Features</text>
-  <text x="270" y="445" class="desc">Business claiming · Owner verification workflow</text>
-  <text x="270" y="460" class="desc">Interactive map (OpenStreetMap) · Ratings Reviews</text>
-  <text x="270" y="475" class="desc">Owner dashboard · Edit requests · Contact management</text>
+  <text x="270" y="425" class="phase-label" fill="#1e40af">Phase 3：互動功能</text>
+  <text x="270" y="445" class="desc">商家認領機制 · 業主驗證流程</text>
+  <text x="270" y="460" class="desc">互動地圖 (OpenStreetMap) · 評分與評論</text>
+  <text x="270" y="475" class="desc">業主後台 · 編輯請求 · 聯絡資訊管理</text>
   <rect x="680" y="408" width="80" height="18" rx="9" fill="#3b82f6"/>
-  <text x="720" y="421" class="status" fill="#ffffff" text-anchor="middle">UPCOMING</text>
+  <text x="720" y="421" class="status" fill="#ffffff" text-anchor="middle">即將推出</text>
 
-  <!-- Phase 4: Ecosystem (FUTURE - purple) -->
+  <!-- Phase 4: 生態系（未來規劃） -->
   <rect x="420" y="520" width="450" height="90" rx="8" fill="#f3e8ff" stroke="#e9d5ff" stroke-width="2" filter="url(#shadow)"/>
   <rect x="420" y="520" width="8" height="90" rx="4" fill="#a855f7"/>
-  <text x="440" y="545" class="phase-label" fill="#581c87">Phase 4: Ecosystem</text>
-  <text x="440" y="565" class="desc">PWA · SEO for AI crawlers · K-Core integration</text>
-  <text x="440" y="580" class="desc">QuickNotifys · MyCal · Card modules</text>
-  <text x="440" y="595" class="desc">API for 3rd-party developers · Monetization</text>
+  <text x="440" y="545" class="phase-label" fill="#581c87">Phase 4：生態系</text>
+  <text x="440" y="565" class="desc">PWA 應用 · AI 爬蟲 SEO 優化 · K-Core 整合</text>
+  <text x="440" y="580" class="desc">QuickNotifys · MyCal · 數位名片模組</text>
+  <text x="440" y="595" class="desc">第三方開發者 API · 商業模式變現</text>
   <rect x="770" y="528" width="80" height="18" rx="9" fill="#a855f7"/>
-  <text x="810" y="541" class="status" fill="#ffffff" text-anchor="middle">FUTURE</text>
+  <text x="810" y="541" class="status" fill="#ffffff" text-anchor="middle">未來規劃</text>
 
-  <!-- Transition arrows between phases -->
+  <!-- 階段轉換箭頭 -->
   <path d="M 420,205 C 480,205 480,280 480,280" stroke="#94a3b8" stroke-width="2" fill="none" stroke-dasharray="6,4" marker-end="url(#arrow)"/>
   <path d="M 590,325 C 620,325 620,400 620,400" stroke="#94a3b8" stroke-width="2" fill="none" stroke-dasharray="6,4" marker-end="url(#arrow)"/>
   <path d="M 780,445 C 800,445 800,520 800,520" stroke="#94a3b8" stroke-width="2" fill="none" stroke-dasharray="6,4" marker-end="url(#arrow)"/>
 
-  <!-- Legend -->
+  <!-- 圖例 -->
   <rect x="80" y="630" width="1040" height="50" rx="8" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
-  <text x="100" y="650" class="legend-text" font-weight="600">Legend:</text>
+  <text x="100" y="650" class="legend-text" font-weight="600">圖例：</text>
   <rect x="200" y="642" width="14" height="14" rx="3" fill="#22c55e"/>
-  <text x="222" y="654" class="legend-text" font-weight="600">Data Foundation</text>
-  <text x="222" y="667" class="detail">Q1 2026, 2,887 businesses</text>
+  <text x="222" y="654" class="legend-text" font-weight="600">資料基礎</text>
+  <text x="222" y="667" class="detail">2026 Q1，2,887 家商家</text>
   <rect x="440" y="642" width="14" height="14" rx="3" fill="#f97316"/>
-  <text x="462" y="654" class="legend-text" font-weight="600">Data Expansion</text>
-  <text x="462" y="667" class="detail">Q2 2026, scaling to 10K+</text>
+  <text x="462" y="654" class="legend-text" font-weight="600">資料擴充</text>
+  <text x="462" y="667" class="detail">2026 Q2，擴充至 10K+</text>
   <rect x="680" y="642" width="14" height="14" rx="3" fill="#3b82f6"/>
-  <text x="702" y="654" class="legend-text" font-weight="600">Interactive</text>
-  <text x="702" y="667" class="detail">Q2-Q3 2026, claiming + map</text>
+  <text x="702" y="654" class="legend-text" font-weight="600">互動功能</text>
+  <text x="702" y="667" class="detail">2026 Q2-Q3，認領 + 地圖</text>
   <rect x="920" y="642" width="14" height="14" rx="3" fill="#a855f7"/>
-  <text x="942" y="654" class="legend-text" font-weight="600">Ecosystem</text>
-  <text x="942" y="667" class="detail">Q3-Q4 2026, advanced</text>
+  <text x="942" y="654" class="legend-text" font-weight="600">生態系</text>
+  <text x="942" y="667" class="detail">2026 Q3-Q4，進階功能</text>
 </svg>
