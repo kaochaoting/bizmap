@@ -1,0 +1,149 @@
+{
+  "type": "excalidraw",
+  "version": 2,
+  "source": "hermes-agent",
+  "elements": [
+    {
+      "type": "rectangle",
+      "id": "bg",
+      "x": -100,
+      "y": -100,
+      "width": 2500,
+      "height": 1500,
+      "roundness": { "type": 3 },
+      "backgroundColor": "#f8f9fa",
+      "fillStyle": "solid",
+      "strokeColor": "#e9ecef",
+      "strokeWidth": 0,
+      "opacity": 100
+    },
+    {
+      "type": "text",
+      "id": "title",
+      "x": 800,
+      "y": -60,
+      "width": 500,
+      "height": 50,
+      "text": "Bizmap.tw — Visual Development Roadmap",
+      "fontSize": 32,
+      "fontFamily": 1,
+      "strokeColor": "#1e1e1e",
+      "originalText": "Bizmap.tw — Visual Development Roadmap",
+      "autoResize": true,
+      "textAlign": "center",
+      "verticalAlign": "middle"
+    },
+    {
+      "type": "text",
+      "id": "subtitle",
+      "x": 830,
+      "y": -10,
+      "width": 440,
+      "height": 30,
+      "text": "2,887 businesses · 9 categories · 22 cities · Live at bizmap.tw",
+      "fontSize": 18,
+      "fontFamily": 1,
+      "strokeColor": "#868e96",
+      "originalText": "2,887 businesses · 9 categories · 22 cities · Live at bizmap.tw",
+      "autoResize": true
+    },
+
+    {"type":"text","id":"ph1_title","x":80,"y":60,"width":400,"height":35,"text":"Phase 1 Data Foundation","fontSize":24,"fontFamily":1,"strokeColor":"#1e1e1e","originalText":"Phase 1 Data Foundation","autoResize":true},
+    {"type":"text","id":"ph1_badge","x":82,"y":92,"width":100,"height":22,"text":"COMPLETED","fontSize":14,"fontFamily":1,"strokeColor":"#2f9e44","originalText":"COMPLETED","autoResize":true},
+
+    {"type":"rectangle","id":"ph1_r1","x":80,"y":130,"width":460,"height":60,"roundness":{"type":3},"backgroundColor":"#b2f2bb","fillStyle":"solid","strokeColor":"#2f9e44","strokeWidth":2,"boundElements":[{"id":"t_ph1_r1","type":"text"}]},
+    {"type":"text","id":"t_ph1_r1","x":90,"y":140,"width":440,"height":22,"text":"Twinkle Hub MCP integrated - 19 datasets from government open data","fontSize":14,"fontFamily":1,"strokeColor":"#1e1e1e","containerId":"ph1_r1","originalText":"Twinkle Hub MCP integrated - 19 datasets from government open data","autoResize":true,"textAlign":"center","verticalAlign":"middle"},
+    {"type":"text","id":"t_ph1_r1_sub","x":90,"y":160,"width":440,"height":18,"text":"Data pipeline: scripts/bizmap_pipeline.py","fontSize":14,"fontFamily":1,"strokeColor":"#2f9e44","containerId":"ph1_r1","originalText":"Data pipeline: scripts/bizmap_pipeline.py","autoResize":true,"textAlign":"center","verticalAlign":"middle"},
+
+    {"type":"rectangle","id":"ph1_r2","x":80,"y":210,"width":460,"height":60,"roundness":{"type":3},"backgroundColor":"#b2f2bb","fillStyle":"solid","strokeColor":"#2f9e44","strokeWidth":2,"boundElements":[{"id":"t_ph1_r2","type":"text"}]},
+    {"type":"text","id":"t_ph1_r2","x":90,"y":218,"width":440,"height":22,"text":"9 Categories across 22 cities","fontSize":14,"fontFamily":1,"strokeColor":"#1e1e1e","containerId":"ph1_r2","originalText":"9 Categories across 22 cities","autoResize":true,"textAlign":"center","verticalAlign":"middle"},
+    {"type":"text","id":"t_ph1_r2_sub","x":90,"y":240,"width":440,"height":18,"text":"Food | Beauty | Fitness | Medical | Home | Education | Business | Retail | Transport","fontSize":14,"fontFamily":1,"strokeColor":"#2f9e44","containerId":"ph1_r2","originalText":"Food | Beauty | Fitness | Medical | Home | Education | Business | Retail | Transport","autoResize":true,"textAlign":"center","verticalAlign":"middle"},
+
+    {"type":"rectangle","id":"ph1_r3","x":80,"y":290,"width":460,"height":60,"roundness":{"type":3},"backgroundColor":"#b2f2bb","fillStyle":"solid","strokeColor":"#2f9e44","strokeWidth":2,"boundElements":[{"id":"t_ph1_r3","type":"text"}]},
+    {"type":"text","id":"t_ph1_r3","x":90,"y":298,"width":440,"height":22,"text":"Directory page + Search + Filters","fontSize":14,"fontFamily":1,"strokeColor":"#1e1e1e","containerId":"ph1_r3","originalText":"Directory page + Search + Filters","autoResize":true,"textAlign":"center","verticalAlign":"middle"},
+    {"type":"text","id":"t_ph1_r3_sub","x":90,"y":320,"width":440,"height":18,"text":"SvelteKit + Cloudflare Pages + businesses.json API","fontSize":14,"fontFamily":1,"strokeColor":"#2f9e44","containerId":"ph1_r3","originalText":"SvelteKit + Cloudflare Pages + businesses.json API","autoResize":true,"textAlign":"center","verticalAlign":"middle"},
+
+    {"type":"rectangle","id":"ph1_r4","x":80,"y":370,"width":460,"height":60,"roundness":{"type":3},"backgroundColor":"#b2f2bb","fillStyle":"solid","strokeColor":"#2f9e44","strokeWidth":2,"boundElements":[{"id":"t_ph1_r4","type":"text"}]},
+    {"type":"text","id":"t_ph1_r4","x":90,"y":378,"width":440,"height":22,"text":"Business detail pages at /business/[id]","fontSize":14,"fontFamily":1,"strokeColor":"#1e1e1e","containerId":"ph1_r4","originalText":"Business detail pages at /business/[id]","autoResize":true,"textAlign":"center","verticalAlign":"middle"},
+    {"type":"text","id":"t_ph1_r4_sub","x":90,"y":400,"width":440,"height":18,"text":"Source attribution · Tags · Metadata","fontSize":14,"fontFamily":1,"strokeColor":"#2f9e44","containerId":"ph1_r4","originalText":"Source attribution · Tags · Metadata","autoResize":true,"textAlign":"center","verticalAlign":"middle"},
+
+    {"type":"rectangle","id":"ph1_r5","x":80,"y":450,"width":460,"height":60,"roundness":{"type":3},"backgroundColor":"#b2f2bb","fillStyle":"solid","strokeColor":"#2f9e44","strokeWidth":2,"boundElements":[{"id":"t_ph1_r5","type":"text"}]},
+    {"type":"text","id":"t_ph1_r5","x":90,"y":458,"width":440,"height":22,"text":"Daily auto-update cron job (3AM UTC+8)","fontSize":14,"fontFamily":1,"strokeColor":"#1e1e1e","containerId":"ph1_r5","originalText":"Daily auto-update cron job (3AM UTC+8)","autoResize":true,"textAlign":"center","verticalAlign":"middle"},
+    {"type":"text","id":"t_ph1_r5_sub","x":90,"y":480,"width":440,"height":18,"text":"Pipeline → git push → Cloudflare Pages auto-deploy","fontSize":14,"fontFamily":1,"strokeColor":"#2f9e44","containerId":"ph1_r5","originalText":"Pipeline → git push → Cloudflare Pages auto-deploy","autoResize":true,"textAlign":"center","verticalAlign":"middle"},
+
+    {"type":"rectangle","id":"ph1_r6","x":80,"y":530,"width":460,"height":60,"roundness":{"type":3},"backgroundColor":"#b2f2bb","fillStyle":"solid","strokeColor":"#2f9e44","strokeWidth":2,"boundElements":[{"id":"t_ph1_r6","type":"text"}]},
+    {"type":"text","id":"t_ph1_r6","x":90,"y":538,"width":440,"height":22,"text":"PRD + SSD documentation","fontSize":14,"fontFamily":1,"strokeColor":"#1e1e1e","containerId":"ph1_r6","originalText":"PRD + SSD documentation","autoResize":true,"textAlign":"center","verticalAlign":"middle"},
+    {"type":"text","id":"t_ph1_r6_sub","x":90,"y":560,"width":440,"height":18,"text":"docs/01-prd/ · docs/02-ssd/","fontSize":14,"fontFamily":1,"strokeColor":"#2f9e44","containerId":"ph1_r6","originalText":"docs/01-prd/ · docs/02-ssd/","autoResize":true,"textAlign":"center","verticalAlign":"middle"},
+
+    {"type":"arrow","id":"a_ph1_ph2","x":700,"y":310,"width":200,"height":0,"endArrowhead":"arrow","strokeWidth":3,"strokeColor":"#1971c2","points":[[0,0],[200,0]],"startBinding":{"elementId":"ph1_r3","fixedPoint":[1,0.5]},"endBinding":{"elementId":"ph2_title","fixedPoint":[0,0.5]}},
+    {"type":"text","id":"t_a_ph1", "x":770, "y":298, "width":60,"height":20,"text":"next","fontSize":16,"fontFamily":1,"strokeColor":"#1971c2","containerId":"a_ph1_ph2","originalText":"next","autoResize":true},
+
+    {"type":"text","id":"ph2_title","x":920,"y":60,"width":400,"height":35,"text":"Phase 2 Data Expansion","fontSize":24,"fontFamily":1,"strokeColor":"#1e1e1e","originalText":"Phase 2 Data Expansion","autoResize":true},
+    {"type":"text","id":"ph2_badge","x":922,"y":92,"width":120,"height":22,"text":"IN PROGRESS","fontSize":14,"fontFamily":1,"strokeColor":"#e8590c","originalText":"IN PROGRESS","autoResize":true},
+
+    {"type":"rectangle","id":"ph2_r1","x":920,"y":130,"width":500,"height":50,"roundness":{"type":3},"backgroundColor":"#ffd8a8","fillStyle":"solid","strokeColor":"#e8590c","strokeWidth":2,"boundElements":[{"id":"t_ph2_r1","type":"text"}]},
+    {"type":"text","id":"t_ph2_r1","x":930,"y":138,"width":480,"height":22,"text":"Scale to 10,000+ businesses (increase PER_DATASET limit)","fontSize":14,"fontFamily":1,"strokeColor":"#1e1e1e","containerId":"ph2_r1","originalText":"Scale to 10,000+ businesses (increase PER_DATASET limit)","autoResize":true,"textAlign":"center","verticalAlign":"middle"},
+
+    {"type":"rectangle","id":"ph2_r2","x":920,"y":200,"width":500,"height":50,"roundness":{"type":3},"backgroundColor":"#ffd8a8","fillStyle":"solid","strokeColor":"#e8590c","strokeWidth":2,"boundElements":[{"id":"t_ph2_r2","type":"text"}]},
+    {"type":"text","id":"t_ph2_r2","x":930,"y":208,"width":480,"height":22,"text":"Add more datasets: Pet services, Daycare, Nurseries, Temples","fontSize":14,"fontFamily":1,"strokeColor":"#1e1e1e","containerId":"ph2_r2","originalText":"Add more datasets: Pet services, Daycare, Nurseries, Temples","autoResize":true,"textAlign":"center","verticalAlign":"middle"},
+
+    {"type":"rectangle","id":"ph2_r3","x":920,"y":270,"width":500,"height":50,"roundness":{"type":3},"backgroundColor":"#ffd8a8","fillStyle":"solid","strokeColor":"#e8590c","strokeWidth":2,"boundElements":[{"id":"t_ph2_r3","type":"text"}]},
+    {"type":"text","id":"t_ph2_r3","x":930,"y":278,"width":480,"height":22,"text":"Address normalization + geocoding (TWD97/WGS84)","fontSize":14,"fontFamily":1,"strokeColor":"#1e1e1e","containerId":"ph2_r3","originalText":"Address normalization + geocoding (TWD97/WGS84)","autoResize":true,"textAlign":"center","verticalAlign":"middle"},
+
+    {"type":"rectangle","id":"ph2_r4","x":920,"y":340,"width":500,"height":50,"roundness":{"type":3},"backgroundColor":"#ffd8a8","fillStyle":"solid","strokeColor":"#e8590c","strokeWidth":2,"boundElements":[{"id":"t_ph2_r4","type":"text"}]},
+    {"type":"text","id":"t_ph2_r4","x":930,"y":348,"width":480,"height":22,"text":"National coverage for all datasets (not just 6 cities)","fontSize":14,"fontFamily":1,"strokeColor":"#1e1e1e","containerId":"ph2_r4","originalText":"National coverage for all datasets (not just 6 cities)","autoResize":true,"textAlign":"center","verticalAlign":"middle"},
+
+    {"type":"rectangle","id":"ph2_r5","x":920,"y":410,"width":500,"height":50,"roundness":{"type":3},"backgroundColor":"#ffd8a8","fillStyle":"solid","strokeColor":"#e8590c","strokeWidth":2,"boundElements":[{"id":"t_ph2_r5","type":"text"}]},
+    {"type":"text","id":"t_ph2_r5","x":930,"y":418,"width":480,"height":22,"text":"Google structured data (LocalBusiness schema.org)","fontSize":14,"fontFamily":1,"strokeColor":"#1e1e1e","containerId":"ph2_r5","originalText":"Google structured data (LocalBusiness schema.org)","autoResize":true,"textAlign":"center","verticalAlign":"middle"},
+
+    {"type":"arrow","id":"a_ph2_ph3","x":1580,"y":280,"width":200,"height":0,"endArrowhead":"arrow","strokeWidth":3,"strokeColor":"#1971c2","points":[[0,0],[200,0]],"startBinding":{"elementId":"ph2_r3","fixedPoint":[1,0.5]},"endBinding":{"elementId":"ph3_title","fixedPoint":[0,0.5]}},
+    {"type":"text","id":"t_a_ph2","x":1650,"y":268,"width":60,"height":20,"text":"next","fontSize":16,"fontFamily":1,"strokeColor":"#1971c2","containerId":"a_ph2_ph3","originalText":"next","autoResize":true},
+
+    {"type":"text","id":"ph3_title","x":1800,"y":60,"width":380,"height":35,"text":"Phase 3 Interactive Features","fontSize":24,"fontFamily":1,"strokeColor":"#1e1e1e","originalText":"Phase 3 Interactive Features","autoResize":true},
+    {"type":"text","id":"ph3_badge","x":1802,"y":92,"width":100,"height":22,"text":"UPCOMING","fontSize":14,"fontFamily":1,"strokeColor":"#1971c2","originalText":"UPCOMING","autoResize":true},
+
+    {"type":"rectangle","id":"ph3_r1","x":1800,"y":130,"width":460,"height":50,"roundness":{"type":3},"backgroundColor":"#a5d8ff","fillStyle":"solid","strokeColor":"#1971c2","strokeWidth":2,"boundElements":[{"id":"t_ph3_r1","type":"text"}]},
+    {"type":"text","id":"t_ph3_r1","x":1810,"y":138,"width":440,"height":22,"text":"Business claiming workflow (owner verification)","fontSize":14,"fontFamily":1,"strokeColor":"#1e1e1e","containerId":"ph3_r1","originalText":"Business claiming workflow (owner verification)","autoResize":true,"textAlign":"center","verticalAlign":"middle"},
+
+    {"type":"rectangle","id":"ph3_r2","x":1800,"y":200,"width":460,"height":50,"roundness":{"type":3},"backgroundColor":"#a5d8ff","fillStyle":"solid","strokeColor":"#1971c2","strokeWidth":2,"boundElements":[{"id":"t_ph3_r2","type":"text"}]},
+    {"type":"text","id":"t_ph3_r2","x":1810,"y":208,"width":440,"height":22,"text":"Interactive map (Leaflet / OpenStreetMap integration)","fontSize":14,"fontFamily":1,"strokeColor":"#1e1e1e","containerId":"ph3_r2","originalText":"Interactive map (Leaflet / OpenStreetMap integration)","autoResize":true,"textAlign":"center","verticalAlign":"middle"},
+
+    {"type":"rectangle","id":"ph3_r3","x":1800,"y":270,"width":460,"height":50,"roundness":{"type":3},"backgroundColor":"#a5d8ff","fillStyle":"solid","strokeColor":"#1971c2","strokeWidth":2,"boundElements":[{"id":"t_ph3_r3","type":"text"}]},
+    {"type":"text","id":"t_ph3_r3","x":1810,"y":278,"width":440,"height":22,"text":"Ratings and reviews system","fontSize":14,"fontFamily":1,"strokeColor":"#1e1e1e","containerId":"ph3_r3","originalText":"Ratings and reviews system","autoResize":true,"textAlign":"center","verticalAlign":"middle"},
+
+    {"type":"rectangle","id":"ph3_r4","x":1800,"y":340,"width":460,"height":50,"roundness":{"type":3},"backgroundColor":"#a5d8ff","fillStyle":"solid","strokeColor":"#1971c2","strokeWidth":2,"boundElements":[{"id":"t_ph3_r4","type":"text"}]},
+    {"type":"text","id":"t_ph3_r4","x":1810,"y":348,"width":440,"height":22,"text":"Owner dashboard for managing listing","fontSize":14,"fontFamily":1,"strokeColor":"#1e1e1e","containerId":"ph3_r4","originalText":"Owner dashboard for managing listing","autoResize":true,"textAlign":"center","verticalAlign":"middle"},
+
+    {"type":"rectangle","id":"ph3_r5","x":1800,"y":410,"width":460,"height":50,"roundness":{"type":3},"backgroundColor":"#a5d8ff","fillStyle":"solid","strokeColor":"#1971c2","strokeWidth":2,"boundElements":[{"id":"t_ph3_r5","type":"text"}]},
+    {"type":"text","id":"t_ph3_r5","x":1810,"y":418,"width":440,"height":22,"text":"Phone/email/website edit requests","fontSize":14,"fontFamily":1,"strokeColor":"#1e1e1e","containerId":"ph3_r5","originalText":"Phone/email/website edit requests","autoResize":true,"textAlign":"center","verticalAlign":"middle"},
+
+    {"type":"arrow","id":"a_ph3_ph4","x":1580,"y":600,"width":200,"height":0,"endArrowhead":"arrow","strokeWidth":3,"strokeColor":"#862e9c","points":[[0,0],[200,0]],"startBinding":{"elementId":"ph4_title","fixedPoint":[1,0.5]},"endBinding":{"elementId":"ph4_title","fixedPoint":[0,0.5]}},
+
+    {"type":"text","id":"ph4_title","x":80,"y":640,"width":400,"height":35,"text":"Phase 4 Advanced & Ecosystem","fontSize":24,"fontFamily":1,"strokeColor":"#1e1e1e","originalText":"Phase 4 Advanced & Ecosystem","autoResize":true},
+    {"type":"text","id":"ph4_badge","x":82,"y":672,"width":100,"height":22,"text":"FUTURE","fontSize":14,"fontFamily":1,"strokeColor":"#862e9c","originalText":"FUTURE","autoResize":true},
+
+    {"type":"rectangle","id":"ph4_r1","x":80,"y":710,"width":460,"height":50,"roundness":{"type":3},"backgroundColor":"#d0bfff","fillStyle":"solid","strokeColor":"#862e9c","strokeWidth":2,"boundElements":[{"id":"t_ph4_r1","type":"text"}]},
+    {"type":"text","id":"t_ph4_r1","x":90,"y":718,"width":440,"height":22,"text":"Mobile app / Progressive Web App (PWA)","fontSize":14,"fontFamily":1,"strokeColor":"#1e1e1e","containerId":"ph4_r1","originalText":"Mobile app / Progressive Web App (PWA)","autoResize":true,"textAlign":"center","verticalAlign":"middle"},
+
+    {"type":"rectangle","id":"ph4_r2","x":80,"y":780,"width":460,"height":50,"roundness":{"type":3},"backgroundColor":"#d0bfff","fillStyle":"solid","strokeColor":"#862e9c","strokeWidth":2,"boundElements":[{"id":"t_ph4_r2","type":"text"}]},
+    {"type":"text","id":"t_ph4_r2","x":90,"y":788,"width":440,"height":22,"text":"SEO optimization + AI crawler llms.txt","fontSize":14,"fontFamily":1,"strokeColor":"#1e1e1e","containerId":"ph4_r2","originalText":"SEO optimization + AI crawler llms.txt","autoResize":true,"textAlign":"center","verticalAlign":"middle"},
+
+    {"type":"rectangle","id":"ph4_r3","x":80,"y":850,"width":460,"height":50,"roundness":{"type":3},"backgroundColor":"#d0bfff","fillStyle":"solid","strokeColor":"#862e9c","strokeWidth":2,"boundElements":[{"id":"t_ph4_r3","type":"text"}]},
+    {"type":"text","id":"t_ph4_r3","x":90,"y":858,"width":440,"height":22,"text":"K-Core integration (internal diagnostics)","fontSize":14,"fontFamily":1,"strokeColor":"#1e1e1e","containerId":"ph4_r3","originalText":"K-Core integration (internal diagnostics)","autoResize":true,"textAlign":"center","verticalAlign":"middle"},
+
+    {"type":"rectangle","id":"ph4_r4","x":80,"y":920,"width":460,"height":50,"roundness":{"type":3},"backgroundColor":"#d0bfff","fillStyle":"solid","strokeColor":"#862e9c","strokeWidth":2,"boundElements":[{"id":"t_ph4_r4","type":"text"}]},
+    {"type":"text","id":"t_ph4_r4","x":90,"y":928,"width":440,"height":22,"text":"QuickNotifys + MyCal + Card module activation","fontSize":14,"fontFamily":1,"strokeColor":"#1e1e1e","containerId":"ph4_r4","originalText":"QuickNotifys + MyCal + Card module activation","autoResize":true,"textAlign":"center","verticalAlign":"middle"},
+
+    {"type":"rectangle","id":"ph4_r5","x":80,"y":990,"width":460,"height":50,"roundness":{"type":3},"backgroundColor":"#d0bfff","fillStyle":"solid","strokeColor":"#862e9c","strokeWidth":2,"boundElements":[{"id":"t_ph4_r5","type":"text"}]},
+    {"type":"text","id":"t_ph4_r5","x":90,"y":998,"width":440,"height":22,"text":"API for third-party developers","fontSize":14,"fontFamily":1,"strokeColor":"#1e1e1e","containerId":"ph4_r5","originalText":"API for third-party developers","autoResize":true,"textAlign":"center","verticalAlign":"middle"},
+
+    {"type":"rectangle","id":"ph4_r6","x":80,"y":1060,"width":460,"height":50,"roundness":{"type":3},"backgroundColor":"#d0bfff","fillStyle":"solid","strokeColor":"#862e9c","strokeWidth":2,"boundElements":[{"id":"t_ph4_r6","type":"text"}]},
+    {"type":"text","id":"t_ph4_r6","x":90,"y":1068,"width":440,"height":22,"text":"Monetization: featured listings, ads","fontSize":14,"fontFamily":1,"strokeColor":"#1e1e1e","containerId":"ph4_r6","originalText":"Monetization: featured listings, ads","autoResize":true,"textAlign":"center","verticalAlign":"middle"},
+
+    {"type":"text","id":"footer","x":200,"y":1180,"width":1600,"height":25,"text":"github.com/kaochaoting/bizmap  •  bizmap.tw  •  Updated daily via Hermes cron job  •  Twinkle Hub MCP powered","fontSize":16,"fontFamily":1,"strokeColor":"#868e96","originalText":"github.com/kaochaoting/bizmap  •  bizmap.tw  •  Updated daily via Hermes cron job  •  Twinkle Hub MCP powered","autoResize":true,"textAlign":"center"}
+  ],
+  "appState": {
+    "viewBackgroundColor": "#ffffff",
+    "gridSize": null
+  }
+}
