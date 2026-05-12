@@ -168,6 +168,63 @@ def t_slimming(row, cols):
             "source_url":"https://data.gov.tw/dataset/26259","source_license":"政府開放資料授權條款-第1版",
             "source_updated_at":time.strftime("%Y-%m-%d"), **base()}
 
+# --- New transformers for missing categories ---
+
+def t_cleaning(row, cols):
+    """建築物清潔服務業 (公司登記) → 居家服務"""
+    d = dict(zip(cols, row)); n=safe(d.get("公司名稱") or ""); a=safe(d.get("公司地址") or ""); c,dst=parse_address(a)
+    if not n: return None
+    return {"business_name":n,"category":"居家服務","category_slug":"home","city":c,"district":dst,
+            "region":f"{c} {dst}".strip(),"address":a,"phone":"",
+            "description":"經濟部公司登記建築物清潔服務業","tags":["清潔","居家","打掃"],
+            "source_type":"government_open_data","source_name":"經濟部商業發展署",
+            "source_url":"https://data.gov.tw/dataset/32689","source_license":"政府開放資料授權條款-第1版",
+            "source_updated_at":time.strftime("%Y-%m-%d"), **base()}
+
+def t_building_mgmt(row, cols):
+    """公寓大廈管理服務業 (商業登記) → 居家服務"""
+    d = dict(zip(cols, row)); n=safe(d.get("商業名稱") or ""); a=safe(d.get("商業地址") or ""); c,dst=parse_address(a)
+    if not n: return None
+    return {"business_name":n,"category":"居家服務","category_slug":"home","city":c,"district":dst,
+            "region":f"{c} {dst}".strip(),"address":a,"phone":"",
+            "description":"經濟部商業登記公寓大廈管理服務業","tags":["物業管理","公寓","居家服務"],
+            "source_type":"government_open_data","source_name":"經濟部商業發展署",
+            "source_url":"https://data.gov.tw/dataset/81101","source_license":"政府開放資料授權條款-第1版",
+            "source_updated_at":time.strftime("%Y-%m-%d"), **base()}
+
+def t_convenience_store(row, cols):
+    """便利商店 (商業登記) → 零售購物"""
+    d = dict(zip(cols, row)); n=safe(d.get("商業名稱") or ""); a=safe(d.get("商業地址") or ""); c,dst=parse_address(a)
+    if not n: return None
+    return {"business_name":n,"category":"零售購物","category_slug":"retail","city":c,"district":dst,
+            "region":f"{c} {dst}".strip(),"address":a,"phone":"",
+            "description":"經濟部商業登記便利商店","tags":["便利商店","零售","購物"],
+            "source_type":"government_open_data","source_name":"經濟部商業發展署",
+            "source_url":"https://data.gov.tw/dataset/108388","source_license":"政府開放資料授權條款-第1版",
+            "source_updated_at":time.strftime("%Y-%m-%d"), **base()}
+
+def t_department_store(row, cols):
+    """百貨公司業 (公司登記) → 零售購物"""
+    d = dict(zip(cols, row)); n=safe(d.get("公司名稱") or ""); a=safe(d.get("公司地址") or ""); c,dst=parse_address(a)
+    if not n: return None
+    return {"business_name":n,"category":"零售購物","category_slug":"retail","city":c,"district":dst,
+            "region":f"{c} {dst}".strip(),"address":a,"phone":"",
+            "description":"經濟部公司登記百貨公司業","tags":["百貨","零售","購物"],
+            "source_type":"government_open_data","source_name":"經濟部商業發展署",
+            "source_url":"https://data.gov.tw/dataset/45654","source_license":"政府開放資料授權條款-第1版",
+            "source_updated_at":time.strftime("%Y-%m-%d"), **base()}
+
+def t_translation(row, cols):
+    """翻譯業 (商業登記) → 商業服務"""
+    d = dict(zip(cols, row)); n=safe(d.get("商業名稱") or ""); a=safe(d.get("商業地址") or ""); c,dst=parse_address(a)
+    if not n: return None
+    return {"business_name":n,"category":"商業服務","category_slug":"business","city":c,"district":dst,
+            "region":f"{c} {dst}".strip(),"address":a,"phone":"",
+            "description":"經濟部商業登記翻譯業","tags":["翻譯","商業服務","語言"],
+            "source_type":"government_open_data","source_name":"經濟部商業發展署",
+            "source_url":"https://data.gov.tw/dataset/108375","source_license":"政府開放資料授權條款-第1版",
+            "source_updated_at":time.strftime("%Y-%m-%d"), **base()}
+
 # --- Pipeline ---
 
 datasets = [
@@ -180,6 +237,11 @@ datasets = [
     ("108629", "臺中運動場館", t_sports_venue),
     ("83645", "臺中好客民宿", t_bnb),
     ("26259", "瘦身美容業公司", t_slimming),
+    ("32689", "建築物清潔服務業", t_cleaning),
+    ("81101", "公寓大廈管理服務業", t_building_mgmt),
+    ("108388", "便利商店", t_convenience_store),
+    ("45654", "百貨公司業", t_department_store),
+    ("108375", "翻譯業", t_translation),
 ]
 
 def run():
