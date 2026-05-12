@@ -1,40 +1,83 @@
 <script>
   import { onMount } from 'svelte';
 
-  const categories = [
-    { icon: '🍜', name: '餐飲美食', count: '2,840+', slug: 'food' },
-    { icon: '💆', name: '美容美髮', count: '1,560+', slug: 'beauty' },
-    { icon: '🏋️', name: '健身運動', count: '890+', slug: 'fitness' },
-    { icon: '🏥', name: '醫療健康', count: '1,230+', slug: 'medical' },
-    { icon: '🛠️', name: '居家服務', count: '720+', slug: 'home' },
-    { icon: '📚', name: '教育補習', count: '960+', slug: 'education' },
-    { icon: '💼', name: '商業服務', count: '1,100+', slug: 'business' },
-    { icon: '🛍️', name: '零售購物', count: '2,200+', slug: 'retail' },
-  ];
+  const categoryMap = {
+    'food': '餐飲美食', 'beauty': '美容美髮', 'fitness': '健身運動',
+    'medical': '醫療健康', 'home': '居家服務', 'education': '教育補習',
+    'business': '商業服務', 'retail': '零售購物',
+  };
+  const categoryIcons = {
+    '餐飲美食': '🍜', '美容美髮': '💆', '健身運動': '🏋️',
+    '醫療健康': '🏥', '居家服務': '🛠️', '教育補習': '📚',
+    '商業服務': '💼', '零售購物': '🛍️',
+  };
+  const categorySlugs = {
+    '餐飲美食': 'food', '美容美髮': 'beauty', '健身運動': 'fitness',
+    '醫療健康': 'medical', '居家服務': 'home', '教育補習': 'education',
+    '商業服務': 'business', '零售購物': 'retail',
+  };
 
-  const cities = ['台北', '新北', '桃園', '台中', '台南', '高雄', '新竹', '嘉義'];
-
+  let businesses = [];
+  let stats = { total: 0, cities: 0, categories: 0 };
+  let categories = [];
   let searchQuery = '';
   let visible = false;
-  onMount(() => { setTimeout(() => visible = true, 50); });
+
+  onMount(async () => {
+    setTimeout(() => visible = true, 50);
+    try {
+      const res = await fetch('/data/businesses.json');
+      const data = await res.json();
+      businesses = data.businesses || [];
+      
+      const citySet = new Set(businesses.map(b => b.city).filter(Boolean));
+      const catCounts = {};
+      businesses.forEach(b => {
+        if (b.category) catCounts[b.category] = (catCounts[b.category] || 0) + 1;
+      });
+      
+      stats = {
+        total: businesses.length,
+        cities: citySet.size,
+        categories: Object.keys(catCounts).length,
+      };
+      
+      categories = Object.entries(catCounts)
+        .sort((a, b) => b[1] - a[1])
+        .map(([name, count]) => ({
+          icon: categoryIcons[name] || '🏪',
+          name,
+          count: count.toLocaleString(),
+          slug: categorySlugs[name] || name,
+        }));
+      
+      // Add categories not yet present with 0 count
+      for (const [slug, name] of Object.entries(categoryMap)) {
+        if (!catCounts[name]) {
+          categories.push({
+            icon: categoryIcons[name] || '🏪',
+            name,
+            count: '0',
+            slug,
+          });
+        }
+      }
+    } catch (e) {
+      console.error('Failed to load businesses:', e);
+    }
+  });
 </script>
 
 <svelte:head>
   <title>bizmap.tw — 台灣商家名錄，找對的在地好店</title>
-  <meta name="description" content="台灣最完整的在地商家名錄，收錄餐飲、美容、醫療、教育等各類商家，幫助您快速找到附近優質店家。">
+  <meta name="description" content="台灣在地商家名錄，收錄全台經政府開放資料驗證的商家，涵蓋餐飲、美容、醫療、教育等各類服務。">
   <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "WebSite",
-      "name": "bizmap.tw",
-      "url": "https://bizmap.tw",
+    { "@context": "https://schema.org", "@type": "WebSite",
+      "name": "bizmap.tw", "url": "https://bizmap.tw",
       "description": "台灣商家名錄平台",
-      "potentialAction": {
-        "@type": "SearchAction",
+      "potentialAction": { "@type": "SearchAction",
         "target": "https://bizmap.tw/search?q={search_term_string}",
-        "query-input": "required name=search_term_string"
-      }
-    }
+        "query-input": "required name=search_term_string" } }
   </script>
 </svelte:head>
 
@@ -59,7 +102,9 @@
       <span class="text-2xl md:text-3xl font-light text-gray-400">快速、精準、值得信賴</span>
     </h1>
     <p class="text-gray-400 text-lg mb-10 max-w-xl mx-auto">
-      收錄台灣 12,000+ 家經過驗證的在地商家，每筆資料均含完整聯絡資訊與 Google 地圖整合。
+      {stats.total > 0
+        ? `收錄全台 ${stats.total.toLocaleString()} 家經政府開放資料驗證的商家，覆蓋 ${stats.cities} 縣市。`
+        : '收錄全台經政府開放資料驗證的商家，資料持續擴充中。'}
     </p>
 
     <!-- Search bar -->
@@ -76,20 +121,22 @@
     </div>
 
     <!-- City quick links -->
-    <div class="flex flex-wrap justify-center gap-2 mt-6">
-      {#each cities as city}
-        <a href="/directory?city={city}" class="px-3 py-1.5 rounded-full text-xs text-gray-400 border border-white/10 hover:border-yellow-400/50 hover:text-yellow-400 transition-all">
-          {city}
-        </a>
-      {/each}
-    </div>
+    {#if businesses.length}
+      <div class="flex flex-wrap justify-center gap-2 mt-6">
+        {#each [...new Set(businesses.map(b => b.city).filter(Boolean))].slice(0, 12) as city}
+          <a href="/directory?city={city}" class="px-3 py-1.5 rounded-full text-xs text-gray-400 border border-white/10 hover:border-yellow-400/50 hover:text-yellow-400 transition-all">
+            {city}
+          </a>
+        {/each}
+      </div>
+    {/if}
   </div>
 </section>
 
 <!-- STATS -->
 <section class="py-12 bg-white border-b border-gray-100">
   <div class="max-w-4xl mx-auto px-6 grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
-    {#each [['12,000+','收錄商家'],['22','縣市覆蓋'],['8','主要類別'],['100%','免費查詢']] as [num, label]}
+    {#each [[(stats.total || 0).toLocaleString()+'家','收錄商家'],[(stats.cities || '0')+'縣市','縣市覆蓋'],[(stats.categories || '0')+'類別','主要類別'],['100%','免費查詢']] as [num, label]}
       <div>
         <div class="text-3xl font-bold" style="color: var(--ink)">{num}</div>
         <div class="text-sm text-gray-500 mt-1">{label}</div>
