@@ -1,0 +1,96 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 700">
+  <defs>
+    <marker id="arrow" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#64748b"/>
+    </marker>
+    <filter id="shadow" x="-5%" y="-5%" width="110%" height="110%">
+      <feDropShadow dx="1" dy="2" stdDeviation="3" flood-opacity="0.12"/>
+    </filter>
+  </defs>
+  <style>
+    text { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, sans-serif; }
+    .title { font-size: 28px; font-weight: 700; fill: #0f172a; }
+    .subtitle { font-size: 15px; font-weight: 400; fill: #64748b; }
+    .phase-label { font-size: 16px; font-weight: 700; }
+    .desc { font-size: 12px; fill: #475569; }
+    .status { font-size: 11px; font-weight: 600; }
+    .axis-label { font-size: 13px; font-weight: 500; fill: #94a3b8; text-anchor: middle; }
+    .detail { font-size: 11px; fill: #64748b; }
+    .legend-text { font-size: 12px; fill: #475569; }
+  </style>
+  <rect width="1200" height="700" fill="#f8fafc"/>
+  <text x="80" y="50" class="title">Bizmap.tw — Development Roadmap</text>
+  <text x="80" y="78" class="subtitle">2,887 businesses · 9 categories · 22 cities · 19 datasets · bizmap.tw</text>
+
+  <!-- Timeline axis -->
+  <line x1="80" y1="130" x2="1120" y2="130" stroke="#e2e8f0" stroke-width="2"/>
+  <line x1="80" y1="125" x2="80" y2="135" stroke="#e2e8f0" stroke-width="2"/>
+  <line x1="420" y1="125" x2="420" y2="135" stroke="#e2e8f0" stroke-width="2"/>
+  <line x1="760" y1="125" x2="760" y2="135" stroke="#e2e8f0" stroke-width="2"/>
+  <line x1="1120" y1="125" x2="1120" y2="135" stroke="#e2e8f0" stroke-width="2"/>
+  <text x="80" y="118" class="axis-label">Q1 2026</text>
+  <text x="420" y="118" class="axis-label">Q2 2026</text>
+  <text x="760" y="118" class="axis-label">Q3 2026</text>
+  <text x="1120" y="118" class="axis-label">Q4 2026</text>
+
+  <!-- Phase 1: Data Foundation (DONE - green) -->
+  <rect x="80" y="160" width="340" height="90" rx="8" fill="#dcfce7" stroke="#86efac" stroke-width="2" filter="url(#shadow)"/>
+  <rect x="80" y="160" width="8" height="90" rx="4" fill="#22c55e"/>
+  <text x="100" y="185" class="phase-label" fill="#166534">Phase 1: Data Foundation</text>
+  <text x="100" y="205" class="desc">19 datasets from Twinkle Hub MCP</text>
+  <text x="100" y="220" class="desc">Directory · Search · Filter · Detail pages</text>
+  <text x="100" y="235" class="desc">PRD + SSD docs · Cloudflare Pages deploy</text>
+  <rect x="340" y="168" width="60" height="18" rx="9" fill="#22c55e"/>
+  <text x="370" y="181" class="status" fill="#ffffff" text-anchor="middle">DONE</text>
+
+  <!-- Phase 2: Data Expansion (ACTIVE - orange) -->
+  <rect x="80" y="280" width="510" height="90" rx="8" fill="#ffedd5" stroke="#fed7aa" stroke-width="2" filter="url(#shadow)"/>
+  <rect x="80" y="280" width="8" height="90" rx="4" fill="#f97316"/>
+  <text x="100" y="305" class="phase-label" fill="#9a3412">Phase 2: Data Expansion</text>
+  <text x="100" y="325" class="desc">Scale to 10K+ businesses (increase PER_DATASET)</text>
+  <text x="100" y="340" class="desc">Pet services · Daycare · Nurseries · Temples</text>
+  <text x="100" y="355" class="desc">Geocoding · National coverage · Schema.org structured data</text>
+  <rect x="500" y="288" width="80" height="18" rx="9" fill="#f97316"/>
+  <text x="540" y="301" class="status" fill="#ffffff" text-anchor="middle">ACTIVE</text>
+
+  <!-- Phase 3: Interactive Features (UPCOMING - blue) -->
+  <rect x="250" y="400" width="530" height="90" rx="8" fill="#dbeafe" stroke="#bfdbfe" stroke-width="2" filter="url(#shadow)"/>
+  <rect x="250" y="400" width="8" height="90" rx="4" fill="#3b82f6"/>
+  <text x="270" y="425" class="phase-label" fill="#1e40af">Phase 3: Interactive Features</text>
+  <text x="270" y="445" class="desc">Business claiming · Owner verification workflow</text>
+  <text x="270" y="460" class="desc">Interactive map (OpenStreetMap) · Ratings Reviews</text>
+  <text x="270" y="475" class="desc">Owner dashboard · Edit requests · Contact management</text>
+  <rect x="680" y="408" width="80" height="18" rx="9" fill="#3b82f6"/>
+  <text x="720" y="421" class="status" fill="#ffffff" text-anchor="middle">UPCOMING</text>
+
+  <!-- Phase 4: Ecosystem (FUTURE - purple) -->
+  <rect x="420" y="520" width="450" height="90" rx="8" fill="#f3e8ff" stroke="#e9d5ff" stroke-width="2" filter="url(#shadow)"/>
+  <rect x="420" y="520" width="8" height="90" rx="4" fill="#a855f7"/>
+  <text x="440" y="545" class="phase-label" fill="#581c87">Phase 4: Ecosystem</text>
+  <text x="440" y="565" class="desc">PWA · SEO for AI crawlers · K-Core integration</text>
+  <text x="440" y="580" class="desc">QuickNotifys · MyCal · Card modules</text>
+  <text x="440" y="595" class="desc">API for 3rd-party developers · Monetization</text>
+  <rect x="770" y="528" width="80" height="18" rx="9" fill="#a855f7"/>
+  <text x="810" y="541" class="status" fill="#ffffff" text-anchor="middle">FUTURE</text>
+
+  <!-- Transition arrows between phases -->
+  <path d="M 420,205 C 480,205 480,280 480,280" stroke="#94a3b8" stroke-width="2" fill="none" stroke-dasharray="6,4" marker-end="url(#arrow)"/>
+  <path d="M 590,325 C 620,325 620,400 620,400" stroke="#94a3b8" stroke-width="2" fill="none" stroke-dasharray="6,4" marker-end="url(#arrow)"/>
+  <path d="M 780,445 C 800,445 800,520 800,520" stroke="#94a3b8" stroke-width="2" fill="none" stroke-dasharray="6,4" marker-end="url(#arrow)"/>
+
+  <!-- Legend -->
+  <rect x="80" y="630" width="1040" height="50" rx="8" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+  <text x="100" y="650" class="legend-text" font-weight="600">Legend:</text>
+  <rect x="200" y="642" width="14" height="14" rx="3" fill="#22c55e"/>
+  <text x="222" y="654" class="legend-text" font-weight="600">Data Foundation</text>
+  <text x="222" y="667" class="detail">Q1 2026, 2,887 businesses</text>
+  <rect x="440" y="642" width="14" height="14" rx="3" fill="#f97316"/>
+  <text x="462" y="654" class="legend-text" font-weight="600">Data Expansion</text>
+  <text x="462" y="667" class="detail">Q2 2026, scaling to 10K+</text>
+  <rect x="680" y="642" width="14" height="14" rx="3" fill="#3b82f6"/>
+  <text x="702" y="654" class="legend-text" font-weight="600">Interactive</text>
+  <text x="702" y="667" class="detail">Q2-Q3 2026, claiming + map</text>
+  <rect x="920" y="642" width="14" height="14" rx="3" fill="#a855f7"/>
+  <text x="942" y="654" class="legend-text" font-weight="600">Ecosystem</text>
+  <text x="942" y="667" class="detail">Q3-Q4 2026, advanced</text>
+</svg>
