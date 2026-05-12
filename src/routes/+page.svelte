@@ -4,17 +4,17 @@
   const categoryMap = {
     'food': '餐飲美食', 'beauty': '美容美髮', 'fitness': '健身運動',
     'medical': '醫療健康', 'home': '居家服務', 'education': '教育補習',
-    'business': '商業服務', 'retail': '零售購物',
+    'business': '商業服務', 'retail': '零售購物', 'transport': '交通運輸',
   };
   const categoryIcons = {
     '餐飲美食': '🍜', '美容美髮': '💆', '健身運動': '🏋️',
     '醫療健康': '🏥', '居家服務': '🛠️', '教育補習': '📚',
-    '商業服務': '💼', '零售購物': '🛍️',
+    '商業服務': '💼', '零售購物': '🛍️', '交通運輸': '⛽',
   };
   const categorySlugs = {
     '餐飲美食': 'food', '美容美髮': 'beauty', '健身運動': 'fitness',
     '醫療健康': 'medical', '居家服務': 'home', '教育補習': 'education',
-    '商業服務': 'business', '零售購物': 'retail',
+    '商業服務': 'business', '零售購物': 'retail', '交通運輸': 'transport',
   };
 
   let businesses = [];

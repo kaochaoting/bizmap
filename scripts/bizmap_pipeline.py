@@ -225,6 +225,63 @@ def t_translation(row, cols):
             "source_url":"https://data.gov.tw/dataset/108375","source_license":"政府開放資料授權條款-第1版",
             "source_updated_at":time.strftime("%Y-%m-%d"), **base()}
 
+# === NEW: Top 5 priority datasets ===
+
+def t_gas_station(row, cols):
+    """加油站業 (商業登記) → 交通運輸"""
+    d = dict(zip(cols, row)); n=safe(d.get("商業名稱") or ""); a=safe(d.get("商業地址") or ""); c,dst=parse_address(a)
+    if not n: return None
+    return {"business_name":n,"category":"交通運輸","category_slug":"transport","city":c,"district":dst,
+            "region":f"{c} {dst}".strip(),"address":a,"phone":"",
+            "description":"經濟部商業登記加油站業","tags":["加油站","交通","加油"],
+            "source_type":"government_open_data","source_name":"經濟部商業發展署",
+            "source_url":"https://data.gov.tw/dataset/81098","source_license":"政府開放資料授權條款-第1版",
+            "source_updated_at":time.strftime("%Y-%m-%d"), **base()}
+
+def t_supermarket(row, cols):
+    """超級市場業 (商業登記) → 零售購物"""
+    d = dict(zip(cols, row)); n=safe(d.get("商業名稱") or ""); a=safe(d.get("商業地址") or ""); c,dst=parse_address(a)
+    if not n: return None
+    return {"business_name":n,"category":"零售購物","category_slug":"retail","city":c,"district":dst,
+            "region":f"{c} {dst}".strip(),"address":a,"phone":"",
+            "description":"經濟部商業登記超級市場業","tags":["超市","零售","購物"],
+            "source_type":"government_open_data","source_name":"經濟部商業發展署",
+            "source_url":"https://data.gov.tw/dataset/125955","source_license":"政府開放資料授權條款-第1版",
+            "source_updated_at":time.strftime("%Y-%m-%d"), **base()}
+
+def t_security(row, cols):
+    """保全業 (商業登記) → 居家服務"""
+    d = dict(zip(cols, row)); n=safe(d.get("商業名稱") or ""); a=safe(d.get("商業地址") or ""); c,dst=parse_address(a)
+    if not n: return None
+    return {"business_name":n,"category":"居家服務","category_slug":"home","city":c,"district":dst,
+            "region":f"{c} {dst}".strip(),"address":a,"phone":"",
+            "description":"經濟部商業登記保全業","tags":["保全","安全","居家"],
+            "source_type":"government_open_data","source_name":"經濟部商業發展署",
+            "source_url":"https://data.gov.tw/dataset/81120","source_license":"政府開放資料授權條款-第1版",
+            "source_updated_at":time.strftime("%Y-%m-%d"), **base()}
+
+def t_real_estate(row, cols):
+    """不動產仲介經紀業 (商業登記) → 商業服務"""
+    d = dict(zip(cols, row)); n=safe(d.get("商業名稱") or ""); a=safe(d.get("商業地址") or ""); c,dst=parse_address(a)
+    if not n: return None
+    return {"business_name":n,"category":"商業服務","category_slug":"business","city":c,"district":dst,
+            "region":f"{c} {dst}".strip(),"address":a,"phone":"",
+            "description":"經濟部商業登記不動產仲介經紀業","tags":["不動產","仲介","租屋","買房"],
+            "source_type":"government_open_data","source_name":"經濟部商業發展署",
+            "source_url":"https://data.gov.tw/dataset/81110","source_license":"政府開放資料授權條款-第1版",
+            "source_updated_at":time.strftime("%Y-%m-%d"), **base()}
+
+def t_car_rental(row, cols):
+    """小客車租賃業 (商業登記) → 交通運輸"""
+    d = dict(zip(cols, row)); n=safe(d.get("商業名稱") or ""); a=safe(d.get("商業地址") or ""); c,dst=parse_address(a)
+    if not n: return None
+    return {"business_name":n,"category":"交通運輸","category_slug":"transport","city":c,"district":dst,
+            "region":f"{c} {dst}".strip(),"address":a,"phone":"",
+            "description":"經濟部商業登記小客車租賃業","tags":["租車","交通","運輸"],
+            "source_type":"government_open_data","source_name":"經濟部商業發展署",
+            "source_url":"https://data.gov.tw/dataset/81106","source_license":"政府開放資料授權條款-第1版",
+            "source_updated_at":time.strftime("%Y-%m-%d"), **base()}
+
 # --- Pipeline ---
 
 datasets = [
@@ -242,6 +299,11 @@ datasets = [
     ("108388", "便利商店", t_convenience_store),
     ("45654", "百貨公司業", t_department_store),
     ("108375", "翻譯業", t_translation),
+    ("81098", "加油站業", t_gas_station),
+    ("125955", "超級市場業", t_supermarket),
+    ("81120", "保全業", t_security),
+    ("81110", "不動產仲介業", t_real_estate),
+    ("81106", "小客車租賃業", t_car_rental),
 ]
 
 def run():
