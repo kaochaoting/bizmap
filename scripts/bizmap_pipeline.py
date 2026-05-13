@@ -14,12 +14,14 @@ PUBLIC_DIR = BIZMAP_DIR / "static" / "data"
 PER_DATASET = 200  # per dataset, set 0 for all
 
 def mcp_call(method, params, timeout=120):
+    headers = [
+        "-H", "Content-Type: application/json",
+        "-H", "Accept: application/json, text/event-stream",
+        "-H", f"Authorization: Bearer {KEY}",
+    ]
     payload = json.dumps({"jsonrpc":"2.0","id":1,"method":method,"params":params})
-    r = subprocess.run(["curl", "-s", "--max-time", str(timeout), "-X", "POST", API,
-                        "-H", "Content-Type: application/json",
-                        "-H", "Accept: application/json, text/event-stream",
-                        "-H", f"Authorization: Bearer {KEY}",
-                        "-d", payload],
+    r = subprocess.run(["curl", "-s", "--max-time", str(timeout), "-X", "POST", API] + headers +
+                       ["-d", payload],
                        capture_output=True, text=True, timeout=timeout+30)
     data = r.stdout
     if "data: " in data:
