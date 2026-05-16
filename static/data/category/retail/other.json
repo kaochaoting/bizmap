@@ -1,0 +1,477 @@
+{
+  "category": "零售購物",
+  "category_slug": "retail",
+  "region": "other",
+  "count": 28,
+  "businesses": [
+    {
+      "business_id": "biz_d7d91c4f33f5",
+      "business_name": "富士便利商店",
+      "category": "零售購物",
+      "category_slug": "retail",
+      "address": "中山南路５０號１樓",
+      "description": "經濟部商業登記便利商店",
+      "tags": [
+        "便利商店",
+        "零售",
+        "購物"
+      ],
+      "source_name": "經濟部商業發展署",
+      "source_url": "https://data.gov.tw/dataset/108388",
+      "source_updated_at": "2026-05-17"
+    },
+    {
+      "business_id": "biz_f2d017162a86",
+      "business_name": "慧安號",
+      "category": "零售購物",
+      "category_slug": "retail",
+      "description": "經濟部商業登記便利商店",
+      "tags": [
+        "便利商店",
+        "零售",
+        "購物"
+      ],
+      "source_name": "經濟部商業發展署",
+      "source_url": "https://data.gov.tw/dataset/108388",
+      "source_updated_at": "2026-05-17"
+    },
+    {
+      "business_id": "biz_db45246ffdad",
+      "business_name": "金陸全銀樓",
+      "category": "零售購物",
+      "category_slug": "retail",
+      "description": "經濟部商業登記便利商店",
+      "tags": [
+        "便利商店",
+        "零售",
+        "購物"
+      ],
+      "source_name": "經濟部商業發展署",
+      "source_url": "https://data.gov.tw/dataset/108388",
+      "source_updated_at": "2026-05-17"
+    },
+    {
+      "business_id": "biz_a11726b691fa",
+      "business_name": "奇碁亞洲電子商務股份有限公司",
+      "category": "零售購物",
+      "category_slug": "retail",
+      "description": "經濟部公司登記百貨公司業",
+      "tags": [
+        "百貨",
+        "零售",
+        "購物"
+      ],
+      "source_name": "經濟部商業發展署",
+      "source_url": "https://data.gov.tw/dataset/45654",
+      "source_updated_at": "2026-05-17"
+    },
+    {
+      "business_id": "biz_259999e1f72c",
+      "business_name": "台灣馬莎股份有限公司",
+      "category": "零售購物",
+      "category_slug": "retail",
+      "description": "經濟部公司登記百貨公司業",
+      "tags": [
+        "百貨",
+        "零售",
+        "購物"
+      ],
+      "source_name": "經濟部商業發展署",
+      "source_url": "https://data.gov.tw/dataset/45654",
+      "source_updated_at": "2026-05-17"
+    },
+    {
+      "business_id": "biz_56f61df8d3e6",
+      "business_name": "品翔企業社",
+      "category": "零售購物",
+      "category_slug": "retail",
+      "address": "正義街9巷6號1樓",
+      "description": "經濟部商業登記布疋、衣著、鞋、帽、傘、服飾品零售",
+      "tags": [
+        "服飾",
+        "零售",
+        "購物",
+        "衣著",
+        "配件",
+        "鞋"
+      ],
+      "source_name": "經濟部商業發展署",
+      "source_url": "https://data.gov.tw/dataset/82613",
+      "source_updated_at": "2026-05-17"
+    },
+    {
+      "business_id": "biz_1fd6b5235bd7",
+      "business_name": "佶鋒資訊行",
+      "category": "零售購物",
+      "category_slug": "retail",
+      "address": "山鶯路１３０號１樓",
+      "description": "經濟部商業登記電器零售業",
+      "tags": [
+        "家電",
+        "電器",
+        "零售",
+        "購物"
+      ],
+      "source_name": "經濟部商業發展署",
+      "source_url": "https://data.gov.tw/dataset/82608",
+      "source_updated_at": "2026-05-17"
+    },
+    {
+      "business_id": "biz_3ab2dad7d526",
+      "business_name": "協昌電機行",
+      "category": "零售購物",
+      "category_slug": "retail",
+      "address": "南薦裺路一二號",
+      "description": "經濟部商業登記電器零售業",
+      "tags": [
+        "家電",
+        "電器",
+        "零售",
+        "購物"
+      ],
+      "source_name": "經濟部商業發展署",
+      "source_url": "https://data.gov.tw/dataset/82608",
+      "source_updated_at": "2026-05-17"
+    },
+    {
+      "business_id": "biz_5b006a3b1748",
+      "business_name": "泓國工程行",
+      "category": "零售購物",
+      "category_slug": "retail",
+      "address": "延平路二段四四七巷一三弄十號一樓",
+      "description": "經濟部商業登記電器零售業",
+      "tags": [
+        "家電",
+        "電器",
+        "零售",
+        "購物"
+      ],
+      "source_name": "經濟部商業發展署",
+      "source_url": "https://data.gov.tw/dataset/82608",
+      "source_updated_at": "2026-05-17"
+    },
+    {
+      "business_id": "biz_2fc1900c9212",
+      "business_name": "志昌水電工程行",
+      "category": "零售購物",
+      "category_slug": "retail",
+      "address": "臺北縣新莊市建安街４１巷１２號１樓（僅得使用店舖範為面積為１４．３５平方公尺）",
+      "description": "經濟部商業登記電器零售業",
+      "tags": [
+        "家電",
+        "電器",
+        "零售",
+        "購物"
+      ],
+      "source_name": "經濟部商業發展署",
+      "source_url": "https://data.gov.tw/dataset/82608",
+      "source_updated_at": "2026-05-17"
+    },
+    {
+      "business_id": "biz_9fcdb20bd023",
+      "business_name": "吉豐精品店",
+      "category": "零售購物",
+      "category_slug": "retail",
+      "address": "中華路324號1F",
+      "description": "經濟部商業登記電器零售業",
+      "tags": [
+        "家電",
+        "電器",
+        "零售",
+        "購物"
+      ],
+      "source_name": "經濟部商業發展署",
+      "source_url": "https://data.gov.tw/dataset/82608",
+      "source_updated_at": "2026-05-17"
+    },
+    {
+      "business_id": "biz_3cde8cc7e03a",
+      "business_name": "信義電機行",
+      "category": "零售購物",
+      "category_slug": "retail",
+      "address": "北埔街二十八號",
+      "description": "經濟部商業登記電器零售業",
+      "tags": [
+        "家電",
+        "電器",
+        "零售",
+        "購物"
+      ],
+      "source_name": "經濟部商業發展署",
+      "source_url": "https://data.gov.tw/dataset/82608",
+      "source_updated_at": "2026-05-17"
+    },
+    {
+      "business_id": "biz_7ef7e01624ff",
+      "business_name": "元泰電器行",
+      "category": "零售購物",
+      "category_slug": "retail",
+      "address": "德芳南一街140號限一樓　　　　　　　　　　?",
+      "description": "經濟部商業登記電器零售業",
+      "tags": [
+        "家電",
+        "電器",
+        "零售",
+        "購物"
+      ],
+      "source_name": "經濟部商業發展署",
+      "source_url": "https://data.gov.tw/dataset/82608",
+      "source_updated_at": "2026-05-17"
+    },
+    {
+      "business_id": "biz_2af34358e9d1",
+      "business_name": "鉅順企業社",
+      "category": "零售購物",
+      "category_slug": "retail",
+      "address": "桃園縣大溪鎮一心里民權東路５４巷２號１樓",
+      "description": "經濟部商業登記建材零售業",
+      "tags": [
+        "建材",
+        "零售",
+        "居家",
+        "裝潢"
+      ],
+      "source_name": "經濟部商業發展署",
+      "source_url": "https://data.gov.tw/dataset/82611",
+      "source_updated_at": "2026-05-17"
+    },
+    {
+      "business_id": "biz_7137bd6350d1",
+      "business_name": "嘉禾企業社",
+      "category": "零售購物",
+      "category_slug": "retail",
+      "address": "新峯里１６鄰水流東３１１號",
+      "description": "經濟部商業登記建材零售業",
+      "tags": [
+        "建材",
+        "零售",
+        "居家",
+        "裝潢"
+      ],
+      "source_name": "經濟部商業發展署",
+      "source_url": "https://data.gov.tw/dataset/82611",
+      "source_updated_at": "2026-05-17"
+    },
+    {
+      "business_id": "biz_dd6dce9d88a5",
+      "business_name": "順龍企業社",
+      "category": "零售購物",
+      "category_slug": "retail",
+      "address": "八卦路一五八之一一號",
+      "description": "經濟部商業登記建材零售業",
+      "tags": [
+        "建材",
+        "零售",
+        "居家",
+        "裝潢"
+      ],
+      "source_name": "經濟部商業發展署",
+      "source_url": "https://data.gov.tw/dataset/82611",
+      "source_updated_at": "2026-05-17"
+    },
+    {
+      "business_id": "biz_5b5fa834cc96",
+      "business_name": "富利建材行",
+      "category": "零售購物",
+      "category_slug": "retail",
+      "address": "九鄰蕉埔街九八號",
+      "description": "經濟部商業登記建材零售業",
+      "tags": [
+        "建材",
+        "零售",
+        "居家",
+        "裝潢"
+      ],
+      "source_name": "經濟部商業發展署",
+      "source_url": "https://data.gov.tw/dataset/82611",
+      "source_updated_at": "2026-05-17"
+    },
+    {
+      "business_id": "biz_789a45f3e668",
+      "business_name": "義碩智能股份有限公司",
+      "category": "零售購物",
+      "category_slug": "retail",
+      "address": "新竹科學園區新竹縣創新一路12號6樓",
+      "description": "經濟部公司登記汽機車零件配備零售",
+      "tags": [
+        "汽車",
+        "機車",
+        "零件",
+        "零售"
+      ],
+      "source_name": "經濟部商業發展署",
+      "source_url": "https://data.gov.tw/dataset/81121",
+      "source_updated_at": "2026-05-17"
+    },
+    {
+      "business_id": "biz_8c04d51c335c",
+      "business_name": "新力旺智慧精工股份有限公司",
+      "category": "零售購物",
+      "category_slug": "retail",
+      "address": "中部科學園區臺中市大雅區秀山里科雅路36號3樓",
+      "description": "經濟部公司登記汽機車零件配備零售",
+      "tags": [
+        "汽車",
+        "機車",
+        "零件",
+        "零售"
+      ],
+      "source_name": "經濟部商業發展署",
+      "source_url": "https://data.gov.tw/dataset/81121",
+      "source_updated_at": "2026-05-17"
+    },
+    {
+      "business_id": "biz_6b9da26c99a8",
+      "business_name": "智晶光電股份有限公司",
+      "category": "零售購物",
+      "category_slug": "retail",
+      "address": "新竹科學園區苗栗縣竹南鎮科北二路8號",
+      "description": "經濟部公司登記汽機車零件配備零售",
+      "tags": [
+        "汽車",
+        "機車",
+        "零件",
+        "零售"
+      ],
+      "source_name": "經濟部商業發展署",
+      "source_url": "https://data.gov.tw/dataset/81121",
+      "source_updated_at": "2026-05-17"
+    },
+    {
+      "business_id": "biz_309252f85d10",
+      "business_name": "永鉅精密科技股份有限公司",
+      "category": "零售購物",
+      "category_slug": "retail",
+      "address": "中部科學園區彰化縣二林鎮科技路20號",
+      "description": "經濟部公司登記汽機車零件配備零售",
+      "tags": [
+        "汽車",
+        "機車",
+        "零件",
+        "零售"
+      ],
+      "source_name": "經濟部商業發展署",
+      "source_url": "https://data.gov.tw/dataset/81121",
+      "source_updated_at": "2026-05-17"
+    },
+    {
+      "business_id": "biz_539e7550dfde",
+      "business_name": "群翌能源股份有限公司",
+      "category": "零售購物",
+      "category_slug": "retail",
+      "address": "新竹科學園區新竹縣寶山鄉園區二路60號1樓",
+      "description": "經濟部公司登記汽機車零件配備零售",
+      "tags": [
+        "汽車",
+        "機車",
+        "零件",
+        "零售"
+      ],
+      "source_name": "經濟部商業發展署",
+      "source_url": "https://data.gov.tw/dataset/81121",
+      "source_updated_at": "2026-05-17"
+    },
+    {
+      "business_id": "biz_340c94f33930",
+      "business_name": "明教科技股份有限公司",
+      "category": "零售購物",
+      "category_slug": "retail",
+      "address": "中部科學園區臺中市大雅區科雅路6號",
+      "description": "經濟部公司登記汽機車零件配備零售",
+      "tags": [
+        "汽車",
+        "機車",
+        "零件",
+        "零售"
+      ],
+      "source_name": "經濟部商業發展署",
+      "source_url": "https://data.gov.tw/dataset/81121",
+      "source_updated_at": "2026-05-17"
+    },
+    {
+      "business_id": "biz_53d5a987b4f1",
+      "business_name": "萬泰克原型工程方案有限公司",
+      "category": "零售購物",
+      "category_slug": "retail",
+      "address": "中部科學園區臺中市大雅區科雅路6號",
+      "description": "經濟部公司登記汽機車零件配備零售",
+      "tags": [
+        "汽車",
+        "機車",
+        "零件",
+        "零售"
+      ],
+      "source_name": "經濟部商業發展署",
+      "source_url": "https://data.gov.tw/dataset/81121",
+      "source_updated_at": "2026-05-17"
+    },
+    {
+      "business_id": "biz_c7176a204aa6",
+      "business_name": "起而行綠能股份有限公司",
+      "category": "零售購物",
+      "category_slug": "retail",
+      "address": "新竹科學園區新竹市東區篤行路6-3號1樓",
+      "description": "經濟部公司登記汽機車零件配備零售",
+      "tags": [
+        "汽車",
+        "機車",
+        "零件",
+        "零售"
+      ],
+      "source_name": "經濟部商業發展署",
+      "source_url": "https://data.gov.tw/dataset/81121",
+      "source_updated_at": "2026-05-17"
+    },
+    {
+      "business_id": "biz_cb99cd5ded73",
+      "business_name": "神達數位股份有限公司",
+      "category": "零售購物",
+      "category_slug": "retail",
+      "address": "新竹科學園區新竹縣寶山鄉研發二路1號4樓",
+      "description": "經濟部公司登記汽機車零件配備零售",
+      "tags": [
+        "汽車",
+        "機車",
+        "零件",
+        "零售"
+      ],
+      "source_name": "經濟部商業發展署",
+      "source_url": "https://data.gov.tw/dataset/81121",
+      "source_updated_at": "2026-05-17"
+    },
+    {
+      "business_id": "biz_aa4683b9555e",
+      "business_name": "馬森科技股份有限公司",
+      "category": "零售購物",
+      "category_slug": "retail",
+      "address": "中部科學園區臺中市大雅區科雅路38號2樓",
+      "description": "經濟部公司登記汽機車零件配備零售",
+      "tags": [
+        "汽車",
+        "機車",
+        "零件",
+        "零售"
+      ],
+      "source_name": "經濟部商業發展署",
+      "source_url": "https://data.gov.tw/dataset/81121",
+      "source_updated_at": "2026-05-17"
+    },
+    {
+      "business_id": "biz_33b905a70d82",
+      "business_name": "兆勁科技股份有限公司",
+      "category": "零售購物",
+      "category_slug": "retail",
+      "address": "新竹科學園區苗栗縣竹南鎮科研路50-8號2樓",
+      "description": "經濟部公司登記汽機車零件配備零售",
+      "tags": [
+        "汽車",
+        "機車",
+        "零件",
+        "零售"
+      ],
+      "source_name": "經濟部商業發展署",
+      "source_url": "https://data.gov.tw/dataset/81121",
+      "source_updated_at": "2026-05-17"
+    }
+  ]
+}
