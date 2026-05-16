@@ -12,3 +12,7 @@ __pycache__/
 !.env.example
 vite.config.js.timestamp-*
 vite.config.ts.timestamp-*
+
+# Large data files (exceed GitHub 100MB limit, regenerated each run)
+/data/seed-businesses.json
+/static/data/businesses.json
