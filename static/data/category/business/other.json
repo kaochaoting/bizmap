@@ -1,0 +1,106 @@
+{
+  "category": "商業服務",
+  "category_slug": "business",
+  "region": "other",
+  "count": 6,
+  "businesses": [
+    {
+      "business_id": "biz_ca330ae412a2",
+      "business_name": "華碩企業社",
+      "category": "商業服務",
+      "category_slug": "business",
+      "address": "4鄰光明十八街28號十樓",
+      "description": "經濟部商業登記一般廣告服務業",
+      "tags": [
+        "廣告",
+        "行銷",
+        "商業服務"
+      ],
+      "source_name": "經濟部商業發展署",
+      "source_url": "https://data.gov.tw/dataset/102988",
+      "source_updated_at": "2026-05-17"
+    },
+    {
+      "business_id": "biz_45dffbab5ca8",
+      "business_name": "豪點企業社",
+      "category": "商業服務",
+      "category_slug": "business",
+      "address": "自強路１１３巷１弄１號５樓",
+      "description": "經濟部商業登記一般廣告服務業",
+      "tags": [
+        "廣告",
+        "行銷",
+        "商業服務"
+      ],
+      "source_name": "經濟部商業發展署",
+      "source_url": "https://data.gov.tw/dataset/102988",
+      "source_updated_at": "2026-05-17"
+    },
+    {
+      "business_id": "biz_5523a7d21fae",
+      "business_name": "新協豊碾米廠",
+      "category": "商業服務",
+      "category_slug": "business",
+      "address": "桃園縣大園鄉埔心村１３鄰１８號",
+      "description": "經濟部商業登記倉儲業",
+      "tags": [
+        "倉儲",
+        "物流",
+        "倉庫"
+      ],
+      "source_name": "經濟部商業發展署",
+      "source_url": "https://data.gov.tw/dataset/108393",
+      "source_updated_at": "2026-05-17"
+    },
+    {
+      "business_id": "biz_2fe49f0fe95c",
+      "business_name": "泉發碾米工廠",
+      "category": "商業服務",
+      "category_slug": "business",
+      "address": "桃園縣蘆竹市坑口里頭前路５８之１號",
+      "description": "經濟部商業登記倉儲業",
+      "tags": [
+        "倉儲",
+        "物流",
+        "倉庫"
+      ],
+      "source_name": "經濟部商業發展署",
+      "source_url": "https://data.gov.tw/dataset/108393",
+      "source_updated_at": "2026-05-17"
+    },
+    {
+      "business_id": "biz_b8343cfb9d64",
+      "business_name": "民族行",
+      "category": "商業服務",
+      "category_slug": "business",
+      "address": "高雄縣三民鄉民族村鞍山巷１１３號１樓",
+      "description": "經濟部商業登記電子資訊供應服務業",
+      "tags": [
+        "資訊",
+        "網路",
+        "IT",
+        "商業服務"
+      ],
+      "source_name": "經濟部商業發展署",
+      "source_url": "https://data.gov.tw/dataset/108391",
+      "source_updated_at": "2026-05-17"
+    },
+    {
+      "business_id": "biz_fdf3ffa3ca67",
+      "business_name": "文曲資訊用品社",
+      "category": "商業服務",
+      "category_slug": "business",
+      "address": "福樂街１５６巷１２弄５號２樓",
+      "description": "經濟部商業登記電子資訊供應服務業",
+      "tags": [
+        "資訊",
+        "網路",
+        "IT",
+        "商業服務"
+      ],
+      "source_name": "經濟部商業發展署",
+      "source_url": "https://data.gov.tw/dataset/108391",
+      "source_updated_at": "2026-05-17"
+    }
+  ]
+}

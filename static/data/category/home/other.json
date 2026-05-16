@@ -1,0 +1,135 @@
+{
+  "category": "居家服務",
+  "category_slug": "home",
+  "region": "other",
+  "count": 8,
+  "businesses": [
+    {
+      "business_id": "biz_7848bef0a038",
+      "business_name": "伊蒂媚爾企業有限公司",
+      "category": "居家服務",
+      "category_slug": "home",
+      "description": "經濟部公司登記建築物清潔服務業",
+      "tags": [
+        "清潔",
+        "居家",
+        "打掃"
+      ],
+      "source_name": "經濟部商業發展署",
+      "source_url": "https://data.gov.tw/dataset/32689",
+      "source_updated_at": "2026-05-17"
+    },
+    {
+      "business_id": "biz_7d172a27fb98",
+      "business_name": "尚鵬股份有限公司",
+      "category": "居家服務",
+      "category_slug": "home",
+      "description": "經濟部公司登記建築物清潔服務業",
+      "tags": [
+        "清潔",
+        "居家",
+        "打掃"
+      ],
+      "source_name": "經濟部商業發展署",
+      "source_url": "https://data.gov.tw/dataset/32689",
+      "source_updated_at": "2026-05-17"
+    },
+    {
+      "business_id": "biz_e370e688d25a",
+      "business_name": "立智企業社",
+      "category": "居家服務",
+      "category_slug": "home",
+      "address": "壯濱路六段二九二巷六號一樓",
+      "description": "經濟部商業登記室內裝潢",
+      "tags": [
+        "裝潢",
+        "居家",
+        "設計"
+      ],
+      "source_name": "經濟部商業發展署",
+      "source_url": "https://data.gov.tw/dataset/102992",
+      "source_updated_at": "2026-05-17"
+    },
+    {
+      "business_id": "biz_a3fc372374a9",
+      "business_name": "極美工程行",
+      "category": "居家服務",
+      "category_slug": "home",
+      "address": "\"基隆市中正區碧砂里北寧路296號之2",
+      "description": "經濟部商業登記室內裝潢",
+      "tags": [
+        "裝潢",
+        "居家",
+        "設計"
+      ],
+      "source_name": "經濟部商業發展署",
+      "source_url": "https://data.gov.tw/dataset/102992",
+      "source_updated_at": "2026-05-17"
+    },
+    {
+      "business_id": "biz_cbc3a365dab5",
+      "business_name": "鼎營工程行",
+      "category": "居家服務",
+      "category_slug": "home",
+      "address": "大勤街６９巷１６弄１４號１樓",
+      "description": "經濟部商業登記室內裝潢",
+      "tags": [
+        "裝潢",
+        "居家",
+        "設計"
+      ],
+      "source_name": "經濟部商業發展署",
+      "source_url": "https://data.gov.tw/dataset/102992",
+      "source_updated_at": "2026-05-17"
+    },
+    {
+      "business_id": "biz_c930134b1051",
+      "business_name": "昌億工程行",
+      "category": "居家服務",
+      "category_slug": "home",
+      "address": "仁愛街8巷17號10樓",
+      "description": "經濟部商業登記室內裝潢",
+      "tags": [
+        "裝潢",
+        "居家",
+        "設計"
+      ],
+      "source_name": "經濟部商業發展署",
+      "source_url": "https://data.gov.tw/dataset/102992",
+      "source_updated_at": "2026-05-17"
+    },
+    {
+      "business_id": "biz_03d313fa107c",
+      "business_name": "鋐億工程行",
+      "category": "居家服務",
+      "category_slug": "home",
+      "address": "聖湖路1巷27號一樓",
+      "description": "經濟部商業登記室內裝潢",
+      "tags": [
+        "裝潢",
+        "居家",
+        "設計"
+      ],
+      "source_name": "經濟部商業發展署",
+      "source_url": "https://data.gov.tw/dataset/102992",
+      "source_updated_at": "2026-05-17"
+    },
+    {
+      "business_id": "biz_09f1e11fcc24",
+      "business_name": "仁慶工程行",
+      "category": "居家服務",
+      "category_slug": "home",
+      "address": "蘆洲市民族路３２７巷３０號１樓",
+      "description": "經濟部商業登記室內裝修業",
+      "tags": [
+        "裝修",
+        "居家",
+        "室內",
+        "工程"
+      ],
+      "source_name": "經濟部商業發展署",
+      "source_url": "https://data.gov.tw/dataset/102995",
+      "source_updated_at": "2026-05-17"
+    }
+  ]
+}
