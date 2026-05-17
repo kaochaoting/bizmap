@@ -11,7 +11,7 @@ BIZMAP_DIR = Path("/home/dministrator/bizmap")
 DATA_DIR = BIZMAP_DIR / "data"
 PUBLIC_DIR = BIZMAP_DIR / "static" / "data"
 
-PER_DATASET = 200  # per dataset, set 0 for all
+PER_DATASET = 50000  # per dataset, set 0 for all
 
 def mcp_call(method, params, timeout=120):
     headers = [
@@ -61,7 +61,7 @@ def base():
 
 # --- Transformers ---
 
-def t_pharmacy(row, cols):
+def t_pharmacy(row, cols, ds_id=None):
     d = dict(zip(cols, row)); n=safe(d.get("醫事機構名稱")); a=safe(d.get("地址")); c,dst=parse_address(a)
     if not n: return None
     return {"business_name":n,"category":"醫療健康","category_slug":"medical","city":c,"district":dst,
@@ -71,7 +71,7 @@ def t_pharmacy(row, cols):
             "source_url":"https://data.gov.tw/dataset/39284","source_license":"政府開放資料授權條款-第1版",
             "source_updated_at":time.strftime("%Y-%m-%d"), **base()}
 
-def t_clinic(row, cols):
+def t_clinic(row, cols, ds_id=None):
     d = dict(zip(cols, row)); n=safe(d.get("醫事機構名稱")); a=safe(d.get("地址")); c,dst=parse_address(a)
     if not n: return None
     spec=safe(d.get("診療科別")); tags=["診所","醫療"]
@@ -86,7 +86,7 @@ def t_clinic(row, cols):
             "source_url":"https://data.gov.tw/dataset/39283","source_license":"政府開放資料授權條款-第1版",
             "source_updated_at":time.strftime("%Y-%m-%d"), **base()}
 
-def t_hospital(row, cols):
+def t_hospital(row, cols, ds_id=None):
     d = dict(zip(cols, row)); n=safe(d.get("醫事機構名稱")); a=safe(d.get("地址")); c,dst=parse_address(a)
     if not n: return None
     kind=safe(d.get("醫事機構種類"))
@@ -97,7 +97,7 @@ def t_hospital(row, cols):
             "source_url":"https://data.gov.tw/dataset/39282","source_license":"政府開放資料授權條款-第1版",
             "source_updated_at":time.strftime("%Y-%m-%d"), **base()}
 
-def t_cramschool(row, cols):
+def t_cramschool(row, cols, ds_id=None):
     d = dict(zip(cols, row)); n=safe(d.get("c_schoolname")); dst_name=safe(d.get("district")); addr=safe(d.get("address"))
     if not n: return None
     fa=f"{dst_name}{addr}" if dst_name and addr else addr or dst_name
@@ -111,7 +111,7 @@ def t_cramschool(row, cols):
             "source_url":"https://data.gov.tw/dataset/124223","source_license":"政府開放資料授權條款-第1版",
             "source_updated_at":time.strftime("%Y-%m-%d"), **base()}
 
-def t_restaurant(row, cols):
+def t_restaurant(row, cols, ds_id=None):
     d = dict(zip(cols, row)); n=safe(d.get("商業名稱") or ""); a=safe(d.get("地址") or ""); c,dst=parse_address(a)
     if not n: return None
     return {"business_name":n,"category":"餐飲美食","category_slug":"food","city":c,"district":dst,
@@ -121,7 +121,7 @@ def t_restaurant(row, cols):
             "source_url":"https://data.gov.tw/dataset/32681","source_license":"政府開放資料授權條款-第1版",
             "source_updated_at":time.strftime("%Y-%m-%d"), **base()}
 
-def t_beauty(row, cols):
+def t_beauty(row, cols, ds_id=None):
     d = dict(zip(cols, row)); n=safe(d.get("商業名稱") or ""); a=safe(d.get("地址") or ""); c,dst=parse_address(a)
     if not n: return None
     return {"business_name":n,"category":"美容美髮","category_slug":"beauty","city":c,"district":dst,
@@ -131,7 +131,7 @@ def t_beauty(row, cols):
             "source_url":"https://data.gov.tw/dataset/108376","source_license":"政府開放資料授權條款-第1版",
             "source_updated_at":time.strftime("%Y-%m-%d"), **base()}
 
-def t_sports_venue(row, cols):
+def t_sports_venue(row, cols, ds_id=None):
     d = dict(zip(cols, row)); n=safe(d.get("場館名稱")); a=safe(d.get("場地地址") or d.get("地址","")); c,dst=parse_address(a)
     if not n: return None
     tags=["運動","健身"]
@@ -146,7 +146,7 @@ def t_sports_venue(row, cols):
             "source_url":"https://data.gov.tw/dataset/108629","source_license":"政府開放資料授權條款-第1版",
             "source_updated_at":time.strftime("%Y-%m-%d"), **base()}
 
-def t_bnb(row, cols):
+def t_bnb(row, cols, ds_id=None):
     """臺中市好客民宿"""
     d = dict(zip(cols, row)); n=safe(d.get("中文名稱")); a=safe(d.get("地址")); c,dst=parse_address(a)
     p=safe(d.get("電話或手機"))
@@ -159,7 +159,7 @@ def t_bnb(row, cols):
             "source_url":"https://data.gov.tw/dataset/83645","source_license":"政府開放資料授權條款-第1版",
             "source_updated_at":time.strftime("%Y-%m-%d"), **base()}
 
-def t_slimming(row, cols):
+def t_slimming(row, cols, ds_id=None):
     """瘦身美容業公司登記"""
     d = dict(zip(cols, row)); n=safe(d.get("公司名稱")); a=safe(d.get("公司地址")); c,dst=parse_address(a)
     if not n: return None
@@ -172,7 +172,7 @@ def t_slimming(row, cols):
 
 # --- New transformers for missing categories ---
 
-def t_cleaning(row, cols):
+def t_cleaning(row, cols, ds_id=None):
     """建築物清潔服務業 (公司登記) → 居家服務"""
     d = dict(zip(cols, row)); n=safe(d.get("公司名稱") or ""); a=safe(d.get("公司地址") or ""); c,dst=parse_address(a)
     if not n: return None
@@ -183,7 +183,7 @@ def t_cleaning(row, cols):
             "source_url":"https://data.gov.tw/dataset/32689","source_license":"政府開放資料授權條款-第1版",
             "source_updated_at":time.strftime("%Y-%m-%d"), **base()}
 
-def t_building_mgmt(row, cols):
+def t_building_mgmt(row, cols, ds_id=None):
     """公寓大廈管理服務業 (商業登記) → 居家服務"""
     d = dict(zip(cols, row)); n=safe(d.get("商業名稱") or ""); a=safe(d.get("商業地址") or ""); c,dst=parse_address(a)
     if not n: return None
@@ -194,7 +194,7 @@ def t_building_mgmt(row, cols):
             "source_url":"https://data.gov.tw/dataset/81101","source_license":"政府開放資料授權條款-第1版",
             "source_updated_at":time.strftime("%Y-%m-%d"), **base()}
 
-def t_convenience_store(row, cols):
+def t_convenience_store(row, cols, ds_id=None):
     """便利商店 (商業登記) → 零售購物"""
     d = dict(zip(cols, row)); n=safe(d.get("商業名稱") or ""); a=safe(d.get("商業地址") or ""); c,dst=parse_address(a)
     if not n: return None
@@ -205,7 +205,7 @@ def t_convenience_store(row, cols):
             "source_url":"https://data.gov.tw/dataset/108388","source_license":"政府開放資料授權條款-第1版",
             "source_updated_at":time.strftime("%Y-%m-%d"), **base()}
 
-def t_department_store(row, cols):
+def t_department_store(row, cols, ds_id=None):
     """百貨公司業 (公司登記) → 零售購物"""
     d = dict(zip(cols, row)); n=safe(d.get("公司名稱") or ""); a=safe(d.get("公司地址") or ""); c,dst=parse_address(a)
     if not n: return None
@@ -216,7 +216,7 @@ def t_department_store(row, cols):
             "source_url":"https://data.gov.tw/dataset/45654","source_license":"政府開放資料授權條款-第1版",
             "source_updated_at":time.strftime("%Y-%m-%d"), **base()}
 
-def t_translation(row, cols):
+def t_translation(row, cols, ds_id=None):
     """翻譯業 (商業登記) → 商業服務"""
     d = dict(zip(cols, row)); n=safe(d.get("商業名稱") or ""); a=safe(d.get("商業地址") or ""); c,dst=parse_address(a)
     if not n: return None
@@ -229,7 +229,7 @@ def t_translation(row, cols):
 
 # === NEW: Top 5 priority datasets ===
 
-def t_gas_station(row, cols):
+def t_gas_station(row, cols, ds_id=None):
     """加油站業 (商業登記) → 交通運輸"""
     d = dict(zip(cols, row)); n=safe(d.get("商業名稱") or ""); a=safe(d.get("商業地址") or ""); c,dst=parse_address(a)
     if not n: return None
@@ -240,7 +240,7 @@ def t_gas_station(row, cols):
             "source_url":"https://data.gov.tw/dataset/81098","source_license":"政府開放資料授權條款-第1版",
             "source_updated_at":time.strftime("%Y-%m-%d"), **base()}
 
-def t_supermarket(row, cols):
+def t_supermarket(row, cols, ds_id=None):
     """超級市場業 (商業登記) → 零售購物"""
     d = dict(zip(cols, row)); n=safe(d.get("商業名稱") or ""); a=safe(d.get("商業地址") or ""); c,dst=parse_address(a)
     if not n: return None
@@ -251,7 +251,7 @@ def t_supermarket(row, cols):
             "source_url":"https://data.gov.tw/dataset/125955","source_license":"政府開放資料授權條款-第1版",
             "source_updated_at":time.strftime("%Y-%m-%d"), **base()}
 
-def t_security(row, cols):
+def t_security(row, cols, ds_id=None):
     """保全業 (商業登記) → 居家服務"""
     d = dict(zip(cols, row)); n=safe(d.get("商業名稱") or ""); a=safe(d.get("商業地址") or ""); c,dst=parse_address(a)
     if not n: return None
@@ -262,7 +262,7 @@ def t_security(row, cols):
             "source_url":"https://data.gov.tw/dataset/81120","source_license":"政府開放資料授權條款-第1版",
             "source_updated_at":time.strftime("%Y-%m-%d"), **base()}
 
-def t_real_estate(row, cols):
+def t_real_estate(row, cols, ds_id=None):
     """不動產仲介經紀業 (商業登記) → 商業服務"""
     d = dict(zip(cols, row)); n=safe(d.get("商業名稱") or ""); a=safe(d.get("商業地址") or ""); c,dst=parse_address(a)
     if not n: return None
@@ -273,7 +273,7 @@ def t_real_estate(row, cols):
             "source_url":"https://data.gov.tw/dataset/81110","source_license":"政府開放資料授權條款-第1版",
             "source_updated_at":time.strftime("%Y-%m-%d"), **base()}
 
-def t_car_rental(row, cols):
+def t_car_rental(row, cols, ds_id=None):
     """小客車租賃業 (商業登記) → 交通運輸"""
     d = dict(zip(cols, row)); n=safe(d.get("商業名稱") or ""); a=safe(d.get("商業地址") or ""); c,dst=parse_address(a)
     if not n: return None
@@ -284,9 +284,101 @@ def t_car_rental(row, cols):
             "source_url":"https://data.gov.tw/dataset/81106","source_license":"政府開放資料授權條款-第1版",
             "source_updated_at":time.strftime("%Y-%m-%d"), **base()}
 
+# === NEW: Generic transformers for 商業登記(依營業項目別) datasets ===
+# All have same schema: (統一編號, 商業名稱, 商業地址, 登記狀態, 備註)
+
+BIZ_CATEGORIES = {
+    "82613": ("零售購物", "retail", "布疋、衣著、鞋、帽、傘、服飾品零售",
+              ["服飾", "零售", "購物", "衣著", "配件", "鞋"]),
+    "102992": ("居家服務", "home", "室內裝潢業",
+              ["裝潢", "居家", "室內設計", "裝修"]),
+    "102995": ("居家服務", "home", "室內裝修業",
+              ["裝修", "居家", "室內", "工程"]),
+    "82608":  ("零售購物", "retail", "電器零售業",
+              ["家電", "電器", "零售", "購物"]),
+    "82611":  ("零售購物", "retail", "建材零售業",
+              ["建材", "零售", "居家", "裝潢"]),
+    "102988": ("商業服務", "business", "一般廣告服務業",
+              ["廣告", "行銷", "商業服務"]),
+    "108350": ("商業服務", "business", "廣告傳單分送業",
+              ["廣告", "傳單", "商業服務"]),
+    "108393": ("商業服務", "business", "倉儲業",
+              ["倉儲", "物流", "倉庫"]),
+    "108387": ("商業服務", "business", "理貨包裝業",
+              ["包裝", "理貨", "物流"]),
+    "102991": ("商業服務", "business", "人力派遣業",
+              ["派遣", "人力", "商業服務"]),
+    "108391": ("商業服務", "business", "電子資訊供應服務業",
+              ["資訊", "網路", "IT", "商業服務"]),
+    "82616":  ("零售購物", "retail", "特定寵物零售業",
+              ["寵物", "動物", "零售"]),
+    "82609":  ("零售購物", "retail", "寵物食品及其用品零售業",
+              ["寵物", "寵物用品", "零售"]),
+    "81125":  ("商業服務", "business", "當舖業",
+              ["當舖", "質押", "金融"]),
+    "108384": ("商業服務", "business", "公證業",
+              ["公證", "法律", "商業服務"]),
+    "125954": ("工業製品", "industrial", "基本化學工業",
+              ["化學", "工業", "製造"]),
+    "102992": ("居家服務", "home", "室內裝潢",
+              ["裝潢", "居家", "設計"]),
+    "81121":  ("零售購物", "retail", "汽機車零件配備零售",
+              ["汽車", "機車", "零件", "零售"]),
+    "125964": ("零售購物", "retail", "其他農、畜、水產品批發",
+              ["批發", "農產", "水產"]),
+}
+
+def t_biz_register(row, cols, ds_id):
+    """Generic transformer for 商業登記(依營業項目別) datasets."""
+    d = dict(zip(cols, row))
+    n = (d.get("商業名稱") or "").strip()
+    a = (d.get("商業地址") or "").strip()
+    status = (d.get("登記狀態") or "").strip()
+    if not n or not a:
+        return None
+    city, dst = parse_address(a)
+    mapping = BIZ_CATEGORIES.get(ds_id, ("商業服務", "business", "其他", ["其他"]))
+    cat, slug, desc, tags = mapping
+    return {
+        "business_name": n, "category": cat, "category_slug": slug,
+        "city": city, "district": dst, "region": f"{city} {dst}".strip(),
+        "address": a, "phone": "",
+        "description": f"經濟部商業登記{desc}", "tags": tags.copy(),
+        "source_type": "government_open_data",
+        "source_name": "經濟部商業發展署",
+        "source_url": f"https://data.gov.tw/dataset/{ds_id}",
+        "source_license": "政府開放資料授權條款-第1版",
+        "source_updated_at": time.strftime("%Y-%m-%d"), **base()
+    }
+
+def t_comp_register(row, cols, ds_id):
+    """Generic transformer for 公司登記(依營業項目別) datasets.
+    Schema: (統一編號, 公司名稱, 負責人, 公司地址, 資本總額, 實收資本額)
+    """
+    d = dict(zip(cols, row))
+    n = (d.get("公司名稱") or "").strip()
+    a = (d.get("公司地址") or "").strip()
+    if not n or not a:
+        return None
+    city, dst = parse_address(a)
+    mapping = BIZ_CATEGORIES.get(ds_id, ("商業服務", "business", "其他", ["其他"]))
+    cat, slug, desc, tags = mapping
+    return {
+        "business_name": n, "category": cat, "category_slug": slug,
+        "city": city, "district": dst, "region": f"{city} {dst}".strip(),
+        "address": a, "phone": "",
+        "description": f"經濟部公司登記{desc}", "tags": tags.copy(),
+        "source_type": "government_open_data",
+        "source_name": "經濟部商業發展署",
+        "source_url": f"https://data.gov.tw/dataset/{ds_id}",
+        "source_license": "政府開放資料授權條款-第1版",
+        "source_updated_at": time.strftime("%Y-%m-%d"), **base()
+    }
+
 # --- Pipeline ---
 
 datasets = [
+    # --- Existing 19 datasets (keep) ---
     ("39284", "健保藥局", t_pharmacy),
     ("39283", "診所", t_clinic),
     ("39282", "地區醫院", t_hospital),
@@ -306,6 +398,25 @@ datasets = [
     ("81120", "保全業", t_security),
     ("81110", "不動產仲介業", t_real_estate),
     ("81106", "小客車租賃業", t_car_rental),
+    # --- NEW: 商業登記(依營業項目別) datasets ---
+    ("82613", "布疋衣著鞋帽服飾品", t_biz_register),
+    ("102992", "室內裝潢", t_biz_register),
+    ("102995", "室內裝修", t_biz_register),
+    ("82608", "電器零售業", t_biz_register),
+    ("82611", "建材零售業", t_biz_register),
+    ("102988", "一般廣告服務業", t_biz_register),
+    ("108350", "廣告傳單分送業", t_biz_register),
+    ("108393", "倉儲業", t_biz_register),
+    ("108387", "理貨包裝業", t_biz_register),
+    ("102991", "人力派遣業", t_biz_register),
+    ("108391", "電子資訊供應服務業", t_biz_register),
+    ("82616", "特定寵物零售業", t_biz_register),
+    ("82609", "寵物食品用品零售業", t_biz_register),
+    ("81125", "當舖業", t_biz_register),
+    ("108384", "公證業", t_biz_register),
+    ("125954", "基本化學工業", t_biz_register),
+    # --- NEW: 公司登記(依營業項目別) datasets ---
+    ("81121", "汽機車零件配備零售", t_comp_register),
 ]
 
 def run():
@@ -333,7 +444,7 @@ def run():
             entries = []
             for row in rows:
                 try:
-                    biz = fn(row, cols)
+                    biz = fn(row, cols, ds_id)
                     if biz:
                         biz["business_id"] = make_biz_id(biz)
                         entries.append(biz)
@@ -379,6 +490,11 @@ def run():
         print(f"  {c}: {n}")
     print(f"Cities: {len(cities)} — {sorted(cities)}")
     print("\nDone!")
+
+    # Auto-run optimizer after pipeline
+    print("\nRunning optimizer...")
+    opt_script = BIZMAP_DIR / "scripts" / "optimize_output.py"
+    subprocess.run(["python3", str(opt_script)], cwd=str(BIZMAP_DIR))
 
 if __name__ == "__main__":
     run()

@@ -1,69 +1,80 @@
 <script>
   import { onMount } from 'svelte';
 
-  const categoryMap = {
-    'food': '餐飲美食', 'beauty': '美容美髮', 'fitness': '健身運動',
-    'medical': '醫療健康', 'home': '居家服務', 'education': '教育補習',
-    'business': '商業服務', 'retail': '零售購物', 'transport': '交通運輸',
-  };
   const categoryIcons = {
     '餐飲美食': '🍜', '美容美髮': '💆', '健身運動': '🏋️',
     '醫療健康': '🏥', '居家服務': '🛠️', '教育補習': '📚',
     '商業服務': '💼', '零售購物': '🛍️', '交通運輸': '⛽',
+    '工業製品': '🏭',
   };
   const categorySlugs = {
     '餐飲美食': 'food', '美容美髮': 'beauty', '健身運動': 'fitness',
     '醫療健康': 'medical', '居家服務': 'home', '教育補習': 'education',
     '商業服務': 'business', '零售購物': 'retail', '交通運輸': 'transport',
+    '工業製品': 'industrial',
   };
 
-  let businesses = [];
-  let stats = { total: 0, cities: 0, categories: 0 };
+  // Stats display
+  const featuredStats = [
+    { value: '555,120', label: '收錄商家', suffix: '家' },
+    { value: '22', label: '縣市覆蓋', suffix: '縣市' },
+    { value: '10', label: '主要類別', suffix: '類別' },
+    { value: '100%', label: '免費查詢', suffix: '' },
+  ];
+
+  let stats = { total: 0, cities: 22, categories: 10 };
   let categories = [];
+  let cityList = [];
   let searchQuery = '';
   let visible = false;
+  let loadError = false;
+
+  const bentoFeatures = [
+    { icon: '🔍', title: '精準搜尋', desc: '依類別/縣市快速過濾', colspan: 1, rowspan: 1 },
+    { icon: '🗺️', title: '全台覆蓋', desc: '22 縣市商家資訊', colspan: 1, rowspan: 1 },
+    { icon: '✅', title: '官方資料源', desc: '政府開放資料驗證', colspan: 1, rowspan: 1 },
+    { icon: '📊', title: '即時更新', desc: '資料每日自動同步', colspan: 1, rowspan: 1 },
+  ];
+
+  function getSpans(i) {
+    if (i === 0) return { cols: 2, rows: 1 };
+    if (i === categories.length - 1 && categories.length % 2 !== 0) return { cols: 2, rows: 1 };
+    return { cols: 1, rows: 1 };
+  }
 
   onMount(async () => {
     setTimeout(() => visible = true, 50);
     try {
-      const res = await fetch('/data/businesses.json');
-      const data = await res.json();
-      businesses = data.businesses || [];
-      
-      const citySet = new Set(businesses.map(b => b.city).filter(Boolean));
-      const catCounts = {};
-      businesses.forEach(b => {
-        if (b.category) catCounts[b.category] = (catCounts[b.category] || 0) + 1;
-      });
-      
+      const res = await fetch('/data/index.json');
+      const idx = await res.json();
+
       stats = {
-        total: businesses.length,
-        cities: citySet.size,
-        categories: Object.keys(catCounts).length,
+        total: idx.total || 0,
+        cities: Object.keys(idx.city_counts || {}).length,
+        categories: Object.keys(idx.categories || {}).length,
       };
-      
-      categories = Object.entries(catCounts)
+
+      featuredStats[0] = { value: stats.total.toLocaleString(), label: '收錄商家', suffix: '家' };
+      featuredStats[1] = { value: String(stats.cities || '22'), label: '縣市覆蓋', suffix: '縣市' };
+      featuredStats[2] = { value: String(stats.categories || '10'), label: '主要類別', suffix: '類別' };
+
+      categories = Object.entries(idx.category_counts || {})
         .sort((a, b) => b[1] - a[1])
-        .map(([name, count]) => ({
-          icon: categoryIcons[name] || '🏪',
-          name,
+        .map(([slug, count]) => ({
+          icon: categoryIcons[idx.categories[slug]] || '🏪',
+          name: idx.categories[slug] || slug,
           count: count.toLocaleString(),
-          slug: categorySlugs[name] || name,
+          slug,
         }));
-      
-      // Add categories not yet present with 0 count
-      for (const [slug, name] of Object.entries(categoryMap)) {
-        if (!catCounts[name]) {
-          categories.push({
-            icon: categoryIcons[name] || '🏪',
-            name,
-            count: '0',
-            slug,
-          });
-        }
-      }
+
+      // City list for quick links
+      cityList = Object.entries(idx.city_counts || {})
+        .sort((a, b) => b[1] - a[1])
+        .slice(0, 12)
+        .map(([city]) => city);
     } catch (e) {
-      console.error('Failed to load businesses:', e);
+      loadError = true;
+      console.error('Failed to load index:', e);
     }
   });
 </script>
@@ -76,105 +87,156 @@
       "name": "bizmap.tw", "url": "https://bizmap.tw",
       "description": "台灣商家名錄平台",
       "potentialAction": { "@type": "SearchAction",
-        "target": "https://bizmap.tw/search?q={search_term_string}",
+        "target": "https://bizmap.tw/directory?q={search_term_string}",
         "query-input": "required name=search_term_string" } }
   </script>
 </svelte:head>
 
-<!-- HERO -->
-<section class="relative overflow-hidden py-24 px-6" style="background: linear-gradient(135deg, #0c0c0e 0%, #1e2330 100%)">
-  <div class="absolute inset-0 opacity-5"
-    style="background-image: linear-gradient(rgba(200,168,75,0.4) 1px, transparent 1px), linear-gradient(90deg, rgba(200,168,75,0.4) 1px, transparent 1px); background-size: 48px 48px;">
+<!-- ===== HERO SECTION ===== -->
+<section class="relative overflow-hidden min-h-[85vh] flex items-center"
+  style="background: linear-gradient(160deg, #0c0c0e 0%, #1e2330 40%, #0c0c0e 100%)">
+
+  <!-- Grid pattern overlay -->
+  <div class="absolute inset-0 opacity-[0.03]"
+    style="background-image: linear-gradient(rgba(200,168,75,0.5) 1px, transparent 1px), linear-gradient(90deg, rgba(200,168,75,0.5) 1px, transparent 1px); background-size: 48px 48px;">
   </div>
-  <div
-    class="relative max-w-4xl mx-auto text-center"
-    style:opacity={visible ? 1 : 0}
-    style:transform={visible ? 'translateY(0)' : 'translateY(20px)'}
-    style:transition="all 0.6s ease"
-  >
-    <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full text-xs font-mono mb-8"
-      style="background: rgba(200,168,75,0.15); border: 1px solid rgba(200,168,75,0.3); color: #c8a84b;">
-      <span class="w-1.5 h-1.5 rounded-full bg-yellow-400 animate-pulse"></span>
-      台灣在地商家名錄平台
-    </div>
-    <h1 class="text-4xl md:text-6xl font-bold text-white mb-6 leading-tight">
-      找到<span style="color: #c8a84b">對的</span>在地好店<br>
-      <span class="text-2xl md:text-3xl font-light text-gray-400">快速、精準、值得信賴</span>
-    </h1>
-    <p class="text-gray-400 text-lg mb-10 max-w-xl mx-auto">
-      {stats.total > 0
-        ? `收錄全台 ${stats.total.toLocaleString()} 家經政府開放資料驗證的商家，覆蓋 ${stats.cities} 縣市。`
-        : '收錄全台經政府開放資料驗證的商家，資料持續擴充中。'}
-    </p>
 
-    <!-- Search bar -->
-    <div class="flex gap-3 max-w-xl mx-auto">
-      <input
-        bind:value={searchQuery}
-        type="text"
-        placeholder="搜尋商家名稱、類別或關鍵字..."
-        class="flex-1 px-5 py-4 rounded-xl text-sm bg-white/10 border border-white/20 text-white placeholder-gray-500 focus:outline-none focus:border-yellow-400 transition-colors"
-      />
-      <a href="/search?q={searchQuery}" class="px-6 py-4 rounded-xl font-medium text-sm transition-all hover:-translate-y-0.5 whitespace-nowrap" style="background: #c8a84b; color: #0c0c0e;">
-        搜尋
-      </a>
-    </div>
+  <!-- Radial glow -->
+  <div class="absolute top-1/4 left-1/2 -translate-x-1/2 w-[800px] h-[800px] rounded-full opacity-[0.08]"
+    style="background: radial-gradient(circle, rgba(200,168,75,0.6) 0%, transparent 70%);">
+  </div>
 
-    <!-- City quick links -->
-    {#if businesses.length}
-      <div class="flex flex-wrap justify-center gap-2 mt-6">
-        {#each [...new Set(businesses.map(b => b.city).filter(Boolean))].slice(0, 12) as city}
-          <a href="/directory?city={city}" class="px-3 py-1.5 rounded-full text-xs text-gray-400 border border-white/10 hover:border-yellow-400/50 hover:text-yellow-400 transition-all">
-            {city}
-          </a>
-        {/each}
+  <div class="relative w-full max-w-6xl mx-auto px-6 py-24">
+    <div
+      class="max-w-4xl mx-auto text-center mb-16"
+      class:opacity-100={visible} class:opacity-0={!visible}
+      class:translate-y-0={visible} class:translate-y-8={!visible}
+      style="transition: all 0.7s cubic-bezier(0.16, 1, 0.3, 1);"
+    >
+      <div class="section-label section-label-gold mb-8 mx-auto w-fit">
+        <span class="w-1.5 h-1.5 rounded-full bg-gold animate-pulse-slow"></span>
+        台灣在地商家名錄平台
       </div>
-    {/if}
+
+      <h1 class="text-5xl md:text-7xl font-bold text-white mb-6 leading-[1.1] tracking-tight text-balance">
+        找到<span style="color:var(--gold)">對的</span>在地好店
+      </h1>
+      <p class="text-lg md:text-xl text-white/40 font-light max-w-xl mx-auto mb-12 leading-relaxed">
+        {stats.total > 0
+          ? `收錄全台 ${stats.total.toLocaleString()} 家經政府開放資料驗證的商家`
+          : '收錄全台經政府開放資料驗證的商家，資料持續擴充中。'}
+        <br>
+        <span class="text-white/30">快速、精準、值得信賴</span>
+      </p>
+
+      <!-- Search bar -->
+      <div class="flex gap-3 max-w-xl mx-auto">
+        <div class="flex-1 relative">
+          <svg class="absolute left-4 top-1/2 -translate-y-1/2 w-4 h-4 text-white/30" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-4.35-4.35M11 19a8 8 0 100-16 8 8 0 000 16z"/>
+          </svg>
+          <input
+            bind:value={searchQuery}
+            type="text"
+            placeholder="搜尋商家名稱、類別或關鍵字..."
+            class="w-full pl-11 pr-5 py-4 rounded-card text-sm bg-white/5 border border-white/10 text-white placeholder-white/25 focus:outline-none focus:border-gold/50 focus:bg-white/[0.07] transition-all"
+          />
+        </div>
+        <a href="/directory?q={searchQuery}" class="btn-primary px-7 py-4">
+          搜尋
+        </a>
+      </div>
+
+      <!-- Quick city links -->
+      {#if cityList.length}
+        <div class="flex flex-wrap justify-center gap-2 mt-8">
+          {#each cityList as city}
+            <a href="/directory?city={city}"
+              class="px-3 py-1.5 rounded-pill text-xs text-white/30 border border-white/10 hover:border-gold/40 hover:text-gold/80 transition-all">
+              {city}
+            </a>
+          {/each}
+        </div>
+      {/if}
+    </div>
+
+    <!-- Bento feature grid -->
+    <div class="grid grid-cols-2 md:grid-cols-4 gap-4 max-w-4xl mx-auto">
+      {#each bentoFeatures as feat}
+        <div class="glass-card-dark p-6 text-center glass-card-dark-hover">
+          <div class="text-2xl mb-3">{feat.icon}</div>
+          <div class="font-medium text-white text-sm mb-1">{feat.title}</div>
+          <div class="text-xs text-white/30">{feat.desc}</div>
+        </div>
+      {/each}
+    </div>
   </div>
 </section>
 
-<!-- STATS -->
-<section class="py-12 bg-white border-b border-gray-100">
-  <div class="max-w-4xl mx-auto px-6 grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
-    {#each [[(stats.total || 0).toLocaleString()+'家','收錄商家'],[(stats.cities || '0')+'縣市','縣市覆蓋'],[(stats.categories || '0')+'類別','主要類別'],['100%','免費查詢']] as [num, label]}
-      <div>
-        <div class="text-3xl font-bold" style="color: var(--ink)">{num}</div>
-        <div class="text-sm text-gray-500 mt-1">{label}</div>
-      </div>
-    {/each}
+<!-- ===== STATS SECTION ===== -->
+<section class="relative -mt-12 z-10">
+  <div class="max-w-4xl mx-auto px-6">
+    <div class="glass-card grid grid-cols-2 md:grid-cols-4 gap-1 p-4" style="background:rgba(12,12,14,0.9);">
+      {#each featuredStats as stat}
+        <div class="text-center py-4">
+          <div class="flex items-baseline justify-center gap-0.5">
+            <span class="text-3xl font-bold text-gold">{stat.value}</span>
+            {#if stat.suffix}
+              <span class="text-sm text-white/40">{stat.suffix}</span>
+            {/if}
+          </div>
+          <div class="text-xs text-white/30 mt-1">{stat.label}</div>
+        </div>
+      {/each}
+    </div>
   </div>
 </section>
 
-<!-- CATEGORIES -->
-<section class="py-20 px-6">
+<!-- ===== BENTO CATEGORIES SECTION ===== -->
+<section class="py-28 px-6 bg-gradient-to-b from-ink via-ink to-slate/50">
   <div class="max-w-6xl mx-auto">
-    <div class="text-center mb-12">
-      <p class="text-xs font-mono tracking-widest mb-3" style="color: var(--gold)">BROWSE BY CATEGORY</p>
-      <h2 class="text-3xl font-bold text-gray-900">依類別瀏覽商家</h2>
+    <div class="text-center mb-16">
+      <div class="section-label section-label-gold mx-auto mb-4 w-fit">BROWSE BY CATEGORY</div>
+      <h2 class="text-3xl md:text-4xl font-bold text-white tracking-tight mb-3">依類別瀏覽商家</h2>
+      <p class="text-white/30 text-sm">從全台 {stats.total.toLocaleString()} 家商家中快速找到你需要的服務</p>
     </div>
-    <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
-      {#each categories as cat}
+
+    <div class="grid grid-cols-2 md:grid-cols-4 gap-5">
+      {#each categories as cat, i}
         <a href="/directory?category={cat.slug}"
-          class="group p-6 rounded-2xl border border-gray-100 bg-white hover:border-yellow-300 hover:-translate-y-1 transition-all text-center">
-          <div class="text-4xl mb-3">{cat.icon}</div>
-          <div class="font-medium text-gray-900 mb-1">{cat.name}</div>
-          <div class="text-xs text-gray-400">{cat.count} 家商家</div>
+          class="glass-card-dark p-7 glass-card-dark-hover flex flex-col items-center text-center"
+          class:md:col-span-2={getSpans(i).cols === 2}
+        >
+          <div class="text-4xl mb-4">{cat.icon}</div>
+          <div class="font-semibold text-white mb-1">{cat.name}</div>
+          <div class="text-xs text-white/30 font-mono">{cat.count} 家商家</div>
         </a>
       {/each}
     </div>
   </div>
 </section>
 
-<!-- CTA: Free listing -->
-<section class="py-20 px-6" style="background: var(--ink)">
-  <div class="max-w-2xl mx-auto text-center">
-    <p class="text-xs font-mono tracking-widest mb-4" style="color: var(--gold)">FOR BUSINESS OWNERS</p>
-    <h2 class="text-3xl font-bold text-white mb-4">您是商家嗎？</h2>
-    <p class="text-gray-400 mb-8">免費將您的商家加入 bizmap.tw 名錄，提升 Google 搜尋與 AI 摘要的在地曝光度。</p>
-    <a href="/submit"
-      class="inline-flex items-center gap-2 px-8 py-4 rounded-xl font-medium transition-all hover:-translate-y-1"
-      style="background: var(--gold); color: var(--ink)">
-      免費上架商家 →
+<!-- ===== CTA SECTION ===== -->
+<section class="py-28 px-6 relative overflow-hidden"
+  style="background: linear-gradient(135deg, #0c0c0e 0%, #1e2330 100%)">
+  <div class="absolute inset-0 opacity-[0.04]"
+    style="background-image: linear-gradient(rgba(200,168,75,0.5) 1px, transparent 1px), linear-gradient(90deg, rgba(200,168,75,0.5) 1px, transparent 1px); background-size: 36px 36px;">
+  </div>
+  <div class="absolute top-1/2 right-0 w-[400px] h-[400px] rounded-full opacity-[0.06]"
+    style="background: radial-gradient(circle, rgba(200,168,75,0.8) 0%, transparent 70%);">
+  </div>
+
+  <div class="relative max-w-2xl mx-auto text-center">
+    <div class="section-label section-label-gold mx-auto mb-6 w-fit">FOR BUSINESS OWNERS</div>
+    <h2 class="text-3xl md:text-4xl font-bold text-white mb-4 tracking-tight">您是商家嗎？</h2>
+    <p class="text-white/40 mb-10 max-w-lg mx-auto leading-relaxed">
+      免費將您的商家加入 bizmap.tw 名錄，提升 <span class="text-white/70">Google 搜尋</span>與 <span class="text-white/70">AI 摘要</span>的在地曝光度。
+    </p>
+    <a href="/submit" class="btn-primary px-10 py-4 text-base">
+      免費上架商家
+      <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
+      </svg>
     </a>
   </div>
 </section>
