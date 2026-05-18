@@ -1,0 +1,2 @@
+# Large data files (category splits > 50MB)
+static/data/category/retail/taipei_north.json filter=lfs diff=lfs merge=lfs -text
