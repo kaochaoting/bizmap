@@ -1,8 +1,11 @@
 #!/usr/bin/env python3
 """
-Bizmap Output Optimizer v1
-Strips boilerplate fields, splits into per-category+region files,
+Bizmap Output Optimizer v2
+Strips boilerplate fields, splits into per-category+region+city files,
 creates lightweight index and compact ID lookup.
+
+v2: Large region-level files (>40MB) are auto-split by city to stay under
+    GitHub's 50MB recommended file limit.
 """
 import json, os, time
 from pathlib import Path
@@ -31,6 +34,8 @@ REGION_MAP = {
 }
 
 LARGE_CATEGORY_THRESHOLD = 80000
+# Files exceeding this size (in bytes) will be further split by city
+LARGE_FILE_THRESHOLD = 40 * 1024 * 1024  # 40MB
 
 def region_key(city):
     for rname, cities in REGION_MAP.items():
@@ -69,7 +74,7 @@ def run():
         slug = b.get("category_slug", "other")
         by_cat.setdefault(slug, []).append(b)
     
-    # Split large categories by region
+    # Split large categories by region, then split massive region files by city
     slug_buckets = {}
     for b in compressed:
         slug = b.get("category_slug", "other")
@@ -81,18 +86,45 @@ def run():
             bucket = f"{slug}/{rk}"
         slug_buckets.setdefault(bucket, []).append(b)
     
+    # Second pass: if a region bucket is too large, split by city
+    # Estimate file size as ~760 bytes per entry (based on empirical data)
+    AVG_ENTRY_BYTES = 760
+    final_buckets = {}
+    for bucket, entries in slug_buckets.items():
+        est_size = len(entries) * AVG_ENTRY_BYTES
+        parts = bucket.split("/")
+        if len(parts) == 2 and est_size > LARGE_FILE_THRESHOLD:
+            # Split by city within this region
+            slug, region = parts
+            by_city = {}
+            for e in entries:
+                city = e.get("city", "other")
+                by_city.setdefault(city, []).append(e)
+            for city, city_entries in sorted(by_city.items()):
+                city_bucket = f"{bucket}/{city}"
+                final_buckets[city_bucket] = city_entries
+        else:
+            final_buckets[bucket] = entries
+    
     # Write per-bucket files
     CAT_DIR.mkdir(parents=True, exist_ok=True)
     total_opt_size = 0
     cat_files = {}
     
-    for bucket, entries in sorted(slug_buckets.items()):
+    for bucket, entries in sorted(final_buckets.items()):
         parts = bucket.split("/")
         slug = parts[0]
         region = parts[1] if len(parts) > 1 else None
+        city = parts[2] if len(parts) > 2 else None
         cat_name = entries[0].get("category", slug) if entries else slug
         
-        if region:
+        if city:
+            # Three-level: category/region/city.json
+            out_dir = CAT_DIR / slug / region
+            out_dir.mkdir(parents=True, exist_ok=True)
+            out_path = out_dir / f"{city}.json"
+            file_key = f"category/{slug}/{region}/{city}.json"
+        elif region:
             out_dir = CAT_DIR / slug
             out_dir.mkdir(parents=True, exist_ok=True)
             out_path = out_dir / f"{region}.json"
@@ -102,7 +134,7 @@ def run():
             file_key = f"category/{slug}.json"
         
         output = {"category": cat_name, "category_slug": slug,
-                  "region": region or "all", "count": len(entries),
+                  "region": region or "all", "city": city or "all", "count": len(entries),
                   "businesses": entries}
         with open(out_path, "w", encoding="utf-8") as f:
             json.dump(output, f, ensure_ascii=False, indent=2)
@@ -113,6 +145,7 @@ def run():
         
         cat_files.setdefault(slug, []).append({
             "region": region or "all",
+            "city": city or "all",
             "file": file_key,
             "count": len(entries),
         })
@@ -120,7 +153,7 @@ def run():
     # Per-slug ID lookup (compact, just ID arrays)
     ID_DIR.mkdir(parents=True, exist_ok=True)
     id_map = {}
-    for bucket, entries in slug_buckets.items():
+    for bucket, entries in final_buckets.items():
         slug = bucket.split("/")[0]
         ids = [b["business_id"] for b in entries if b.get("business_id")]
         id_map.setdefault(slug, []).extend(ids)

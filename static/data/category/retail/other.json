@@ -2,6 +2,7 @@
   "category": "零售購物",
   "category_slug": "retail",
   "region": "other",
+  "city": "all",
   "count": 28,
   "businesses": [
     {
@@ -18,7 +19,7 @@
       ],
       "source_name": "經濟部商業發展署",
       "source_url": "https://data.gov.tw/dataset/108388",
-      "source_updated_at": "2026-05-18"
+      "source_updated_at": "2026-05-21"
     },
     {
       "business_id": "biz_f2d017162a86",
@@ -33,7 +34,7 @@
       ],
       "source_name": "經濟部商業發展署",
       "source_url": "https://data.gov.tw/dataset/108388",
-      "source_updated_at": "2026-05-18"
+      "source_updated_at": "2026-05-21"
     },
     {
       "business_id": "biz_db45246ffdad",
@@ -48,7 +49,7 @@
       ],
       "source_name": "經濟部商業發展署",
       "source_url": "https://data.gov.tw/dataset/108388",
-      "source_updated_at": "2026-05-18"
+      "source_updated_at": "2026-05-21"
     },
     {
       "business_id": "biz_a11726b691fa",
@@ -63,7 +64,7 @@
       ],
       "source_name": "經濟部商業發展署",
       "source_url": "https://data.gov.tw/dataset/45654",
-      "source_updated_at": "2026-05-18"
+      "source_updated_at": "2026-05-21"
     },
     {
       "business_id": "biz_259999e1f72c",
@@ -78,7 +79,7 @@
       ],
       "source_name": "經濟部商業發展署",
       "source_url": "https://data.gov.tw/dataset/45654",
-      "source_updated_at": "2026-05-18"
+      "source_updated_at": "2026-05-21"
     },
     {
       "business_id": "biz_56f61df8d3e6",
@@ -97,7 +98,7 @@
       ],
       "source_name": "經濟部商業發展署",
       "source_url": "https://data.gov.tw/dataset/82613",
-      "source_updated_at": "2026-05-18"
+      "source_updated_at": "2026-05-21"
     },
     {
       "business_id": "biz_1fd6b5235bd7",
@@ -114,7 +115,7 @@
       ],
       "source_name": "經濟部商業發展署",
       "source_url": "https://data.gov.tw/dataset/82608",
-      "source_updated_at": "2026-05-18"
+      "source_updated_at": "2026-05-21"
     },
     {
       "business_id": "biz_3ab2dad7d526",
@@ -131,7 +132,7 @@
       ],
       "source_name": "經濟部商業發展署",
       "source_url": "https://data.gov.tw/dataset/82608",
-      "source_updated_at": "2026-05-18"
+      "source_updated_at": "2026-05-21"
     },
     {
       "business_id": "biz_5b006a3b1748",
@@ -148,7 +149,7 @@
       ],
       "source_name": "經濟部商業發展署",
       "source_url": "https://data.gov.tw/dataset/82608",
-      "source_updated_at": "2026-05-18"
+      "source_updated_at": "2026-05-21"
     },
     {
       "business_id": "biz_2fc1900c9212",
@@ -165,7 +166,7 @@
       ],
       "source_name": "經濟部商業發展署",
       "source_url": "https://data.gov.tw/dataset/82608",
-      "source_updated_at": "2026-05-18"
+      "source_updated_at": "2026-05-21"
     },
     {
       "business_id": "biz_9fcdb20bd023",
@@ -182,7 +183,7 @@
       ],
       "source_name": "經濟部商業發展署",
       "source_url": "https://data.gov.tw/dataset/82608",
-      "source_updated_at": "2026-05-18"
+      "source_updated_at": "2026-05-21"
     },
     {
       "business_id": "biz_3cde8cc7e03a",
@@ -199,7 +200,7 @@
       ],
       "source_name": "經濟部商業發展署",
       "source_url": "https://data.gov.tw/dataset/82608",
-      "source_updated_at": "2026-05-18"
+      "source_updated_at": "2026-05-21"
     },
     {
       "business_id": "biz_7ef7e01624ff",
@@ -216,7 +217,7 @@
       ],
       "source_name": "經濟部商業發展署",
       "source_url": "https://data.gov.tw/dataset/82608",
-      "source_updated_at": "2026-05-18"
+      "source_updated_at": "2026-05-21"
     },
     {
       "business_id": "biz_2af34358e9d1",
@@ -233,7 +234,7 @@
       ],
       "source_name": "經濟部商業發展署",
       "source_url": "https://data.gov.tw/dataset/82611",
-      "source_updated_at": "2026-05-18"
+      "source_updated_at": "2026-05-21"
     },
     {
       "business_id": "biz_7137bd6350d1",
@@ -250,7 +251,7 @@
       ],
       "source_name": "經濟部商業發展署",
       "source_url": "https://data.gov.tw/dataset/82611",
-      "source_updated_at": "2026-05-18"
+      "source_updated_at": "2026-05-21"
     },
     {
       "business_id": "biz_dd6dce9d88a5",
@@ -267,7 +268,7 @@
       ],
       "source_name": "經濟部商業發展署",
       "source_url": "https://data.gov.tw/dataset/82611",
-      "source_updated_at": "2026-05-18"
+      "source_updated_at": "2026-05-21"
     },
     {
       "business_id": "biz_5b5fa834cc96",
@@ -284,7 +285,7 @@
       ],
       "source_name": "經濟部商業發展署",
       "source_url": "https://data.gov.tw/dataset/82611",
-      "source_updated_at": "2026-05-18"
+      "source_updated_at": "2026-05-21"
     },
     {
       "business_id": "biz_789a45f3e668",
@@ -301,7 +302,7 @@
       ],
       "source_name": "經濟部商業發展署",
       "source_url": "https://data.gov.tw/dataset/81121",
-      "source_updated_at": "2026-05-18"
+      "source_updated_at": "2026-05-21"
     },
     {
       "business_id": "biz_8c04d51c335c",
@@ -318,7 +319,7 @@
       ],
       "source_name": "經濟部商業發展署",
       "source_url": "https://data.gov.tw/dataset/81121",
-      "source_updated_at": "2026-05-18"
+      "source_updated_at": "2026-05-21"
     },
     {
       "business_id": "biz_6b9da26c99a8",
@@ -335,7 +336,7 @@
       ],
       "source_name": "經濟部商業發展署",
       "source_url": "https://data.gov.tw/dataset/81121",
-      "source_updated_at": "2026-05-18"
+      "source_updated_at": "2026-05-21"
     },
     {
       "business_id": "biz_309252f85d10",
@@ -352,7 +353,7 @@
       ],
       "source_name": "經濟部商業發展署",
       "source_url": "https://data.gov.tw/dataset/81121",
-      "source_updated_at": "2026-05-18"
+      "source_updated_at": "2026-05-21"
     },
     {
       "business_id": "biz_539e7550dfde",
@@ -369,7 +370,7 @@
       ],
       "source_name": "經濟部商業發展署",
       "source_url": "https://data.gov.tw/dataset/81121",
-      "source_updated_at": "2026-05-18"
+      "source_updated_at": "2026-05-21"
     },
     {
       "business_id": "biz_340c94f33930",
@@ -386,7 +387,7 @@
       ],
       "source_name": "經濟部商業發展署",
       "source_url": "https://data.gov.tw/dataset/81121",
-      "source_updated_at": "2026-05-18"
+      "source_updated_at": "2026-05-21"
     },
     {
       "business_id": "biz_53d5a987b4f1",
@@ -403,7 +404,7 @@
       ],
       "source_name": "經濟部商業發展署",
       "source_url": "https://data.gov.tw/dataset/81121",
-      "source_updated_at": "2026-05-18"
+      "source_updated_at": "2026-05-21"
     },
     {
       "business_id": "biz_c7176a204aa6",
@@ -420,7 +421,7 @@
       ],
       "source_name": "經濟部商業發展署",
       "source_url": "https://data.gov.tw/dataset/81121",
-      "source_updated_at": "2026-05-18"
+      "source_updated_at": "2026-05-21"
     },
     {
       "business_id": "biz_cb99cd5ded73",
@@ -437,7 +438,7 @@
       ],
       "source_name": "經濟部商業發展署",
       "source_url": "https://data.gov.tw/dataset/81121",
-      "source_updated_at": "2026-05-18"
+      "source_updated_at": "2026-05-21"
     },
     {
       "business_id": "biz_aa4683b9555e",
@@ -454,7 +455,7 @@
       ],
       "source_name": "經濟部商業發展署",
       "source_url": "https://data.gov.tw/dataset/81121",
-      "source_updated_at": "2026-05-18"
+      "source_updated_at": "2026-05-21"
     },
     {
       "business_id": "biz_33b905a70d82",
@@ -471,7 +472,7 @@
       ],
       "source_name": "經濟部商業發展署",
       "source_url": "https://data.gov.tw/dataset/81121",
-      "source_updated_at": "2026-05-18"
+      "source_updated_at": "2026-05-21"
     }
   ]
 }

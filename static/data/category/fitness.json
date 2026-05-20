@@ -2,6 +2,7 @@
   "category": "健身運動",
   "category_slug": "fitness",
   "region": "all",
+  "city": "all",
   "count": 142,
   "businesses": [
     {
@@ -20,7 +21,7 @@
       ],
       "source_name": "臺中市政府運動局",
       "source_url": "https://data.gov.tw/dataset/108629",
-      "source_updated_at": "2026-05-18"
+      "source_updated_at": "2026-05-21"
     },
     {
       "business_id": "biz_102bc42d1673",
@@ -38,7 +39,7 @@
       ],
       "source_name": "臺中市政府運動局",
       "source_url": "https://data.gov.tw/dataset/108629",
-      "source_updated_at": "2026-05-18"
+      "source_updated_at": "2026-05-21"
     },
     {
       "business_id": "biz_c7efe036cbd0",
@@ -56,7 +57,7 @@
       ],
       "source_name": "臺中市政府運動局",
       "source_url": "https://data.gov.tw/dataset/108629",
-      "source_updated_at": "2026-05-18"
+      "source_updated_at": "2026-05-21"
     },
     {
       "business_id": "biz_fed2f2185ede",
@@ -74,7 +75,7 @@
       ],
       "source_name": "臺中市政府運動局",
       "source_url": "https://data.gov.tw/dataset/108629",
-      "source_updated_at": "2026-05-18"
+      "source_updated_at": "2026-05-21"
     },
     {
       "business_id": "biz_2a6c6d92e11f",
@@ -92,7 +93,7 @@
       ],
       "source_name": "臺中市政府運動局",
       "source_url": "https://data.gov.tw/dataset/108629",
-      "source_updated_at": "2026-05-18"
+      "source_updated_at": "2026-05-21"
     },
     {
       "business_id": "biz_fa62e9021595",
@@ -110,7 +111,7 @@
       ],
       "source_name": "臺中市政府運動局",
       "source_url": "https://data.gov.tw/dataset/108629",
-      "source_updated_at": "2026-05-18"
+      "source_updated_at": "2026-05-21"
     },
     {
       "business_id": "biz_c047d37b6220",
@@ -128,7 +129,7 @@
       ],
       "source_name": "臺中市政府運動局",
       "source_url": "https://data.gov.tw/dataset/108629",
-      "source_updated_at": "2026-05-18"
+      "source_updated_at": "2026-05-21"
     },
     {
       "business_id": "biz_0be7b3c59307",
@@ -146,7 +147,7 @@
       ],
       "source_name": "臺中市政府運動局",
       "source_url": "https://data.gov.tw/dataset/108629",
-      "source_updated_at": "2026-05-18"
+      "source_updated_at": "2026-05-21"
     },
     {
       "business_id": "biz_529af0e3e68f",
@@ -164,7 +165,7 @@
       ],
       "source_name": "臺中市政府運動局",
       "source_url": "https://data.gov.tw/dataset/108629",
-      "source_updated_at": "2026-05-18"
+      "source_updated_at": "2026-05-21"
     },
     {
       "business_id": "biz_f6ffaf63eded",
@@ -181,7 +182,7 @@
       ],
       "source_name": "臺中市政府運動局",
       "source_url": "https://data.gov.tw/dataset/108629",
-      "source_updated_at": "2026-05-18"
+      "source_updated_at": "2026-05-21"
     },
     {
       "business_id": "biz_a00ff6041b23",
@@ -199,7 +200,7 @@
       ],
       "source_name": "臺中市政府運動局",
       "source_url": "https://data.gov.tw/dataset/108629",
-      "source_updated_at": "2026-05-18"
+      "source_updated_at": "2026-05-21"
     },
     {
       "business_id": "biz_00a83acaf03f",
@@ -217,7 +218,7 @@
       ],
       "source_name": "臺中市政府運動局",
       "source_url": "https://data.gov.tw/dataset/108629",
-      "source_updated_at": "2026-05-18"
+      "source_updated_at": "2026-05-21"
     },
     {
       "business_id": "biz_39fdb299236b",
@@ -234,7 +235,7 @@
       ],
       "source_name": "臺中市政府運動局",
       "source_url": "https://data.gov.tw/dataset/108629",
-      "source_updated_at": "2026-05-18"
+      "source_updated_at": "2026-05-21"
     },
     {
       "business_id": "biz_c9cac08eeecc",
@@ -252,7 +253,7 @@
       ],
       "source_name": "臺中市政府運動局",
       "source_url": "https://data.gov.tw/dataset/108629",
-      "source_updated_at": "2026-05-18"
+      "source_updated_at": "2026-05-21"
     },
     {
       "business_id": "biz_ae3894ae4c14",
@@ -269,7 +270,7 @@
       ],
       "source_name": "臺中市政府運動局",
       "source_url": "https://data.gov.tw/dataset/108629",
-      "source_updated_at": "2026-05-18"
+      "source_updated_at": "2026-05-21"
     },
     {
       "business_id": "biz_6ee954760687",
@@ -287,7 +288,7 @@
       ],
       "source_name": "臺中市政府運動局",
       "source_url": "https://data.gov.tw/dataset/108629",
-      "source_updated_at": "2026-05-18"
+      "source_updated_at": "2026-05-21"
     },
     {
       "business_id": "biz_3fcc4ca3067f",
@@ -305,7 +306,7 @@
       ],
       "source_name": "臺中市政府運動局",
       "source_url": "https://data.gov.tw/dataset/108629",
-      "source_updated_at": "2026-05-18"
+      "source_updated_at": "2026-05-21"
     },
     {
       "business_id": "biz_c0306b46199d",
@@ -323,7 +324,7 @@
       ],
       "source_name": "臺中市政府運動局",
       "source_url": "https://data.gov.tw/dataset/108629",
-      "source_updated_at": "2026-05-18"
+      "source_updated_at": "2026-05-21"
     },
     {
       "business_id": "biz_828af4032dbf",
@@ -341,7 +342,7 @@
       ],
       "source_name": "臺中市政府運動局",
       "source_url": "https://data.gov.tw/dataset/108629",
-      "source_updated_at": "2026-05-18"
+      "source_updated_at": "2026-05-21"
     },
     {
       "business_id": "biz_4f7de7e5ee2f",
@@ -359,7 +360,7 @@
       ],
       "source_name": "臺中市政府運動局",
       "source_url": "https://data.gov.tw/dataset/108629",
-      "source_updated_at": "2026-05-18"
+      "source_updated_at": "2026-05-21"
     },
     {
       "business_id": "biz_ed1887f4a261",
@@ -377,7 +378,7 @@
       ],
       "source_name": "臺中市政府運動局",
       "source_url": "https://data.gov.tw/dataset/108629",
-      "source_updated_at": "2026-05-18"
+      "source_updated_at": "2026-05-21"
     },
     {
       "business_id": "biz_7ce63c99c738",
@@ -394,7 +395,7 @@
       ],
       "source_name": "臺中市政府運動局",
       "source_url": "https://data.gov.tw/dataset/108629",
-      "source_updated_at": "2026-05-18"
+      "source_updated_at": "2026-05-21"
     },
     {
       "business_id": "biz_46d43d8bb25f",
@@ -411,7 +412,7 @@
       ],
       "source_name": "臺中市政府運動局",
       "source_url": "https://data.gov.tw/dataset/108629",
-      "source_updated_at": "2026-05-18"
+      "source_updated_at": "2026-05-21"
     },
     {
       "business_id": "biz_e2d7c90e235a",
@@ -428,7 +429,7 @@
       ],
       "source_name": "臺中市政府運動局",
       "source_url": "https://data.gov.tw/dataset/108629",
-      "source_updated_at": "2026-05-18"
+      "source_updated_at": "2026-05-21"
     },
     {
       "business_id": "biz_afc8f7962c0e",
@@ -446,7 +447,7 @@
       ],
       "source_name": "臺中市政府運動局",
       "source_url": "https://data.gov.tw/dataset/108629",
-      "source_updated_at": "2026-05-18"
+      "source_updated_at": "2026-05-21"
     },
     {
       "business_id": "biz_c29040926b42",
@@ -464,7 +465,7 @@
       ],
       "source_name": "臺中市政府運動局",
       "source_url": "https://data.gov.tw/dataset/108629",
-      "source_updated_at": "2026-05-18"
+      "source_updated_at": "2026-05-21"
     },
     {
       "business_id": "biz_d6852e8358c8",
@@ -482,7 +483,7 @@
       ],
       "source_name": "臺中市政府運動局",
       "source_url": "https://data.gov.tw/dataset/108629",
-      "source_updated_at": "2026-05-18"
+      "source_updated_at": "2026-05-21"
     },
     {
       "business_id": "biz_9bdfe058c050",
@@ -499,7 +500,7 @@
       ],
       "source_name": "臺中市政府運動局",
       "source_url": "https://data.gov.tw/dataset/108629",
-      "source_updated_at": "2026-05-18"
+      "source_updated_at": "2026-05-21"
     },
     {
       "business_id": "biz_582840edfd06",
@@ -517,7 +518,7 @@
       ],
       "source_name": "臺中市政府運動局",
       "source_url": "https://data.gov.tw/dataset/108629",
-      "source_updated_at": "2026-05-18"
+      "source_updated_at": "2026-05-21"
     },
     {
       "business_id": "biz_b708736982a2",
@@ -534,7 +535,7 @@
       ],
       "source_name": "臺中市政府運動局",
       "source_url": "https://data.gov.tw/dataset/108629",
-      "source_updated_at": "2026-05-18"
+      "source_updated_at": "2026-05-21"
     },
     {
       "business_id": "biz_b63555da3583",
@@ -551,7 +552,7 @@
       ],
       "source_name": "臺中市政府運動局",
       "source_url": "https://data.gov.tw/dataset/108629",
-      "source_updated_at": "2026-05-18"
+      "source_updated_at": "2026-05-21"
     },
     {
       "business_id": "biz_0757b6ea0efe",
@@ -569,7 +570,7 @@
       ],
       "source_name": "臺中市政府運動局",
       "source_url": "https://data.gov.tw/dataset/108629",
-      "source_updated_at": "2026-05-18"
+      "source_updated_at": "2026-05-21"
     },
     {
       "business_id": "biz_fe466951bc58",
@@ -586,7 +587,7 @@
       ],
       "source_name": "臺中市政府運動局",
       "source_url": "https://data.gov.tw/dataset/108629",
-      "source_updated_at": "2026-05-18"
+      "source_updated_at": "2026-05-21"
     },
     {
       "business_id": "biz_6f7de43cafe7",
@@ -603,7 +604,7 @@
       ],
       "source_name": "臺中市政府運動局",
       "source_url": "https://data.gov.tw/dataset/108629",
-      "source_updated_at": "2026-05-18"
+      "source_updated_at": "2026-05-21"
     },
     {
       "business_id": "biz_20c79881fcb1",
@@ -620,7 +621,7 @@
       ],
       "source_name": "臺中市政府運動局",
       "source_url": "https://data.gov.tw/dataset/108629",
-      "source_updated_at": "2026-05-18"
+      "source_updated_at": "2026-05-21"
     },
     {
       "business_id": "biz_ee9e925ad0ac",
@@ -637,7 +638,7 @@
       ],
       "source_name": "臺中市政府運動局",
       "source_url": "https://data.gov.tw/dataset/108629",
-      "source_updated_at": "2026-05-18"
+      "source_updated_at": "2026-05-21"
     },
     {
       "business_id": "biz_468c2d8b6eb7",
@@ -654,7 +655,7 @@
       ],
       "source_name": "臺中市政府運動局",
       "source_url": "https://data.gov.tw/dataset/108629",
-      "source_updated_at": "2026-05-18"
+      "source_updated_at": "2026-05-21"
     },
     {
       "business_id": "biz_ada31ae741d4",
@@ -671,7 +672,7 @@
       ],
       "source_name": "臺中市政府運動局",
       "source_url": "https://data.gov.tw/dataset/108629",
-      "source_updated_at": "2026-05-18"
+      "source_updated_at": "2026-05-21"
     },
     {
       "business_id": "biz_4bbfaa8901f9",
@@ -688,7 +689,7 @@
       ],
       "source_name": "臺中市政府運動局",
       "source_url": "https://data.gov.tw/dataset/108629",
-      "source_updated_at": "2026-05-18"
+      "source_updated_at": "2026-05-21"
     },
     {
       "business_id": "biz_76af1cfdbb5e",
@@ -705,7 +706,7 @@
       ],
       "source_name": "臺中市政府運動局",
       "source_url": "https://data.gov.tw/dataset/108629",
-      "source_updated_at": "2026-05-18"
+      "source_updated_at": "2026-05-21"
     },
     {
       "business_id": "biz_b876b94c766d",
@@ -722,7 +723,7 @@
       ],
       "source_name": "臺中市政府運動局",
       "source_url": "https://data.gov.tw/dataset/108629",
-      "source_updated_at": "2026-05-18"
+      "source_updated_at": "2026-05-21"
     },
     {
       "business_id": "biz_79c1444e78d1",
@@ -740,7 +741,7 @@
       ],
       "source_name": "臺中市政府運動局",
       "source_url": "https://data.gov.tw/dataset/108629",
-      "source_updated_at": "2026-05-18"
+      "source_updated_at": "2026-05-21"
     },
     {
       "business_id": "biz_cbd054656934",
@@ -757,7 +758,7 @@
       ],
       "source_name": "臺中市政府運動局",
       "source_url": "https://data.gov.tw/dataset/108629",
-      "source_updated_at": "2026-05-18"
+      "source_updated_at": "2026-05-21"
     },
     {
       "business_id": "biz_0bcd3977a5b0",
@@ -775,7 +776,7 @@
       ],
       "source_name": "臺中市政府運動局",
       "source_url": "https://data.gov.tw/dataset/108629",
-      "source_updated_at": "2026-05-18"
+      "source_updated_at": "2026-05-21"
     },
     {
       "business_id": "biz_ac8f6f03958a",
@@ -792,7 +793,7 @@
       ],
       "source_name": "臺中市政府運動局",
       "source_url": "https://data.gov.tw/dataset/108629",
-      "source_updated_at": "2026-05-18"
+      "source_updated_at": "2026-05-21"
     },
     {
       "business_id": "biz_0d64afd89492",
@@ -809,7 +810,7 @@
       ],
       "source_name": "臺中市政府運動局",
       "source_url": "https://data.gov.tw/dataset/108629",
-      "source_updated_at": "2026-05-18"
+      "source_updated_at": "2026-05-21"
     },
     {
       "business_id": "biz_ee76f3037595",
@@ -827,7 +828,7 @@
       ],
       "source_name": "臺中市政府運動局",
       "source_url": "https://data.gov.tw/dataset/108629",
-      "source_updated_at": "2026-05-18"
+      "source_updated_at": "2026-05-21"
     },
     {
       "business_id": "biz_089fc2c0bbc1",
@@ -844,7 +845,7 @@
       ],
       "source_name": "臺中市政府運動局",
       "source_url": "https://data.gov.tw/dataset/108629",
-      "source_updated_at": "2026-05-18"
+      "source_updated_at": "2026-05-21"
     },
     {
       "business_id": "biz_7a8549c07656",
@@ -861,7 +862,7 @@
       ],
       "source_name": "臺中市政府運動局",
       "source_url": "https://data.gov.tw/dataset/108629",
-      "source_updated_at": "2026-05-18"
+      "source_updated_at": "2026-05-21"
     },
     {
       "business_id": "biz_e5fb06923522",
@@ -878,7 +879,7 @@
       ],
       "source_name": "臺中市政府運動局",
       "source_url": "https://data.gov.tw/dataset/108629",
-      "source_updated_at": "2026-05-18"
+      "source_updated_at": "2026-05-21"
     },
     {
       "business_id": "biz_c99b4cfbbf94",
@@ -895,7 +896,7 @@
       ],
       "source_name": "臺中市政府運動局",
       "source_url": "https://data.gov.tw/dataset/108629",
-      "source_updated_at": "2026-05-18"
+      "source_updated_at": "2026-05-21"
     },
     {
       "business_id": "biz_01136c58e2fc",
@@ -912,7 +913,7 @@
       ],
       "source_name": "臺中市政府運動局",
       "source_url": "https://data.gov.tw/dataset/108629",
-      "source_updated_at": "2026-05-18"
+      "source_updated_at": "2026-05-21"
     },
     {
       "business_id": "biz_ff08a9148da4",
@@ -929,7 +930,7 @@
       ],
       "source_name": "臺中市政府運動局",
       "source_url": "https://data.gov.tw/dataset/108629",
-      "source_updated_at": "2026-05-18"
+      "source_updated_at": "2026-05-21"
     },
     {
       "business_id": "biz_8197d90e80fe",
@@ -946,7 +947,7 @@
       ],
       "source_name": "臺中市政府運動局",
       "source_url": "https://data.gov.tw/dataset/108629",
-      "source_updated_at": "2026-05-18"
+      "source_updated_at": "2026-05-21"
     },
     {
       "business_id": "biz_bfff1dd04cc7",
@@ -963,7 +964,7 @@
       ],
       "source_name": "臺中市政府運動局",
       "source_url": "https://data.gov.tw/dataset/108629",
-      "source_updated_at": "2026-05-18"
+      "source_updated_at": "2026-05-21"
     },
     {
       "business_id": "biz_19448a9387b1",
@@ -980,7 +981,7 @@
       ],
       "source_name": "臺中市政府運動局",
       "source_url": "https://data.gov.tw/dataset/108629",
-      "source_updated_at": "2026-05-18"
+      "source_updated_at": "2026-05-21"
     },
     {
       "business_id": "biz_8aaab057ea30",
@@ -998,7 +999,7 @@
       ],
       "source_name": "臺中市政府運動局",
       "source_url": "https://data.gov.tw/dataset/108629",
-      "source_updated_at": "2026-05-18"
+      "source_updated_at": "2026-05-21"
     },
     {
       "business_id": "biz_d6e3722cbef0",
@@ -1016,7 +1017,7 @@
       ],
       "source_name": "臺中市政府運動局",
       "source_url": "https://data.gov.tw/dataset/108629",
-      "source_updated_at": "2026-05-18"
+      "source_updated_at": "2026-05-21"
     },
     {
       "business_id": "biz_619e369c2299",
@@ -1033,7 +1034,7 @@
       ],
       "source_name": "臺中市政府運動局",
       "source_url": "https://data.gov.tw/dataset/108629",
-      "source_updated_at": "2026-05-18"
+      "source_updated_at": "2026-05-21"
     },
     {
       "business_id": "biz_7d15860888cd",
@@ -1051,7 +1052,7 @@
       ],
       "source_name": "臺中市政府運動局",
       "source_url": "https://data.gov.tw/dataset/108629",
-      "source_updated_at": "2026-05-18"
+      "source_updated_at": "2026-05-21"
     },
     {
       "business_id": "biz_a13bf3d2cad4",
@@ -1068,7 +1069,7 @@
       ],
       "source_name": "臺中市政府運動局",
       "source_url": "https://data.gov.tw/dataset/108629",
-      "source_updated_at": "2026-05-18"
+      "source_updated_at": "2026-05-21"
     },
     {
       "business_id": "biz_f756e6165df6",
@@ -1085,7 +1086,7 @@
       ],
       "source_name": "臺中市政府運動局",
       "source_url": "https://data.gov.tw/dataset/108629",
-      "source_updated_at": "2026-05-18"
+      "source_updated_at": "2026-05-21"
     },
     {
       "business_id": "biz_35cf5a165765",
@@ -1103,7 +1104,7 @@
       ],
       "source_name": "臺中市政府運動局",
       "source_url": "https://data.gov.tw/dataset/108629",
-      "source_updated_at": "2026-05-18"
+      "source_updated_at": "2026-05-21"
     },
     {
       "business_id": "biz_8be4a4362b9c",
@@ -1121,7 +1122,7 @@
       ],
       "source_name": "臺中市政府運動局",
       "source_url": "https://data.gov.tw/dataset/108629",
-      "source_updated_at": "2026-05-18"
+      "source_updated_at": "2026-05-21"
     },
     {
       "business_id": "biz_63d92f8c8606",
@@ -1139,7 +1140,7 @@
       ],
       "source_name": "臺中市政府運動局",
       "source_url": "https://data.gov.tw/dataset/108629",
-      "source_updated_at": "2026-05-18"
+      "source_updated_at": "2026-05-21"
     },
     {
       "business_id": "biz_eb852f780a72",
@@ -1157,7 +1158,7 @@
       ],
       "source_name": "臺中市政府運動局",
       "source_url": "https://data.gov.tw/dataset/108629",
-      "source_updated_at": "2026-05-18"
+      "source_updated_at": "2026-05-21"
     },
     {
       "business_id": "biz_7cd1cb535d11",
@@ -1175,7 +1176,7 @@
       ],
       "source_name": "臺中市政府運動局",
       "source_url": "https://data.gov.tw/dataset/108629",
-      "source_updated_at": "2026-05-18"
+      "source_updated_at": "2026-05-21"
     },
     {
       "business_id": "biz_8cca576328ef",
@@ -1192,7 +1193,7 @@
       ],
       "source_name": "臺中市政府運動局",
       "source_url": "https://data.gov.tw/dataset/108629",
-      "source_updated_at": "2026-05-18"
+      "source_updated_at": "2026-05-21"
     },
     {
       "business_id": "biz_241acd187303",
@@ -1210,7 +1211,7 @@
       ],
       "source_name": "臺中市政府運動局",
       "source_url": "https://data.gov.tw/dataset/108629",
-      "source_updated_at": "2026-05-18"
+      "source_updated_at": "2026-05-21"
     },
     {
       "business_id": "biz_f863b71443e1",
@@ -1227,7 +1228,7 @@
       ],
       "source_name": "臺中市政府運動局",
       "source_url": "https://data.gov.tw/dataset/108629",
-      "source_updated_at": "2026-05-18"
+      "source_updated_at": "2026-05-21"
     },
     {
       "business_id": "biz_ff40415f92ee",
@@ -1244,7 +1245,7 @@
       ],
       "source_name": "臺中市政府運動局",
       "source_url": "https://data.gov.tw/dataset/108629",
-      "source_updated_at": "2026-05-18"
+      "source_updated_at": "2026-05-21"
     },
     {
       "business_id": "biz_7138fd894c4f",
@@ -1262,7 +1263,7 @@
       ],
       "source_name": "臺中市政府運動局",
       "source_url": "https://data.gov.tw/dataset/108629",
-      "source_updated_at": "2026-05-18"
+      "source_updated_at": "2026-05-21"
     },
     {
       "business_id": "biz_4f04aec6af97",
@@ -1279,7 +1280,7 @@
       ],
       "source_name": "臺中市政府運動局",
       "source_url": "https://data.gov.tw/dataset/108629",
-      "source_updated_at": "2026-05-18"
+      "source_updated_at": "2026-05-21"
     },
     {
       "business_id": "biz_0d11c5276fcf",
@@ -1296,7 +1297,7 @@
       ],
       "source_name": "臺中市政府運動局",
       "source_url": "https://data.gov.tw/dataset/108629",
-      "source_updated_at": "2026-05-18"
+      "source_updated_at": "2026-05-21"
     },
     {
       "business_id": "biz_f998c5f5882a",
@@ -1314,7 +1315,7 @@
       ],
       "source_name": "臺中市政府運動局",
       "source_url": "https://data.gov.tw/dataset/108629",
-      "source_updated_at": "2026-05-18"
+      "source_updated_at": "2026-05-21"
     },
     {
       "business_id": "biz_ffc421a7193e",
@@ -1331,7 +1332,7 @@
       ],
       "source_name": "臺中市政府運動局",
       "source_url": "https://data.gov.tw/dataset/108629",
-      "source_updated_at": "2026-05-18"
+      "source_updated_at": "2026-05-21"
     },
     {
       "business_id": "biz_65a74ef683e2",
@@ -1349,7 +1350,7 @@
       ],
       "source_name": "臺中市政府運動局",
       "source_url": "https://data.gov.tw/dataset/108629",
-      "source_updated_at": "2026-05-18"
+      "source_updated_at": "2026-05-21"
     },
     {
       "business_id": "biz_32f3b78784d8",
@@ -1367,7 +1368,7 @@
       ],
       "source_name": "臺中市政府運動局",
       "source_url": "https://data.gov.tw/dataset/108629",
-      "source_updated_at": "2026-05-18"
+      "source_updated_at": "2026-05-21"
     },
     {
       "business_id": "biz_d0446c1f27e3",
@@ -1385,7 +1386,7 @@
       ],
       "source_name": "臺中市政府運動局",
       "source_url": "https://data.gov.tw/dataset/108629",
-      "source_updated_at": "2026-05-18"
+      "source_updated_at": "2026-05-21"
     },
     {
       "business_id": "biz_6afbe26ae2bc",
@@ -1403,7 +1404,7 @@
       ],
       "source_name": "臺中市政府運動局",
       "source_url": "https://data.gov.tw/dataset/108629",
-      "source_updated_at": "2026-05-18"
+      "source_updated_at": "2026-05-21"
     },
     {
       "business_id": "biz_a7ee4a37bb13",
@@ -1420,7 +1421,7 @@
       ],
       "source_name": "臺中市政府運動局",
       "source_url": "https://data.gov.tw/dataset/108629",
-      "source_updated_at": "2026-05-18"
+      "source_updated_at": "2026-05-21"
     },
     {
       "business_id": "biz_c53157836f64",
@@ -1437,7 +1438,7 @@
       ],
       "source_name": "臺中市政府運動局",
       "source_url": "https://data.gov.tw/dataset/108629",
-      "source_updated_at": "2026-05-18"
+      "source_updated_at": "2026-05-21"
     },
     {
       "business_id": "biz_749e0a076b69",
@@ -1454,7 +1455,7 @@
       ],
       "source_name": "臺中市政府運動局",
       "source_url": "https://data.gov.tw/dataset/108629",
-      "source_updated_at": "2026-05-18"
+      "source_updated_at": "2026-05-21"
     },
     {
       "business_id": "biz_12ad476723b9",
@@ -1471,7 +1472,7 @@
       ],
       "source_name": "臺中市政府運動局",
       "source_url": "https://data.gov.tw/dataset/108629",
-      "source_updated_at": "2026-05-18"
+      "source_updated_at": "2026-05-21"
     },
     {
       "business_id": "biz_82cd8402e338",
@@ -1488,7 +1489,7 @@
       ],
       "source_name": "臺中市政府運動局",
       "source_url": "https://data.gov.tw/dataset/108629",
-      "source_updated_at": "2026-05-18"
+      "source_updated_at": "2026-05-21"
     },
     {
       "business_id": "biz_7e0e3c6c4d57",
@@ -1506,7 +1507,7 @@
       ],
       "source_name": "臺中市政府運動局",
       "source_url": "https://data.gov.tw/dataset/108629",
-      "source_updated_at": "2026-05-18"
+      "source_updated_at": "2026-05-21"
     },
     {
       "business_id": "biz_f25b73368ce8",
@@ -1523,7 +1524,7 @@
       ],
       "source_name": "臺中市政府運動局",
       "source_url": "https://data.gov.tw/dataset/108629",
-      "source_updated_at": "2026-05-18"
+      "source_updated_at": "2026-05-21"
     },
     {
       "business_id": "biz_19d033f5cab1",
@@ -1540,7 +1541,7 @@
       ],
       "source_name": "臺中市政府運動局",
       "source_url": "https://data.gov.tw/dataset/108629",
-      "source_updated_at": "2026-05-18"
+      "source_updated_at": "2026-05-21"
     },
     {
       "business_id": "biz_764cb813c7dd",
@@ -1557,7 +1558,7 @@
       ],
       "source_name": "臺中市政府運動局",
       "source_url": "https://data.gov.tw/dataset/108629",
-      "source_updated_at": "2026-05-18"
+      "source_updated_at": "2026-05-21"
     },
     {
       "business_id": "biz_0209a46e6b5d",
@@ -1574,7 +1575,7 @@
       ],
       "source_name": "臺中市政府運動局",
       "source_url": "https://data.gov.tw/dataset/108629",
-      "source_updated_at": "2026-05-18"
+      "source_updated_at": "2026-05-21"
     },
     {
       "business_id": "biz_b16f82ded9a4",
@@ -1591,7 +1592,7 @@
       ],
       "source_name": "臺中市政府運動局",
       "source_url": "https://data.gov.tw/dataset/108629",
-      "source_updated_at": "2026-05-18"
+      "source_updated_at": "2026-05-21"
     },
     {
       "business_id": "biz_e7827f34d29a",
@@ -1608,7 +1609,7 @@
       ],
       "source_name": "臺中市政府運動局",
       "source_url": "https://data.gov.tw/dataset/108629",
-      "source_updated_at": "2026-05-18"
+      "source_updated_at": "2026-05-21"
     },
     {
       "business_id": "biz_17b73109b8d3",
@@ -1625,7 +1626,7 @@
       ],
       "source_name": "臺中市政府運動局",
       "source_url": "https://data.gov.tw/dataset/108629",
-      "source_updated_at": "2026-05-18"
+      "source_updated_at": "2026-05-21"
     },
     {
       "business_id": "biz_2a384e437d01",
@@ -1642,7 +1643,7 @@
       ],
       "source_name": "臺中市政府運動局",
       "source_url": "https://data.gov.tw/dataset/108629",
-      "source_updated_at": "2026-05-18"
+      "source_updated_at": "2026-05-21"
     },
     {
       "business_id": "biz_62758da16884",
@@ -1660,7 +1661,7 @@
       ],
       "source_name": "臺中市政府運動局",
       "source_url": "https://data.gov.tw/dataset/108629",
-      "source_updated_at": "2026-05-18"
+      "source_updated_at": "2026-05-21"
     },
     {
       "business_id": "biz_20a32362320a",
@@ -1678,7 +1679,7 @@
       ],
       "source_name": "臺中市政府運動局",
       "source_url": "https://data.gov.tw/dataset/108629",
-      "source_updated_at": "2026-05-18"
+      "source_updated_at": "2026-05-21"
     },
     {
       "business_id": "biz_d4cd8eddd3b1",
@@ -1695,7 +1696,7 @@
       ],
       "source_name": "臺中市政府運動局",
       "source_url": "https://data.gov.tw/dataset/108629",
-      "source_updated_at": "2026-05-18"
+      "source_updated_at": "2026-05-21"
     },
     {
       "business_id": "biz_55202e4bc3ba",
@@ -1712,7 +1713,7 @@
       ],
       "source_name": "臺中市政府運動局",
       "source_url": "https://data.gov.tw/dataset/108629",
-      "source_updated_at": "2026-05-18"
+      "source_updated_at": "2026-05-21"
     },
     {
       "business_id": "biz_e6eb3bc5f89f",
@@ -1729,7 +1730,7 @@
       ],
       "source_name": "臺中市政府運動局",
       "source_url": "https://data.gov.tw/dataset/108629",
-      "source_updated_at": "2026-05-18"
+      "source_updated_at": "2026-05-21"
     },
     {
       "business_id": "biz_1e0de44ff96a",
@@ -1746,7 +1747,7 @@
       ],
       "source_name": "臺中市政府運動局",
       "source_url": "https://data.gov.tw/dataset/108629",
-      "source_updated_at": "2026-05-18"
+      "source_updated_at": "2026-05-21"
     },
     {
       "business_id": "biz_929831c74ec5",
@@ -1763,7 +1764,7 @@
       ],
       "source_name": "臺中市政府運動局",
       "source_url": "https://data.gov.tw/dataset/108629",
-      "source_updated_at": "2026-05-18"
+      "source_updated_at": "2026-05-21"
     },
     {
       "business_id": "biz_e757ad794954",
@@ -1780,7 +1781,7 @@
       ],
       "source_name": "臺中市政府運動局",
       "source_url": "https://data.gov.tw/dataset/108629",
-      "source_updated_at": "2026-05-18"
+      "source_updated_at": "2026-05-21"
     },
     {
       "business_id": "biz_42b3b02df507",
@@ -1797,7 +1798,7 @@
       ],
       "source_name": "臺中市政府運動局",
       "source_url": "https://data.gov.tw/dataset/108629",
-      "source_updated_at": "2026-05-18"
+      "source_updated_at": "2026-05-21"
     },
     {
       "business_id": "biz_c60cb26cd39a",
@@ -1814,7 +1815,7 @@
       ],
       "source_name": "臺中市政府運動局",
       "source_url": "https://data.gov.tw/dataset/108629",
-      "source_updated_at": "2026-05-18"
+      "source_updated_at": "2026-05-21"
     },
     {
       "business_id": "biz_7f929ec4fbb3",
@@ -1831,7 +1832,7 @@
       ],
       "source_name": "臺中市政府運動局",
       "source_url": "https://data.gov.tw/dataset/108629",
-      "source_updated_at": "2026-05-18"
+      "source_updated_at": "2026-05-21"
     },
     {
       "business_id": "biz_ed93faf32f71",
@@ -1848,7 +1849,7 @@
       ],
       "source_name": "臺中市政府運動局",
       "source_url": "https://data.gov.tw/dataset/108629",
-      "source_updated_at": "2026-05-18"
+      "source_updated_at": "2026-05-21"
     },
     {
       "business_id": "biz_6146d5475b08",
@@ -1865,7 +1866,7 @@
       ],
       "source_name": "臺中市政府運動局",
       "source_url": "https://data.gov.tw/dataset/108629",
-      "source_updated_at": "2026-05-18"
+      "source_updated_at": "2026-05-21"
     },
     {
       "business_id": "biz_6602fcb6b22b",
@@ -1883,7 +1884,7 @@
       ],
       "source_name": "臺中市政府運動局",
       "source_url": "https://data.gov.tw/dataset/108629",
-      "source_updated_at": "2026-05-18"
+      "source_updated_at": "2026-05-21"
     },
     {
       "business_id": "biz_03197bba8e7b",
@@ -1900,7 +1901,7 @@
       ],
       "source_name": "臺中市政府運動局",
       "source_url": "https://data.gov.tw/dataset/108629",
-      "source_updated_at": "2026-05-18"
+      "source_updated_at": "2026-05-21"
     },
     {
       "business_id": "biz_3704883f0346",
@@ -1917,7 +1918,7 @@
       ],
       "source_name": "臺中市政府運動局",
       "source_url": "https://data.gov.tw/dataset/108629",
-      "source_updated_at": "2026-05-18"
+      "source_updated_at": "2026-05-21"
     },
     {
       "business_id": "biz_49440c0b2ba4",
@@ -1934,7 +1935,7 @@
       ],
       "source_name": "臺中市政府運動局",
       "source_url": "https://data.gov.tw/dataset/108629",
-      "source_updated_at": "2026-05-18"
+      "source_updated_at": "2026-05-21"
     },
     {
       "business_id": "biz_c7b24fb3ecd9",
@@ -1952,7 +1953,7 @@
       ],
       "source_name": "臺中市政府運動局",
       "source_url": "https://data.gov.tw/dataset/108629",
-      "source_updated_at": "2026-05-18"
+      "source_updated_at": "2026-05-21"
     },
     {
       "business_id": "biz_aa47bd388007",
@@ -1969,7 +1970,7 @@
       ],
       "source_name": "臺中市政府運動局",
       "source_url": "https://data.gov.tw/dataset/108629",
-      "source_updated_at": "2026-05-18"
+      "source_updated_at": "2026-05-21"
     },
     {
       "business_id": "biz_7e4e82b5553c",
@@ -1987,7 +1988,7 @@
       ],
       "source_name": "臺中市政府運動局",
       "source_url": "https://data.gov.tw/dataset/108629",
-      "source_updated_at": "2026-05-18"
+      "source_updated_at": "2026-05-21"
     },
     {
       "business_id": "biz_4df621f2db5d",
@@ -2005,7 +2006,7 @@
       ],
       "source_name": "臺中市政府運動局",
       "source_url": "https://data.gov.tw/dataset/108629",
-      "source_updated_at": "2026-05-18"
+      "source_updated_at": "2026-05-21"
     },
     {
       "business_id": "biz_9c8b6ecb74ba",
@@ -2022,7 +2023,7 @@
       ],
       "source_name": "臺中市政府運動局",
       "source_url": "https://data.gov.tw/dataset/108629",
-      "source_updated_at": "2026-05-18"
+      "source_updated_at": "2026-05-21"
     },
     {
       "business_id": "biz_dd996d16fc9d",
@@ -2039,7 +2040,7 @@
       ],
       "source_name": "臺中市政府運動局",
       "source_url": "https://data.gov.tw/dataset/108629",
-      "source_updated_at": "2026-05-18"
+      "source_updated_at": "2026-05-21"
     },
     {
       "business_id": "biz_1856f386d2d2",
@@ -2057,7 +2058,7 @@
       ],
       "source_name": "臺中市政府運動局",
       "source_url": "https://data.gov.tw/dataset/108629",
-      "source_updated_at": "2026-05-18"
+      "source_updated_at": "2026-05-21"
     },
     {
       "business_id": "biz_05a4905b40bf",
@@ -2075,7 +2076,7 @@
       ],
       "source_name": "臺中市政府運動局",
       "source_url": "https://data.gov.tw/dataset/108629",
-      "source_updated_at": "2026-05-18"
+      "source_updated_at": "2026-05-21"
     },
     {
       "business_id": "biz_4c217e79b560",
@@ -2093,7 +2094,7 @@
       ],
       "source_name": "臺中市政府運動局",
       "source_url": "https://data.gov.tw/dataset/108629",
-      "source_updated_at": "2026-05-18"
+      "source_updated_at": "2026-05-21"
     },
     {
       "business_id": "biz_70c99eba2ac4",
@@ -2110,7 +2111,7 @@
       ],
       "source_name": "臺中市政府運動局",
       "source_url": "https://data.gov.tw/dataset/108629",
-      "source_updated_at": "2026-05-18"
+      "source_updated_at": "2026-05-21"
     },
     {
       "business_id": "biz_b96560f8a6c9",
@@ -2127,7 +2128,7 @@
       ],
       "source_name": "臺中市政府運動局",
       "source_url": "https://data.gov.tw/dataset/108629",
-      "source_updated_at": "2026-05-18"
+      "source_updated_at": "2026-05-21"
     },
     {
       "business_id": "biz_48203cc03552",
@@ -2145,7 +2146,7 @@
       ],
       "source_name": "臺中市政府運動局",
       "source_url": "https://data.gov.tw/dataset/108629",
-      "source_updated_at": "2026-05-18"
+      "source_updated_at": "2026-05-21"
     },
     {
       "business_id": "biz_e97f34912a39",
@@ -2162,7 +2163,7 @@
       ],
       "source_name": "臺中市政府運動局",
       "source_url": "https://data.gov.tw/dataset/108629",
-      "source_updated_at": "2026-05-18"
+      "source_updated_at": "2026-05-21"
     },
     {
       "business_id": "biz_798b39edf303",
@@ -2180,7 +2181,7 @@
       ],
       "source_name": "臺中市政府運動局",
       "source_url": "https://data.gov.tw/dataset/108629",
-      "source_updated_at": "2026-05-18"
+      "source_updated_at": "2026-05-21"
     },
     {
       "business_id": "biz_c1040f39cdd5",
@@ -2198,7 +2199,7 @@
       ],
       "source_name": "臺中市政府運動局",
       "source_url": "https://data.gov.tw/dataset/108629",
-      "source_updated_at": "2026-05-18"
+      "source_updated_at": "2026-05-21"
     },
     {
       "business_id": "biz_6416deee4a64",
@@ -2215,7 +2216,7 @@
       ],
       "source_name": "臺中市政府運動局",
       "source_url": "https://data.gov.tw/dataset/108629",
-      "source_updated_at": "2026-05-18"
+      "source_updated_at": "2026-05-21"
     },
     {
       "business_id": "biz_17bb14bf63fb",
@@ -2232,7 +2233,7 @@
       ],
       "source_name": "臺中市政府運動局",
       "source_url": "https://data.gov.tw/dataset/108629",
-      "source_updated_at": "2026-05-18"
+      "source_updated_at": "2026-05-21"
     },
     {
       "business_id": "biz_ededcd4f6eb5",
@@ -2250,7 +2251,7 @@
       ],
       "source_name": "臺中市政府運動局",
       "source_url": "https://data.gov.tw/dataset/108629",
-      "source_updated_at": "2026-05-18"
+      "source_updated_at": "2026-05-21"
     },
     {
       "business_id": "biz_954f4eb98a89",
@@ -2267,7 +2268,7 @@
       ],
       "source_name": "臺中市政府運動局",
       "source_url": "https://data.gov.tw/dataset/108629",
-      "source_updated_at": "2026-05-18"
+      "source_updated_at": "2026-05-21"
     },
     {
       "business_id": "biz_9bd8ee2750a6",
@@ -2284,7 +2285,7 @@
       ],
       "source_name": "臺中市政府運動局",
       "source_url": "https://data.gov.tw/dataset/108629",
-      "source_updated_at": "2026-05-18"
+      "source_updated_at": "2026-05-21"
     },
     {
       "business_id": "biz_8512a3324971",
@@ -2301,7 +2302,7 @@
       ],
       "source_name": "臺中市政府運動局",
       "source_url": "https://data.gov.tw/dataset/108629",
-      "source_updated_at": "2026-05-18"
+      "source_updated_at": "2026-05-21"
     },
     {
       "business_id": "biz_bdc15093dbd7",
@@ -2318,7 +2319,7 @@
       ],
       "source_name": "臺中市政府運動局",
       "source_url": "https://data.gov.tw/dataset/108629",
-      "source_updated_at": "2026-05-18"
+      "source_updated_at": "2026-05-21"
     },
     {
       "business_id": "biz_3a3023333be5",
@@ -2335,7 +2336,7 @@
       ],
       "source_name": "臺中市政府運動局",
       "source_url": "https://data.gov.tw/dataset/108629",
-      "source_updated_at": "2026-05-18"
+      "source_updated_at": "2026-05-21"
     },
     {
       "business_id": "biz_946302cd2149",
@@ -2352,7 +2353,7 @@
       ],
       "source_name": "臺中市政府運動局",
       "source_url": "https://data.gov.tw/dataset/108629",
-      "source_updated_at": "2026-05-18"
+      "source_updated_at": "2026-05-21"
     },
     {
       "business_id": "biz_a2cd5e90a2cb",
@@ -2369,7 +2370,7 @@
       ],
       "source_name": "臺中市政府運動局",
       "source_url": "https://data.gov.tw/dataset/108629",
-      "source_updated_at": "2026-05-18"
+      "source_updated_at": "2026-05-21"
     },
     {
       "business_id": "biz_8ce13bee45c3",
@@ -2386,7 +2387,7 @@
       ],
       "source_name": "臺中市政府運動局",
       "source_url": "https://data.gov.tw/dataset/108629",
-      "source_updated_at": "2026-05-18"
+      "source_updated_at": "2026-05-21"
     },
     {
       "business_id": "biz_9a76656cee0a",
@@ -2404,7 +2405,7 @@
       ],
       "source_name": "臺中市政府運動局",
       "source_url": "https://data.gov.tw/dataset/108629",
-      "source_updated_at": "2026-05-18"
+      "source_updated_at": "2026-05-21"
     },
     {
       "business_id": "biz_395719051647",
@@ -2422,7 +2423,7 @@
       ],
       "source_name": "臺中市政府運動局",
       "source_url": "https://data.gov.tw/dataset/108629",
-      "source_updated_at": "2026-05-18"
+      "source_updated_at": "2026-05-21"
     },
     {
       "business_id": "biz_36c3925217f7",
@@ -2439,7 +2440,7 @@
       ],
       "source_name": "臺中市政府運動局",
       "source_url": "https://data.gov.tw/dataset/108629",
-      "source_updated_at": "2026-05-18"
+      "source_updated_at": "2026-05-21"
     },
     {
       "business_id": "biz_28021cd5220c",
@@ -2456,7 +2457,7 @@
       ],
       "source_name": "臺中市政府運動局",
       "source_url": "https://data.gov.tw/dataset/108629",
-      "source_updated_at": "2026-05-18"
+      "source_updated_at": "2026-05-21"
     },
     {
       "business_id": "biz_b9dc23ae2dd2",
@@ -2473,7 +2474,7 @@
       ],
       "source_name": "臺中市政府運動局",
       "source_url": "https://data.gov.tw/dataset/108629",
-      "source_updated_at": "2026-05-18"
+      "source_updated_at": "2026-05-21"
     }
   ]
 }

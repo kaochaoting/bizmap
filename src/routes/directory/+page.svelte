@@ -111,8 +111,9 @@
         currentRegion = targetRegion;
 
         if (targetRegion !== 'all') {
-          const rf = cat.files.find(f => f.region === targetRegion);
-          if (rf) filesToLoad = [rf.file];
+          // Load all city-level files within this region
+          const rf = cat.files.filter(f => f.region === targetRegion);
+          if (rf.length) filesToLoad = rf.map(f => f.file);
         }
         if (filesToLoad.length === 0) {
           // Load all regions
