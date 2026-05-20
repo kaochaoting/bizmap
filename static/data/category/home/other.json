@@ -2,6 +2,7 @@
   "category": "居家服務",
   "category_slug": "home",
   "region": "other",
+  "city": "all",
   "count": 8,
   "businesses": [
     {
@@ -17,7 +18,7 @@
       ],
       "source_name": "經濟部商業發展署",
       "source_url": "https://data.gov.tw/dataset/32689",
-      "source_updated_at": "2026-05-18"
+      "source_updated_at": "2026-05-21"
     },
     {
       "business_id": "biz_7d172a27fb98",
@@ -32,7 +33,7 @@
       ],
       "source_name": "經濟部商業發展署",
       "source_url": "https://data.gov.tw/dataset/32689",
-      "source_updated_at": "2026-05-18"
+      "source_updated_at": "2026-05-21"
     },
     {
       "business_id": "biz_e370e688d25a",
@@ -48,7 +49,7 @@
       ],
       "source_name": "經濟部商業發展署",
       "source_url": "https://data.gov.tw/dataset/102992",
-      "source_updated_at": "2026-05-18"
+      "source_updated_at": "2026-05-21"
     },
     {
       "business_id": "biz_a3fc372374a9",
@@ -64,7 +65,7 @@
       ],
       "source_name": "經濟部商業發展署",
       "source_url": "https://data.gov.tw/dataset/102992",
-      "source_updated_at": "2026-05-18"
+      "source_updated_at": "2026-05-21"
     },
     {
       "business_id": "biz_cbc3a365dab5",
@@ -80,7 +81,7 @@
       ],
       "source_name": "經濟部商業發展署",
       "source_url": "https://data.gov.tw/dataset/102992",
-      "source_updated_at": "2026-05-18"
+      "source_updated_at": "2026-05-21"
     },
     {
       "business_id": "biz_c930134b1051",
@@ -96,7 +97,7 @@
       ],
       "source_name": "經濟部商業發展署",
       "source_url": "https://data.gov.tw/dataset/102992",
-      "source_updated_at": "2026-05-18"
+      "source_updated_at": "2026-05-21"
     },
     {
       "business_id": "biz_03d313fa107c",
@@ -112,7 +113,7 @@
       ],
       "source_name": "經濟部商業發展署",
       "source_url": "https://data.gov.tw/dataset/102992",
-      "source_updated_at": "2026-05-18"
+      "source_updated_at": "2026-05-21"
     },
     {
       "business_id": "biz_09f1e11fcc24",
@@ -129,7 +130,7 @@
       ],
       "source_name": "經濟部商業發展署",
       "source_url": "https://data.gov.tw/dataset/102995",
-      "source_updated_at": "2026-05-18"
+      "source_updated_at": "2026-05-21"
     }
   ]
 }
