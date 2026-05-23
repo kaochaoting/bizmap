@@ -39,17 +39,31 @@
     business: '💼', retail: '🛍️', transport: '⛽',
     industrial: '🏭',
   };
+  // SVG icon names (Lucide icons via CDN, fallback to emoji)
+  const categorySvgIcon = {
+    food: 'utensils-crossed',
+    beauty: 'scissors',
+    fitness: 'dumbbell',
+    medical: 'heart-pulse',
+    home: 'wrench',
+    education: 'graduation-cap',
+    business: 'briefcase',
+    retail: 'shopping-bag',
+    transport: 'fuel',
+    industrial: 'factory',
+  };
+  // Category color palette (Tailwind bg/text classes)
   const categoryColor = {
-    food: 'bg-orange-500/20 text-orange-300',
-    beauty: 'bg-pink-500/20 text-pink-300',
-    fitness: 'bg-red-500/20 text-red-300',
-    medical: 'bg-green-500/20 text-green-300',
-    home: 'bg-amber-500/20 text-amber-300',
-    education: 'bg-purple-500/20 text-purple-300',
-    business: 'bg-blue-500/20 text-blue-300',
-    retail: 'bg-cyan-500/20 text-cyan-300',
-    transport: 'bg-slate-500/20 text-slate-300',
-    industrial: 'bg-stone-500/20 text-stone-300',
+    food: 'bg-orange-500/20 text-orange-300 border-orange-500/30',
+    beauty: 'bg-pink-500/20 text-pink-300 border-pink-500/30',
+    fitness: 'bg-red-500/20 text-red-300 border-red-500/30',
+    medical: 'bg-green-500/20 text-green-300 border-green-500/30',
+    home: 'bg-amber-500/20 text-amber-300 border-amber-500/30',
+    education: 'bg-purple-500/20 text-purple-300 border-purple-500/30',
+    business: 'bg-blue-500/20 text-blue-300 border-blue-500/30',
+    retail: 'bg-cyan-500/20 text-cyan-300 border-cyan-500/30',
+    transport: 'bg-slate-500/20 text-slate-300 border-slate-500/30',
+    industrial: 'bg-stone-500/20 text-stone-300 border-stone-500/30',
   };
 
   // ─── Load index ─────────────────────────────────────────────────────────────
@@ -91,48 +105,32 @@
       const catFiles = indexData?.files?.[slug];
       if (!catFiles?.length) { loadingCategory = false; return; }
 
-      // Find the base file (single "all" file OR one of the region files)
-      // For per-city split categories (beauty, food, etc.), use the first file
-      let baseFile = catFiles.find(f => f.region === 'all')?.file || catFiles[0].file;
-
-      // For beauty/food categories that now have per-city files under a subdirectory,
-      // detect and load per-city data
-      const basePath = baseFile.replace('.json', '');
       let allBiz = [];
 
-      // Check if this is a directory-style file (has per-city subdir)
-      // or a stub file (has `files` array but no `businesses`)
-      const dirRes = await fetch(`/data/${basePath}/`);
-      const fileRes = await fetch(`/data/${baseFile}`);
-      
-      if (fileRes.ok) {
-        const fileData = await fileRes.json();
-        
-        if (fileData.files && Array.isArray(fileData.files) && !fileData.businesses?.length) {
-          // Stub file: load all per-city files listed in the `files` array
-          for (const cf of fileData.files) {
-            // Resolve path relative to the stub file location
-            const cfPath = basePath + '/' + cf;
-            try {
-              const r = await fetch(`/data/${cfPath}`);
-              const cd = await r.json();
-              allBiz.push(...(cd.businesses || []));
-            } catch {}
+      for (const fileMeta of catFiles) {
+        const filePath = fileMeta.file;
+        try {
+          const r = await fetch(`/data/${filePath}`);
+          if (!r.ok) continue;
+          const d = await r.json();
+
+          // Stub file: has `files` array but no `businesses` → load each sub-file
+          if (d.files && Array.isArray(d.files) && !d.businesses?.length) {
+            const baseDir = filePath.replace('.json', '');
+            for (const subFile of d.files) {
+              const subPath = `${baseDir}/${subFile}`;
+              const sr = await fetch(`/data/${subPath}`);
+              if (!sr.ok) continue;
+              const sd = await sr.json();
+              allBiz.push(...(sd.businesses || []));
+            }
           }
-        } else if (fileData.businesses?.length) {
           // Direct file with businesses
-          allBiz = fileData.businesses;
-        } else if (dirRes.ok) {
-          // It's a directory — load all JSON files in it
-          const text = await dirRes.text();
-          const cityFiles = [...text.matchAll(/href="([^"]+\.json)"/g)].map(m => m[1]);
-          for (const cf of cityFiles) {
-            try {
-              const r = await fetch(`/data/${basePath}/${cf}`);
-              const cd = await r.json();
-              allBiz.push(...(cd.businesses || []));
-            } catch {}
+          else if (d.businesses?.length) {
+            allBiz.push(...d.businesses);
           }
+        } catch (e) {
+          console.warn(`Failed to load ${fileMeta.file}:`, e);
         }
       }
 
@@ -292,9 +290,10 @@
           </svg>
           <input
             bind:value={searchQuery}
-            on:input={handleSearchInput}
+            on:input={() => { applyFilters(); }}
+            on:keydown={(e) => { if (e.key === 'Enter') applyFilters(); }}
             type="text"
-            placeholder="搜尋商家名稱、標籤..."
+            placeholder="搜尋商家名稱、標籤...（Enter 搜尋）"
             class="w-full pl-10 pr-4 py-2.5 rounded-lg text-sm bg-white/5 border border-white/10 text-white placeholder-white/20 focus:outline-none focus:border-gold/40 transition-all"
           />
         </div>
@@ -304,16 +303,16 @@
       <div class="flex flex-wrap gap-1.5 max-w-[600px]">
         <button
           on:click={() => { selectedCategory = ''; selectedCity = ''; searchQuery = ''; businesses = []; totalFiltered = 0; pushUrl(); }}
-          class="px-3 py-1.5 rounded-lg text-xs font-medium border transition-all shrink-0
-            {!selectedCategory ? 'bg-gold/20 border-gold/40 text-gold' : 'bg-white/5 border-white/10 text-white/50 hover:border-white/20'}"
+          class="px-3 py-1.5 rounded-lg text-xs font-semibold border transition-all shrink-0 whitespace-nowrap
+            {!selectedCategory ? 'bg-gold/20 border-gold/50 text-gold shadow-[0_0_8px_rgba(200,168,75,0.3)]' : 'bg-white/5 border-white/10 text-white/50 hover:border-white/20 hover:text-white/70'}"
         >
-          全部
+          📋 全部
         </button>
         {#each categoryList as cat}
           <button
             on:click={() => handleCategoryClick(cat.slug)}
-            class="px-3 py-1.5 rounded-lg text-xs font-medium border transition-all shrink-0 whitespace-nowrap
-              {selectedCategory === cat.slug ? 'bg-gold/20 border-gold/40 text-gold' : 'bg-white/5 border-white/10 text-white/50 hover:border-white/20 hover:text-white/70'}"
+            class="px-3 py-1.5 rounded-lg text-xs font-semibold border transition-all shrink-0 whitespace-nowrap
+              {selectedCategory === cat.slug ? 'bg-gold/20 border-gold/50 text-gold shadow-[0_0_8px_rgba(200,168,75,0.3)]' : 'bg-white/5 border-white/10 text-white/50 hover:border-white/20 hover:text-white/70'}"
             title="{cat.count.toLocaleString()} 家"
           >
             {cat.icon} {cat.name}
@@ -323,28 +322,129 @@
     </div>
   </div>
 
-  <!-- ── Category Grid (when no category selected) ──────────── -->
+<!-- ── Category Grid (when no category selected) ──────────── -->
   {#if !loading && !selectedCategory}
     <div class="mb-8">
-      <p class="text-xs text-white/20 font-mono mb-4 uppercase tracking-wider">選擇類別開始瀏覽</p>
+      <!-- Top: quick search bar -->
+      <div class="relative mb-5">
+        <div class="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none">
+          <svg class="w-5 h-5 text-white/20" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-4.35-4.35M11 19a8 8 0 100-16 8 8 0 000 16z"/>
+          </svg>
+        </div>
+        <input
+          bind:value={searchQuery}
+          on:input={() => { applyFilters(); }}
+          on:keydown={(e) => { if (e.key === 'Enter') applyFilters(); }}
+          type="text"
+          placeholder="🔍 搜尋商家名稱、類別或城市...（Enter 搜尋）"
+          class="w-full pl-12 pr-4 py-4 rounded-2xl text-sm bg-white/5 border border-white/10 text-white placeholder-white/20 focus:outline-none focus:border-gold/40 focus:bg-white/8 transition-all"
+          style="font-size:15px;"
+        />
+      </div>
+
+      <p class="text-xs text-white/20 font-mono mb-4 uppercase tracking-wider">
+        共收錄 <strong class="text-white/50">{indexData?.total?.toLocaleString() || '...'}</strong> 家，選擇類別探索
+      </p>
+
+      <!-- Category cards grid -->
       <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-3">
         {#each categoryList as cat}
+          {@const topCities = Object.entries(
+            indexData?.city_counts ? Object.entries(indexData.city_counts)
+              .filter(([c]) => c && ['food','beauty','fitness','medical','home','education','business','retail','transport','industrial'].includes(cat.slug))
+              .reduce((acc, [city, cnt]) => { acc[city] = cnt; return acc; }, {})
+              : {}
+          ).sort((a,b) => b[1]-a[1]).slice(0,3)}
           <button
             on:click={() => handleCategoryClick(cat.slug)}
-            class="relative group glass-card-dark-hover p-5 rounded-xl text-center cursor-pointer border border-white/5 hover:border-white/10 transition-all duration-200 hover:-translate-y-1"
-            style="background: rgba(255,255,255,0.03);"
+            class="relative group glass-card-dark-hover p-4 rounded-xl text-center cursor-pointer border transition-all duration-200 hover:-translate-y-1
+              {categoryColor[cat.slug] || 'bg-white/10 text-white/60'}
+              {!selectedCategory ? 'opacity-100' : selectedCategory === cat.slug ? 'ring-1 ring-gold/40' : 'opacity-40'}"
+            style="background: rgba(255,255,255,0.02);"
           >
-            <div class="w-12 h-12 rounded-xl mx-auto mb-3 flex items-center justify-center text-2xl
-              {categoryColor[cat.slug] || 'bg-white/10 text-white/60'}">
-              {cat.icon}
+            <!-- Icon container with glow -->
+            <div class="relative mb-3">
+              <div class="w-16 h-16 rounded-2xl mx-auto flex items-center justify-center text-2xl shadow-lg
+                {categoryColor[cat.slug] || 'bg-white/10 text-white/60'}
+                group-hover:scale-110 transition-transform duration-200"
+                style="box-shadow: 0 4px 24px rgba(0,0,0,0.4); background: rgba(255,255,255,0.06);">
+                <!-- SVG icon (Lucide-style inline SVG) -->
+                {#if cat.slug === 'food'}
+                  <svg class="w-8 h-8" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 2v7c0 1.1.9 2 2 2h4a2 2 0 002-2V2"/><path d="M7 2v20"/><path d="M21 15V2v0a5 5 0 00-5 5v6c0 1.1.9 2 2 2h3zm0 0v7"/></svg>
+                {:else if cat.slug === 'beauty'}
+                  <svg class="w-8 h-8" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="6" cy="6" r="3"/><path d="M8.12 8.12L12 12"/><path d="M20 4L8.12 15.88"/><circle cx="6" cy="18" r="3"/><path d="M14.8 14.8L20 20"/></svg>
+                {:else if cat.slug === 'fitness'}
+                  <svg class="w-8 h-8" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M6.5 6.5L17.5 17.5M17.5 6.5L6.5 17.5"/><path d="M3 12h3m12 0h3M12 3v3m0 12v3"/></svg>
+                {:else if cat.slug === 'medical'}
+                  <svg class="w-8 h-8" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0016.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 002 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/><path d="M3 22h18"/></svg>
+                {:else if cat.slug === 'home'}
+                  <svg class="w-8 h-8" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a1 1 0 000 1.4l1.6 1.6a1 1 0 001.4 0l3.77-3.77a6 6 0 01-7.94 7.94l-6.91 6.91a2.12 2.12 0 01-3-3l6.91-6.91a6 6 0 017.94-7.94l-3.76 3.76z"/></svg>
+                {:else if cat.slug === 'education'}
+                  <svg class="w-8 h-8" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg>
+                {:else if cat.slug === 'business'}
+                  <svg class="w-8 h-8" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="14" x="2" y="7" rx="2" ry="2"/><path d="M16 21V5a2 2 0 00-2-2h-4a2 2 0 00-2 2v16"/></svg>
+                {:else if cat.slug === 'retail'}
+                  <svg class="w-8 h-8" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 01-8 0"/></svg>
+                {:else if cat.slug === 'transport'}
+                  <svg class="w-8 h-8" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 11l19-9-9 19-2-8-8-2z"/></svg>
+                {:else if cat.slug === 'industrial'}
+                  <svg class="w-8 h-8" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M2 20a2 2 0 002 2h16a2 2 0 002-2V8l-7 5V8l-7 5V4a2 2 0 00-2-2H4a2 2 0 00-2 2Z"/></svg>
+                {:else}
+                  <span class="text-2xl">{cat.icon}</span>
+                {/if}
+              </div>
+              <!-- Active ring -->
+              {#if selectedCategory === cat.slug}
+                <div class="absolute inset-0 rounded-2xl border-2 border-gold/50 animate-pulse" style="animation-duration:2s;"></div>
+              {/if}
             </div>
-            <div class="font-medium text-white/90 text-sm mb-1">{cat.name}</div>
-            <div class="text-xs text-white/30">{cat.count.toLocaleString()} 家</div>
+
+            <!-- Category name -->
+            <div class="font-semibold text-white/90 text-sm mb-1 leading-tight">{cat.name}</div>
+
+            <!-- Count -->
+            <div class="text-xs text-white/30 mb-2">{cat.count.toLocaleString()} 家</div>
+
+            <!-- City SEO tags (top 3 cities for this category) -->
+            {#if indexData?.city_counts}
+              {@const catCities = Object.entries(indexData.city_counts)
+                .filter(([c]) => c)
+                .sort((a,b) => b[1]-a[1])
+                .slice(0, 4)}
+              {#if catCities.length > 0}
+                <div class="flex flex-wrap justify-center gap-1">
+                  {#each catCities.slice(0,3) as [city, cnt]}
+                    <a
+                      href="/city/{encodeURIComponent(city)}?category={cat.slug}"
+                      on:click|stopPropagation
+                      class="text-[9px] px-1.5 py-0.5 rounded-full bg-white/5 text-white/40 border border-white/5 hover:text-gold/80 hover:border-gold/30 transition-all"
+                      title="{city} · {cnt} 家"
+                    >
+                      {city}
+                    </a>
+                  {/each}
+                  {#if catCities.length > 3}
+                    <span class="text-[9px] px-1.5 py-0.5 rounded-full bg-white/5 text-white/20">+{catCities.length - 3}</span>
+                  {/if}
+                </div>
+              {/if}
+            {/if}
+
+            <!-- SEO: 反向鏈結提示 -->
+            <div class="mt-2 pt-2 border-t border-white/5">
+              <a
+                href="/city/taipei?category={cat.slug}"
+                on:click|stopPropagation
+                class="text-[9px] text-white/15 hover:text-gold/50 transition-colors"
+              >
+                → 台北 · 新北 · 台中
+              </a>
+            </div>
           </button>
         {/each}
       </div>
     </div>
-
   <!-- ── Category Results ─────────────────────────────────────── -->
   {:else if selectedCategory}
     <div class="mb-6">
