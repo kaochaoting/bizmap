@@ -33,30 +33,6 @@
     business: '💼', retail: '🛍️', transport: '⛽',
     industrial: '🏭',
   };
-  const categoryDesc = {
-    food: '餐廳、咖啡、小吃、飲料',
-    beauty: '美髮、美容、SPA、彩妝',
-    fitness: '健身房、課程、健身用品',
-    medical: '診所、藥局、醫院、中醫',
-    home: '清潔、維修、搬家、快遞',
-    education: '補習、安親、才藝、語言',
-    business: '顧問、代辦、工商登記',
-    retail: '零售、百貨、超市、網拍',
-    transport: '貨運、租車、維修、保險',
-    industrial: '製造、加工、原物料供應',
-  };
-  const categoryColor = {
-    food: 'bg-orange-500/20 text-orange-300',
-    beauty: 'bg-pink-500/20 text-pink-300',
-    fitness: 'bg-red-500/20 text-red-300',
-    medical: 'bg-green-500/20 text-green-300',
-    home: 'bg-amber-500/20 text-amber-300',
-    education: 'bg-purple-500/20 text-purple-300',
-    business: 'bg-blue-500/20 text-blue-300',
-    retail: 'bg-cyan-500/20 text-cyan-300',
-    transport: 'bg-slate-500/20 text-slate-300',
-    industrial: 'bg-stone-500/20 text-stone-300',
-  };
 
   // Region mapping for large categories
   const regions = [
@@ -227,13 +203,24 @@
 </section>
 
 <div class="max-w-6xl mx-auto px-6 -mt-8 relative z-10">
-  <!-- Persistent search bar + category shortcuts -->
-  <div class="mb-8">
-    <!-- Always-visible search + category quick-switch -->
-    <div class="glass-card p-4 flex flex-wrap items-center gap-3" style="background:rgba(12,12,14,0.95); border-color:rgba(255,255,255,0.08);">
-      <!-- Search input (always visible) -->
-      <div class="flex-1 min-w-[220px]">
-        <label class="block text-[10px] text-white/30 font-mono tracking-wider mb-1 uppercase">搜尋商家</label>
+  <!-- Filter bar -->
+  <div class="glass-card p-5 mb-10 flex flex-wrap items-end gap-4" style="background:rgba(12,12,14,0.95); border-color:rgba(255,255,255,0.08);">
+    <!-- Category selector -->
+    <div class="min-w-[180px]">
+      <label class="block text-[11px] text-white/30 font-mono tracking-wider mb-1.5 uppercase">類別</label>
+      <select bind:value={selectedCategory} on:change={handleCategoryChange}
+        class="w-full px-3 py-2.5 rounded-lg text-sm bg-white/5 border border-white/10 text-white/80 focus:outline-none focus:border-gold/40 transition-all appearance-none">
+        <option value="" class="bg-ink">選擇類別⋯</option>
+        {#each categoryList as cat}
+          <option value={cat.slug} class="bg-ink">{cat.icon} {cat.name} ({cat.count.toLocaleString()})</option>
+        {/each}
+      </select>
+    </div>
+
+    <!-- Search (within loaded category) -->
+    {#if businesses.length > 0}
+      <div class="flex-1 min-w-[200px]">
+        <label class="block text-[11px] text-white/30 font-mono tracking-wider mb-1.5 uppercase">搜尋（{currentCategorySlug}）</label>
         <div class="relative">
           <svg class="absolute left-3 top-1/2 -translate-y-1/2 w-3.5 h-3.5 text-white/20" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-4.35-4.35M11 19a8 8 0 100-16 8 8 0 000 16z"/>
@@ -243,85 +230,17 @@
             on:input={applyFilters}
             type="text"
             placeholder="商家名稱、標籤..."
-            class="w-full pl-9 pr-4 py-2 rounded-lg text-sm bg-white/5 border border-white/10 text-white placeholder-white/20 focus:outline-none focus:border-gold/40 transition-all"
+            class="w-full pl-9 pr-4 py-2.5 rounded-lg text-sm bg-white/5 border border-white/10 text-white placeholder-white/20 focus:outline-none focus:border-gold/40 transition-all"
           />
         </div>
       </div>
 
-      <!-- Category quick-switch (always visible) -->
-      <div class="min-w-0">
-        <label class="block text-[10px] text-white/30 font-mono tracking-wider mb-1 uppercase">快速切換</label>
-        <div class="flex flex-wrap gap-1.5">
-          <button
-            on:click={() => { selectedCategory = ''; selectedCity = ''; businesses = []; searchQuery = ''; }}
-            class="px-3 py-1.5 rounded-lg text-xs font-medium border transition-all
-              {selectedCategory === '' ? 'bg-gold/20 border-gold/40 text-gold' : 'bg-white/5 border-white/10 text-white/50 hover:border-white/20 hover:text-white/70'}"
-          >
-            全部
-          </button>
-          {#each categoryList as cat}
-            <button
-              on:click={() => {
-                selectedCategory = cat.slug;
-                selectedCity = '';
-                searchQuery = '';
-                loadCategory(cat.slug);
-              }}
-              class="px-3 py-1.5 rounded-lg text-xs font-medium border transition-all whitespace-nowrap
-                {selectedCategory === cat.slug ? 'bg-gold/20 border-gold/40 text-gold' : 'bg-white/5 border-white/10 text-white/50 hover:border-white/20 hover:text-white/70'}"
-              title={categoryDesc[cat.slug] || cat.name}
-            >
-              {cat.icon} {cat.name}
-            </button>
-          {/each}
-        </div>
-      </div>
-    </div>
-
-    <!-- Category Icon Grid — shown when no category selected -->
-    {#if !loading && !selectedCategory}
-      <div class="mt-6">
-        <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-3">
-          {#each categoryList as cat}
-            <button
-              on:click={() => {
-                selectedCategory = cat.slug;
-                selectedCity = '';
-                searchQuery = '';
-                loadCategory(cat.slug);
-              }}
-              class="relative group glass-card-dark-hover p-4 rounded-xl text-center cursor-pointer border border-white/5 hover:border-white/10 transition-all duration-200 hover:-translate-y-0.5"
-              style="background: rgba(255,255,255,0.03);"
-            >
-              <div class="w-11 h-11 rounded-xl mx-auto mb-3 flex items-center justify-center text-xl
-                {categoryColor[cat.slug] || 'bg-white/10 text-white/60'}">
-                {cat.icon}
-              </div>
-              <div class="font-medium text-white/90 text-sm mb-1">{cat.name}</div>
-              <div class="text-xs text-white/30">{cat.count.toLocaleString()} 家</div>
-              <div class="absolute bottom-full left-1/2 -translate-x-1/2 mb-2 hidden group-hover:block z-10 pointer-events-none">
-                <div class="glass-card px-3 py-1.5 rounded-lg text-xs text-white/70 whitespace-nowrap shadow-lg"
-                  style="background: rgba(20,20,26,0.95); border: 1px solid rgba(255,255,255,0.1);">
-                  {categoryDesc[cat.slug] || '各類服務商家'}
-                </div>
-                <div class="w-2 h-2 rotate-45 mx-auto -mt-1" style="background: rgba(20,20,26,0.95); border-right: 1px solid rgba(255,255,255,0.1); border-bottom: 1px solid rgba(255,255,255,0.1);"></div>
-              </div>
-            </button>
-          {/each}
-        </div>
-      </div>
-    {/if}
-  </div>
-
-  <!-- Filters when a category is selected -->
-  {#if selectedCategory && businesses.length > 0}
-    <div class="glass-card p-4 flex flex-wrap items-end gap-3 mt-4" style="background:rgba(12,12,14,0.95); border-color:rgba(255,255,255,0.08);">
       <!-- City (only for non-large-categories) -->
       {#if !largeCategory}
         <div class="min-w-[150px]">
-          <label class="block text-[10px] text-white/30 font-mono tracking-wider mb-1 uppercase">縣市</label>
+          <label class="block text-[11px] text-white/30 font-mono tracking-wider mb-1.5 uppercase">縣市</label>
           <select bind:value={selectedCity} on:change={applyFilters}
-            class="w-full px-3 py-2 rounded-lg text-sm bg-white/5 border border-white/10 text-white/80 focus:outline-none focus:border-gold/40 transition-all appearance-none">
+            class="w-full px-3 py-2.5 rounded-lg text-sm bg-white/5 border border-white/10 text-white/80 focus:outline-none focus:border-gold/40 transition-all appearance-none">
             <option value="" class="bg-ink">所有縣市</option>
             {#each Object.entries(cityCounts) as [city, count]}
               <option value={city} class="bg-ink">{city} ({count.toLocaleString()})</option>
@@ -331,9 +250,9 @@
       {:else}
         <!-- Region selector for large categories -->
         <div class="min-w-[150px]">
-          <label class="block text-[10px] text-white/30 font-mono tracking-wider mb-1 uppercase">區域</label>
-          <select bind:value={selectedCity} on:change={applyFilters}
-            class="w-full px-3 py-2 rounded-lg text-sm bg-white/5 border border-white/10 text-white/80 focus:outline-none focus:border-gold/40 transition-all appearance-none">
+          <label class="block text-[11px] text-white/30 font-mono tracking-wider mb-1.5 uppercase">區域</label>
+          <select bind:value={selectedCity} on:change={handleCategoryChange}
+            class="w-full px-3 py-2.5 rounded-lg text-sm bg-white/5 border border-white/10 text-white/80 focus:outline-none focus:border-gold/40 transition-all appearance-none">
             <option value="" class="bg-ink">全區域</option>
             {#each regions as r}
               <option value={r.cities[0]} class="bg-ink">{r.label}</option>
@@ -344,16 +263,37 @@
 
       <!-- Sort -->
       <div class="min-w-[130px]">
-        <label class="block text-[10px] text-white/30 font-mono tracking-wider mb-1 uppercase">排序</label>
+        <label class="block text-[11px] text-white/30 font-mono tracking-wider mb-1.5 uppercase">排序</label>
         <select bind:value={sortBy} on:change={applyFilters}
-          class="w-full px-3 py-2 rounded-lg text-sm bg-white/5 border border-white/10 text-white/80 focus:outline-none focus:border-gold/40 transition-all appearance-none">
+          class="w-full px-3 py-2.5 rounded-lg text-sm bg-white/5 border border-white/10 text-white/80 focus:outline-none focus:border-gold/40 transition-all appearance-none">
           <option value="default" class="bg-ink">預設</option>
           <option value="name" class="bg-ink">名稱 A-Z</option>
           <option value="city" class="bg-ink">縣市</option>
         </select>
       </div>
-    </div>
-  {/if}
+    {/if}
+  </div>
+
+    <!-- Category picker (no category selected yet) -->
+    {#if !loading && !selectedCategory}
+      <div class="text-center py-10">
+        <div class="text-5xl mb-4 opacity-30">📂</div>
+        <p class="text-lg text-white/40 mb-2">請先選擇一個類別</p>
+        <p class="text-sm text-white/20">上方選擇類別後，即可瀏覽該類別的商家資訊</p>
+
+        <div class="grid grid-cols-2 md:grid-cols-5 gap-4 mt-10 max-w-3xl mx-auto">
+          {#each categoryList as cat}
+            <button on:click={() => { selectedCategory = cat.slug; handleCategoryChange(); }}
+              class="glass-card-dark p-4 glass-card-dark-hover text-center cursor-pointer border-0"
+            >
+              <div class="text-3xl mb-2">{cat.icon}</div>
+              <div class="font-medium text-white text-sm mb-1">{cat.name}</div>
+              <div class="text-xs text-white/30">{cat.count.toLocaleString()} 家</div>
+            </button>
+          {/each}
+        </div>
+      </div>
+    {/if}
 
     <!-- Loading state -->
     {#if loadingCategory}
