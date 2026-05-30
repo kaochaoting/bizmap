@@ -1,0 +1,440 @@
+[
+  {
+    "id": "seed-kairos-studio",
+    "name": "凱羅斯工作室 Kairos Studio",
+    "name_en": "Kairos Studio",
+    "address": "臺北市",
+    "city": "臺北市",
+    "district": "",
+    "latitude": 25.033,
+    "longitude": 121.5654,
+    "phone": "",
+    "category": "資訊服務業",
+    "category_code": "63",
+    "status": "active",
+    "source": "seed",
+    "last_updated": "2026-05-30T19:08:39.577375+00:00",
+    "metadata": {
+      "note": "種子資料 - Twinkle Hub 離線備用"
+    }
+  },
+  {
+    "id": "seed-bizmap-tw",
+    "name": "BizMap 商業地圖",
+    "name_en": "BizMap Taiwan",
+    "address": "臺北市",
+    "city": "臺北市",
+    "district": "",
+    "latitude": 25.0478,
+    "longitude": 121.517,
+    "phone": "",
+    "category": "資訊服務業",
+    "category_code": "63",
+    "status": "active",
+    "source": "seed",
+    "last_updated": "2026-05-30T19:08:39.577384+00:00",
+    "metadata": {
+      "note": "種子資料 - Twinkle Hub 離線備用"
+    }
+  },
+  {
+    "id": "seed-demo-001",
+    "name": "臺北市示範科技研發企業",
+    "name_en": "臺北市 Demo 科技研發 Co.",
+    "address": "臺北市市中心",
+    "city": "臺北市",
+    "district": "",
+    "latitude": 25.0478,
+    "longitude": 121.517,
+    "phone": "",
+    "category": "科技研發",
+    "category_code": "72",
+    "status": "active",
+    "source": "seed",
+    "last_updated": "2026-05-30T19:08:39.577386+00:00",
+    "metadata": {
+      "note": "示範資料 - Bizmap 初始種子",
+      "region": "臺北"
+    }
+  },
+  {
+    "id": "seed-demo-002",
+    "name": "新北市示範製造業企業",
+    "name_en": "新北市 Demo 製造業 Co.",
+    "address": "新北市市中心",
+    "city": "新北市",
+    "district": "",
+    "latitude": 25.017,
+    "longitude": 121.45,
+    "phone": "",
+    "category": "製造業",
+    "category_code": "C",
+    "status": "active",
+    "source": "seed",
+    "last_updated": "2026-05-30T19:08:39.577388+00:00",
+    "metadata": {
+      "note": "示範資料 - Bizmap 初始種子",
+      "region": "新北"
+    }
+  },
+  {
+    "id": "seed-demo-003",
+    "name": "桃園市示範物流倉儲企業",
+    "name_en": "桃園市 Demo 物流倉儲 Co.",
+    "address": "桃園市市中心",
+    "city": "桃園市",
+    "district": "",
+    "latitude": 24.9936,
+    "longitude": 121.301,
+    "phone": "",
+    "category": "物流倉儲",
+    "category_code": "53",
+    "status": "active",
+    "source": "seed",
+    "last_updated": "2026-05-30T19:08:39.577391+00:00",
+    "metadata": {
+      "note": "示範資料 - Bizmap 初始種子",
+      "region": "桃園"
+    }
+  },
+  {
+    "id": "seed-demo-004",
+    "name": "臺中市示範餐飲業企業",
+    "name_en": "臺中市 Demo 餐飲業 Co.",
+    "address": "臺中市市中心",
+    "city": "臺中市",
+    "district": "",
+    "latitude": 24.1477,
+    "longitude": 120.6736,
+    "phone": "",
+    "category": "餐飲業",
+    "category_code": "56",
+    "status": "active",
+    "source": "seed",
+    "last_updated": "2026-05-30T19:08:39.577393+00:00",
+    "metadata": {
+      "note": "示範資料 - Bizmap 初始種子",
+      "region": "臺中"
+    }
+  },
+  {
+    "id": "seed-demo-005",
+    "name": "臺南市示範文化創意企業",
+    "name_en": "臺南市 Demo 文化創意 Co.",
+    "address": "臺南市市中心",
+    "city": "臺南市",
+    "district": "",
+    "latitude": 22.9997,
+    "longitude": 120.227,
+    "phone": "",
+    "category": "文化創意",
+    "category_code": "90",
+    "status": "active",
+    "source": "seed",
+    "last_updated": "2026-05-30T19:08:39.577396+00:00",
+    "metadata": {
+      "note": "示範資料 - Bizmap 初始種子",
+      "region": "臺南"
+    }
+  },
+  {
+    "id": "seed-demo-006",
+    "name": "高雄市示範零售業企業",
+    "name_en": "高雄市 Demo 零售業 Co.",
+    "address": "高雄市市中心",
+    "city": "高雄市",
+    "district": "",
+    "latitude": 22.6273,
+    "longitude": 120.3014,
+    "phone": "",
+    "category": "零售業",
+    "category_code": "47",
+    "status": "active",
+    "source": "seed",
+    "last_updated": "2026-05-30T19:08:39.577398+00:00",
+    "metadata": {
+      "note": "示範資料 - Bizmap 初始種子",
+      "region": "高雄"
+    }
+  },
+  {
+    "id": "seed-demo-007",
+    "name": "基隆市示範水產貿易企業",
+    "name_en": "基隆市 Demo 水產貿易 Co.",
+    "address": "基隆市市中心",
+    "city": "基隆市",
+    "district": "",
+    "latitude": 25.1276,
+    "longitude": 121.7392,
+    "phone": "",
+    "category": "水產貿易",
+    "category_code": "03",
+    "status": "active",
+    "source": "seed",
+    "last_updated": "2026-05-30T19:08:39.577400+00:00",
+    "metadata": {
+      "note": "示範資料 - Bizmap 初始種子",
+      "region": "基隆"
+    }
+  },
+  {
+    "id": "seed-demo-008",
+    "name": "新竹市示範半導體企業",
+    "name_en": "新竹市 Demo 半導體 Co.",
+    "address": "新竹市市中心",
+    "city": "新竹市",
+    "district": "",
+    "latitude": 24.8138,
+    "longitude": 120.9675,
+    "phone": "",
+    "category": "半導體",
+    "category_code": "26",
+    "status": "active",
+    "source": "seed",
+    "last_updated": "2026-05-30T19:08:39.577402+00:00",
+    "metadata": {
+      "note": "示範資料 - Bizmap 初始種子",
+      "region": "新竹"
+    }
+  },
+  {
+    "id": "seed-demo-009",
+    "name": "嘉義市示範食品加工企業",
+    "name_en": "嘉義市 Demo 食品加工 Co.",
+    "address": "嘉義市市中心",
+    "city": "嘉義市",
+    "district": "",
+    "latitude": 23.48,
+    "longitude": 120.449,
+    "phone": "",
+    "category": "食品加工",
+    "category_code": "08",
+    "status": "active",
+    "source": "seed",
+    "last_updated": "2026-05-30T19:08:39.577404+00:00",
+    "metadata": {
+      "note": "示範資料 - Bizmap 初始種子",
+      "region": "嘉義"
+    }
+  },
+  {
+    "id": "seed-demo-010",
+    "name": "宜蘭縣示範觀光旅遊企業",
+    "name_en": "宜蘭縣 Demo 觀光旅遊 Co.",
+    "address": "宜蘭縣市中心",
+    "city": "宜蘭縣",
+    "district": "",
+    "latitude": 24.7021,
+    "longitude": 121.7378,
+    "phone": "",
+    "category": "觀光旅遊",
+    "category_code": "79",
+    "status": "active",
+    "source": "seed",
+    "last_updated": "2026-05-30T19:08:39.577407+00:00",
+    "metadata": {
+      "note": "示範資料 - Bizmap 初始種子",
+      "region": "宜蘭"
+    }
+  },
+  {
+    "id": "seed-demo-011",
+    "name": "花蓮縣示範休閒服務企業",
+    "name_en": "花蓮縣 Demo 休閒服務 Co.",
+    "address": "花蓮縣市中心",
+    "city": "花蓮縣",
+    "district": "",
+    "latitude": 23.9872,
+    "longitude": 121.6016,
+    "phone": "",
+    "category": "休閒服務",
+    "category_code": "76",
+    "status": "active",
+    "source": "seed",
+    "last_updated": "2026-05-30T19:08:39.577409+00:00",
+    "metadata": {
+      "note": "示範資料 - Bizmap 初始種子",
+      "region": "花蓮"
+    }
+  },
+  {
+    "id": "seed-demo-012",
+    "name": "臺東縣示範生態旅遊企業",
+    "name_en": "臺東縣 Demo 生態旅遊 Co.",
+    "address": "臺東縣市中心",
+    "city": "臺東縣",
+    "district": "",
+    "latitude": 22.7583,
+    "longitude": 121.1444,
+    "phone": "",
+    "category": "生態旅遊",
+    "category_code": "79",
+    "status": "active",
+    "source": "seed",
+    "last_updated": "2026-05-30T19:08:39.577411+00:00",
+    "metadata": {
+      "note": "示範資料 - Bizmap 初始種子",
+      "region": "臺東"
+    }
+  },
+  {
+    "id": "seed-demo-013",
+    "name": "苗栗縣示範農業科技企業",
+    "name_en": "苗栗縣 Demo 農業科技 Co.",
+    "address": "苗栗縣市中心",
+    "city": "苗栗縣",
+    "district": "",
+    "latitude": 24.5602,
+    "longitude": 120.8204,
+    "phone": "",
+    "category": "農業科技",
+    "category_code": "01",
+    "status": "active",
+    "source": "seed",
+    "last_updated": "2026-05-30T19:08:39.577413+00:00",
+    "metadata": {
+      "note": "示範資料 - Bizmap 初始種子",
+      "region": "苗栗"
+    }
+  },
+  {
+    "id": "seed-demo-014",
+    "name": "彰化縣示範傳統製造企業",
+    "name_en": "彰化縣 Demo 傳統製造 Co.",
+    "address": "彰化縣市中心",
+    "city": "彰化縣",
+    "district": "",
+    "latitude": 24.0733,
+    "longitude": 120.5386,
+    "phone": "",
+    "category": "傳統製造",
+    "category_code": "C",
+    "status": "active",
+    "source": "seed",
+    "last_updated": "2026-05-30T19:08:39.577416+00:00",
+    "metadata": {
+      "note": "示範資料 - Bizmap 初始種子",
+      "region": "彰化"
+    }
+  },
+  {
+    "id": "seed-demo-015",
+    "name": "南投縣示範觀光休閒企業",
+    "name_en": "南投縣 Demo 觀光休閒 Co.",
+    "address": "南投縣市中心",
+    "city": "南投縣",
+    "district": "",
+    "latitude": 23.9196,
+    "longitude": 120.6857,
+    "phone": "",
+    "category": "觀光休閒",
+    "category_code": "79",
+    "status": "active",
+    "source": "seed",
+    "last_updated": "2026-05-30T19:08:39.577418+00:00",
+    "metadata": {
+      "note": "示範資料 - Bizmap 初始種子",
+      "region": "南投"
+    }
+  },
+  {
+    "id": "seed-demo-016",
+    "name": "雲林縣示範農業企業",
+    "name_en": "雲林縣 Demo 農業 Co.",
+    "address": "雲林縣市中心",
+    "city": "雲林縣",
+    "district": "",
+    "latitude": 23.7198,
+    "longitude": 120.474,
+    "phone": "",
+    "category": "農業",
+    "category_code": "01",
+    "status": "active",
+    "source": "seed",
+    "last_updated": "2026-05-30T19:08:39.577420+00:00",
+    "metadata": {
+      "note": "示範資料 - Bizmap 初始種子",
+      "region": "雲林"
+    }
+  },
+  {
+    "id": "seed-demo-017",
+    "name": "嘉義縣示範農業加工企業",
+    "name_en": "嘉義縣 Demo 農業加工 Co.",
+    "address": "嘉義縣市中心",
+    "city": "嘉義縣",
+    "district": "",
+    "latitude": 23.4482,
+    "longitude": 120.2424,
+    "phone": "",
+    "category": "農業加工",
+    "category_code": "08",
+    "status": "active",
+    "source": "seed",
+    "last_updated": "2026-05-30T19:08:39.577422+00:00",
+    "metadata": {
+      "note": "示範資料 - Bizmap 初始種子",
+      "region": "嘉義"
+    }
+  },
+  {
+    "id": "seed-demo-018",
+    "name": "屏東縣示範水產養殖企業",
+    "name_en": "屏東縣 Demo 水產養殖 Co.",
+    "address": "屏東縣市中心",
+    "city": "屏東縣",
+    "district": "",
+    "latitude": 22.6731,
+    "longitude": 120.489,
+    "phone": "",
+    "category": "水產養殖",
+    "category_code": "03",
+    "status": "active",
+    "source": "seed",
+    "last_updated": "2026-05-30T19:08:39.577424+00:00",
+    "metadata": {
+      "note": "示範資料 - Bizmap 初始種子",
+      "region": "屏東"
+    }
+  },
+  {
+    "id": "seed-demo-019",
+    "name": "澎湖縣示範海洋觀光企業",
+    "name_en": "澎湖縣 Demo 海洋觀光 Co.",
+    "address": "澎湖縣市中心",
+    "city": "澎湖縣",
+    "district": "",
+    "latitude": 23.5711,
+    "longitude": 119.5793,
+    "phone": "",
+    "category": "海洋觀光",
+    "category_code": "79",
+    "status": "active",
+    "source": "seed",
+    "last_updated": "2026-05-30T19:08:39.577426+00:00",
+    "metadata": {
+      "note": "示範資料 - Bizmap 初始種子",
+      "region": "澎湖"
+    }
+  },
+  {
+    "id": "seed-demo-020",
+    "name": "金門縣示範觀光服務企業",
+    "name_en": "金門縣 Demo 觀光服務 Co.",
+    "address": "金門縣市中心",
+    "city": "金門縣",
+    "district": "",
+    "latitude": 24.4412,
+    "longitude": 118.3177,
+    "phone": "",
+    "category": "觀光服務",
+    "category_code": "79",
+    "status": "active",
+    "source": "seed",
+    "last_updated": "2026-05-30T19:08:39.577429+00:00",
+    "metadata": {
+      "note": "示範資料 - Bizmap 初始種子",
+      "region": "金門"
+    }
+  }
+]
