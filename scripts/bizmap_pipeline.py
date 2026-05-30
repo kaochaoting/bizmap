@@ -547,8 +547,10 @@ def git_commit_and_push(
     message: str,
 ) -> bool:
     """
-    提交並推送變更至 origin/main。
-    若無變更則略過。
+    提交並推送變更至 remote(s) 的 main 分支。
+    - 優先推送到 origin/main
+    - 若存在 bizmap remote，也推送到 bizmap/main（觸發 Cloudflare Pages）
+    - 若檔案被 .gitignore 排除，自動使用 git add -f
     """
     import subprocess
 
@@ -567,21 +569,18 @@ def git_commit_and_push(
         log.error("❌ 非 git repository")
         return False
 
-    # 確認 remote
-    result = _run(["git", "remote", "get-url", "origin"])
-    if result.returncode != 0:
-        log.error("❌ 無 remote 'origin'")
-        return False
-    log.info("🔗 Remote origin: %s", result.stdout.strip())
-
     # 確認分支
     result = _run(["git", "branch", "--show-current"])
-    branch = result.stdout.strip()
-    log.info("🌿 目前分支: %s", branch)
+    branch = result.stdout.strip() or "main"
 
-    # add
+    # 取得 remote 清單
+    result = _run(["git", "remote"])
+    remotes = result.stdout.strip().split()
+    log.info("🔗 Remotes: %s", ", ".join(remotes) if remotes else "(none)")
+
+    # add (force-add to bypass .gitignore for these specific artifacts)
     for f in files:
-        result = _run(["git", "add", str(f)])
+        result = _run(["git", "add", "-f", str(f)])
         if result.returncode != 0:
             log.warning("⚠️  git add %s 失敗: %s", f, result.stderr.strip())
 
@@ -598,21 +597,30 @@ def git_commit_and_push(
         return False
     log.info("✅ git commit: %s", result.stdout.strip())
 
-    # pull rebase 以避免衝突
-    log.info("🔄 git pull --rebase origin %s…", branch)
-    result = _run(["git", "pull", "--rebase", "origin", branch])
-    if result.returncode != 0:
-        log.warning("⚠️  git pull rebase 可能失敗: %s", result.stderr.strip()[:200])
+    # 推送至所有 remote（origin, bizmap 等）
+    success = True
+    for remote in remotes:
+        log.info("🔄 git pull --rebase %s %s…", remote, branch)
+        result = _run(["git", "pull", "--rebase", remote, branch])
+        if result.returncode != 0:
+            log.warning("⚠️  git pull rebase %s 可能失敗: %s", remote, result.stderr.strip()[:200])
+            # 嘗試 stash 後再 pull
+            _run(["git", "stash"])
+            result = _run(["git", "pull", "--rebase", remote, branch])
+            _run(["git", "stash", "pop"])
 
-    # push
-    log.info("📤 git push origin %s…", branch)
-    result = _run(["git", "push", "origin", branch])
-    if result.returncode != 0:
-        log.error("❌ git push 失敗: %s", result.stderr.strip()[:300])
-        return False
+        log.info("📤 git push %s %s…", remote, branch)
+        result = _run(["git", "push", remote, branch])
+        if result.returncode != 0:
+            log.warning("⚠️  git push %s 失敗（可能無權限）: %s", remote, result.stderr.strip()[:200])
+            success = False
+        else:
+            deploy_tag = " 🚀 Cloudflare Pages" if remote == "bizmap" else ""
+            log.info("✅ Push 到 %s 成功%s！", remote, deploy_tag)
 
-    log.info("🚀 Push 成功！Cloudflare Pages 部署已觸發。")
-    return True
+    if success:
+        log.info("🚀 所有推送完成，Cloudflare Pages 自動部署已觸發（如有 bizmap remote）。")
+    return success
 
 
 # ═══════════════════════════════════════════════════════════════════
