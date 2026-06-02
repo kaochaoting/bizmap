@@ -1,6 +1,6 @@
 {
-  "total": 555120,
-  "generated_at": "2026-05-24T19:16:00Z",
+  "total": 555895,
+  "generated_at": "2026-06-02T19:07:31Z",
   "categories": {
     "medical": "醫療健康",
     "education": "教育補習",
@@ -14,40 +14,40 @@
     "industrial": "工業製品"
   },
   "category_counts": {
-    "medical": 33326,
+    "medical": 33394,
     "education": 2917,
-    "food": 47861,
-    "beauty": 57654,
+    "food": 47871,
+    "beauty": 57674,
     "fitness": 142,
-    "home": 100346,
-    "retail": 227296,
-    "business": 81224,
+    "home": 100372,
+    "retail": 227568,
+    "business": 81595,
     "transport": 3096,
-    "industrial": 1258
+    "industrial": 1266
   },
   "city_counts": {
-    "新北市": 93501,
-    "高雄市": 57685,
-    "台中市": 56139,
-    "台北市": 46838,
-    "台南市": 43138,
-    "桃園市": 33958,
-    "彰化縣": 18368,
-    "屏東縣": 13470,
-    "宜蘭縣": 12278,
-    "新竹縣": 10105,
-    "雲林縣": 9811,
-    "新竹市": 9647,
-    "苗栗縣": 9103,
-    "花蓮縣": 8900,
-    "南投縣": 8211,
-    "基隆市": 7374,
-    "嘉義市": 6973,
-    "嘉義縣": 6653,
-    "台東縣": 5077,
-    "金門縣": 1842,
-    "澎湖縣": 1044,
-    "連江縣": 301
+    "新北市": 93707,
+    "高雄市": 57818,
+    "台中市": 56254,
+    "台北市": 47101,
+    "台南市": 42886,
+    "桃園市": 34194,
+    "彰化縣": 18347,
+    "屏東縣": 13487,
+    "宜蘭縣": 12316,
+    "新竹縣": 10133,
+    "雲林縣": 9748,
+    "新竹市": 9681,
+    "苗栗縣": 9115,
+    "花蓮縣": 8930,
+    "南投縣": 8227,
+    "基隆市": 7384,
+    "嘉義市": 6964,
+    "嘉義縣": 6642,
+    "台東縣": 5038,
+    "金門縣": 1847,
+    "澎湖縣": 1050,
+    "連江縣": 300
   },
   "files": {
     "beauty": [
@@ -55,7 +55,7 @@
         "region": "all",
         "city": "all",
         "file": "category/beauty.json",
-        "count": 57654
+        "count": 57674
       }
     ],
     "business": [
@@ -63,13 +63,13 @@
         "region": "hualien_east",
         "city": "all",
         "file": "category/business/hualien_east.json",
-        "count": 5029
+        "count": 5026
       },
       {
         "region": "kaohsiung_south",
         "city": "all",
         "file": "category/business/kaohsiung_south.json",
-        "count": 25030
+        "count": 25004
       },
       {
         "region": "other",
@@ -81,19 +81,19 @@
         "region": "outlying_islands",
         "city": "all",
         "file": "category/business/outlying_islands.json",
-        "count": 696
+        "count": 699
       },
       {
         "region": "taichung_central",
         "city": "all",
         "file": "category/business/taichung_central.json",
-        "count": 16400
+        "count": 16506
       },
       {
         "region": "taipei_north",
         "city": "all",
         "file": "category/business/taipei_north.json",
-        "count": 34063
+        "count": 34354
       }
     ],
     "education": [
@@ -117,7 +117,7 @@
         "region": "all",
         "city": "all",
         "file": "category/food.json",
-        "count": 47861
+        "count": 47871
       }
     ],
     "home": [
@@ -125,13 +125,13 @@
         "region": "hualien_east",
         "city": "all",
         "file": "category/home/hualien_east.json",
-        "count": 5512
+        "count": 5470
       },
       {
         "region": "kaohsiung_south",
         "city": "all",
         "file": "category/home/kaohsiung_south.json",
-        "count": 27181
+        "count": 27191
       },
       {
         "region": "other",
@@ -143,19 +143,19 @@
         "region": "outlying_islands",
         "city": "all",
         "file": "category/home/outlying_islands.json",
-        "count": 1038
+        "count": 1039
       },
       {
         "region": "taichung_central",
         "city": "all",
         "file": "category/home/taichung_central.json",
-        "count": 18133
+        "count": 18135
       },
       {
         "region": "taipei_north",
         "city": "all",
         "file": "category/home/taipei_north.json",
-        "count": 48474
+        "count": 48529
       }
     ],
     "industrial": [
@@ -163,7 +163,7 @@
         "region": "all",
         "city": "all",
         "file": "category/industrial.json",
-        "count": 1258
+        "count": 1266
       }
     ],
     "medical": [
@@ -171,7 +171,7 @@
         "region": "all",
         "city": "all",
         "file": "category/medical.json",
-        "count": 33326
+        "count": 33394
       }
     ],
     "retail": [
@@ -179,37 +179,37 @@
         "region": "hualien_east",
         "city": "all",
         "file": "category/retail/hualien_east.json",
-        "count": 13995
+        "count": 14067
       },
       {
         "region": "kaohsiung_south",
         "city": "台南市",
         "file": "category/retail/kaohsiung_south/台南市.json",
-        "count": 23358
+        "count": 23102
       },
       {
         "region": "kaohsiung_south",
         "city": "嘉義市",
         "file": "category/retail/kaohsiung_south/嘉義市.json",
-        "count": 3547
+        "count": 3574
       },
       {
         "region": "kaohsiung_south",
         "city": "嘉義縣",
         "file": "category/retail/kaohsiung_south/嘉義縣.json",
-        "count": 3312
+        "count": 3322
       },
       {
         "region": "kaohsiung_south",
         "city": "屏東縣",
         "file": "category/retail/kaohsiung_south/屏東縣.json",
-        "count": 6508
+        "count": 6545
       },
       {
         "region": "kaohsiung_south",
         "city": "高雄市",
         "file": "category/retail/kaohsiung_south/高雄市.json",
-        "count": 24796
+        "count": 24848
       },
       {
         "region": "other",
@@ -221,55 +221,55 @@
         "region": "outlying_islands",
         "city": "all",
         "file": "category/retail/outlying_islands.json",
-        "count": 1178
+        "count": 1184
       },
       {
         "region": "taichung_central",
         "city": "all",
         "file": "category/retail/taichung_central.json",
-        "count": 46766
+        "count": 46675
       },
       {
         "region": "taipei_north",
         "city": "台北市",
         "file": "category/retail/taipei_north/台北市.json",
-        "count": 22739
+        "count": 22859
       },
       {
         "region": "taipei_north",
         "city": "基隆市",
         "file": "category/retail/taipei_north/基隆市.json",
-        "count": 3443
+        "count": 3451
       },
       {
         "region": "taipei_north",
         "city": "新北市",
         "file": "category/retail/taipei_north/新北市.json",
-        "count": 45325
+        "count": 45443
       },
       {
         "region": "taipei_north",
         "city": "新竹市",
         "file": "category/retail/taipei_north/新竹市.json",
-        "count": 4726
+        "count": 4739
       },
       {
         "region": "taipei_north",
         "city": "新竹縣",
         "file": "category/retail/taipei_north/新竹縣.json",
-        "count": 4943
+        "count": 4961
       },
       {
         "region": "taipei_north",
         "city": "桃園市",
         "file": "category/retail/taipei_north/桃園市.json",
-        "count": 17973
+        "count": 18094
       },
       {
         "region": "taipei_north",
         "city": "苗栗縣",
         "file": "category/retail/taipei_north/苗栗縣.json",
-        "count": 4659
+        "count": 4676
       }
     ],
     "transport": [
