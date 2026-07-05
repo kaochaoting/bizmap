@@ -16,3 +16,6 @@ vite.config.ts.timestamp-*
 # Large data files (exceed GitHub 100MB limit, regenerated each run)
 /data/seed-businesses.json
 /static/data/businesses.json
+
+# Pre-built search index (too large for Cloudflare Pages 25MiB limit)
+static/data/search-index.json
