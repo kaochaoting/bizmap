@@ -1,0 +1,7 @@
+name = "bizmap-kairossite-sync"
+main = "worker/kairossite-sync-worker.js"
+compatibility_date = "2026-07-20"
+
+[[kv_namespaces]]
+binding = "BIZMAP_KV"
+id = "976272a6fade4a658303c637a977628a"
