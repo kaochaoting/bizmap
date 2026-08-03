@@ -15,7 +15,7 @@
     categories: Object.keys(indexData.categories).length,
   };
   const updatedAt = new Intl.DateTimeFormat('zh-TW', {
-    year: 'numeric', month: '2-digit', day: '2-digit'
+    year: 'numeric', month: '2-digit', day: '2-digit', timeZone: 'Asia/Taipei'
   }).format(new Date(indexData.generated_at));
   const featuredStats = [
     { value: stats.total.toLocaleString(), label: '收錄商家', suffix: '家' },
