@@ -1,9 +1,13 @@
 #!/usr/bin/env python3
 """Scan Twinkle Hub for ALL datasets relevant to Bizmap expansion."""
-import subprocess, json, time
+import os, subprocess, json, sys, time
 
-API = "https://api.twinkleai.tw/mcp/"
-KEY = "***REMOVED***"
+API = os.environ.get("TWINKLE_MCP_URL", "https://api.twinkleai.tw/mcp/")
+KEY = os.environ.get("TWINKLE_API_KEY", "").strip()
+
+if not KEY:
+    print("TWINKLE_API_KEY is required", file=sys.stderr)
+    raise SystemExit(2)
 
 def mc(m, p, t=60):
     pld = json.dumps({"jsonrpc":"2.0","id":1,"method":m,"params":p})

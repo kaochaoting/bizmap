@@ -17,6 +17,7 @@ jobs:
         with:
           node-version: 22
           cache: 'npm'
+      - run: python scripts/check_no_committed_secrets.py
       - run: npm ci
       - run: npm run build
       - name: Deploy to Cloudflare Pages
