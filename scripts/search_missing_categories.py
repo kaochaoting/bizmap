@@ -1,9 +1,13 @@
 #!/usr/bin/env python3
 """Search for datasets matching 3 missing Bizmap categories."""
-import subprocess, json, time
+import os, subprocess, json, sys, time
 
-API = "https://api.twinkleai.tw/mcp/"
-KEY = "sk-POQczvJ9YJP1IpAncQws3w"
+API = os.environ.get("TWINKLE_MCP_URL", "https://api.twinkleai.tw/mcp/")
+KEY = os.environ.get("TWINKLE_API_KEY", "").strip()
+
+if not KEY:
+    print("TWINKLE_API_KEY is required", file=sys.stderr)
+    raise SystemExit(2)
 
 def mcp_call(method, params, timeout=60):
     payload = json.dumps({"jsonrpc":"2.0","id":1,"method":method,"params":params})

@@ -1,12 +1,13 @@
 #!/usr/bin/env python3
 """Search Twinkle Hub for datasets relevant to each Bizmap category."""
-import subprocess, json, sys, time
+import os, subprocess, json, sys, time
 
-API = "https://api.twinkleai.tw/mcp/"
-KEY = "sk-POQczvJ9YJP1IpAncQws3w"
-HEADERS = {"Content-Type": "application/json",
-           "Accept": "application/json, text/event-stream",
-           "Authorization": f"Bearer {KEY}"}
+API = os.environ.get("TWINKLE_MCP_URL", "https://api.twinkleai.tw/mcp/")
+KEY = os.environ.get("TWINKLE_API_KEY", "").strip()
+
+if not KEY:
+    print("TWINKLE_API_KEY is required", file=sys.stderr)
+    raise SystemExit(2)
 
 def mcp_call(method, params):
     payload = json.dumps({"jsonrpc":"2.0","id":1,"method":method,"params":params})
