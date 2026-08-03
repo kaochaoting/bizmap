@@ -1,5 +1,7 @@
 <script>
   import { onMount } from 'svelte';
+  import { goto } from '$app/navigation';
+  import indexData from '../../static/data/index.json';
 
   const categoryIcons = {
     '餐飲美食': '🍜', '美容美髮': '💆', '健身運動': '🏋️',
@@ -7,33 +9,41 @@
     '商業服務': '💼', '零售購物': '🛍️', '交通運輸': '⛽',
     '工業製品': '🏭',
   };
-  const categorySlugs = {
-    '餐飲美食': 'food', '美容美髮': 'beauty', '健身運動': 'fitness',
-    '醫療健康': 'medical', '居家服務': 'home', '教育補習': 'education',
-    '商業服務': 'business', '零售購物': 'retail', '交通運輸': 'transport',
-    '工業製品': 'industrial',
+  const stats = {
+    total: indexData.total,
+    cities: Object.keys(indexData.city_counts).length,
+    categories: Object.keys(indexData.categories).length,
   };
-
-  // Stats display
+  const updatedAt = new Intl.DateTimeFormat('zh-TW', {
+    year: 'numeric', month: '2-digit', day: '2-digit'
+  }).format(new Date(indexData.generated_at));
   const featuredStats = [
-    { value: '555,120', label: '收錄商家', suffix: '家' },
-    { value: '22', label: '縣市覆蓋', suffix: '縣市' },
-    { value: '10', label: '主要類別', suffix: '類別' },
+    { value: stats.total.toLocaleString(), label: '收錄商家', suffix: '家' },
+    { value: String(stats.cities), label: '縣市覆蓋', suffix: '縣市' },
+    { value: String(stats.categories), label: '主要類別', suffix: '類別' },
     { value: '100%', label: '免費查詢', suffix: '' },
   ];
-
-  let stats = { total: 0, cities: 22, categories: 10 };
-  let categories = [];
-  let cityList = [];
+  const categories = Object.entries(indexData.category_counts)
+    .sort((a, b) => b[1] - a[1])
+    .map(([slug, count]) => ({
+      icon: categoryIcons[indexData.categories[slug]] || '🏪',
+      name: indexData.categories[slug] || slug,
+      count: count.toLocaleString(),
+      slug,
+    }));
+  const cityList = Object.entries(indexData.city_counts)
+    .sort((a, b) => b[1] - a[1])
+    .slice(0, 12)
+    .map(([city]) => city);
   let searchQuery = '';
+  let searchCategory = '';
   let visible = false;
-  let loadError = false;
 
   const bentoFeatures = [
     { icon: '🔍', title: '精準搜尋', desc: '依類別/縣市快速過濾', colspan: 1, rowspan: 1 },
     { icon: '🗺️', title: '全台覆蓋', desc: '22 縣市商家資訊', colspan: 1, rowspan: 1 },
     { icon: '✅', title: '官方資料源', desc: '政府開放資料驗證', colspan: 1, rowspan: 1 },
-    { icon: '📊', title: '即時更新', desc: '資料每日自動同步', colspan: 1, rowspan: 1 },
+    { icon: '📊', title: '定期更新', desc: `資料更新：${updatedAt}`, colspan: 1, rowspan: 1 },
   ];
 
   function getSpans(i) {
@@ -42,41 +52,16 @@
     return { cols: 1, rows: 1 };
   }
 
-  onMount(async () => {
+  onMount(() => {
     setTimeout(() => visible = true, 50);
-    try {
-      const res = await fetch('/data/index.json');
-      const idx = await res.json();
-
-      stats = {
-        total: idx.total || 0,
-        cities: Object.keys(idx.city_counts || {}).length,
-        categories: Object.keys(idx.categories || {}).length,
-      };
-
-      featuredStats[0] = { value: stats.total.toLocaleString(), label: '收錄商家', suffix: '家' };
-      featuredStats[1] = { value: String(stats.cities || '22'), label: '縣市覆蓋', suffix: '縣市' };
-      featuredStats[2] = { value: String(stats.categories || '10'), label: '主要類別', suffix: '類別' };
-
-      categories = Object.entries(idx.category_counts || {})
-        .sort((a, b) => b[1] - a[1])
-        .map(([slug, count]) => ({
-          icon: categoryIcons[idx.categories[slug]] || '🏪',
-          name: idx.categories[slug] || slug,
-          count: count.toLocaleString(),
-          slug,
-        }));
-
-      // City list for quick links
-      cityList = Object.entries(idx.city_counts || {})
-        .sort((a, b) => b[1] - a[1])
-        .slice(0, 12)
-        .map(([city]) => city);
-    } catch (e) {
-      loadError = true;
-      console.error('Failed to load index:', e);
-    }
   });
+
+  function searchDirectory() {
+    if (!searchCategory) return;
+    const params = new URLSearchParams({ category: searchCategory });
+    if (searchQuery.trim()) params.set('q', searchQuery.trim());
+    goto(`/directory?${params}`);
+  }
 </script>
 
 <svelte:head>
@@ -122,16 +107,18 @@
         找到<span style="color:var(--gold)">對的</span>在地好店
       </h1>
       <p class="text-lg md:text-xl text-white/40 font-light max-w-xl mx-auto mb-12 leading-relaxed">
-        {stats.total > 0
-          ? `收錄全台 ${stats.total.toLocaleString()} 家經政府開放資料驗證的商家`
-          : '收錄全台經政府開放資料驗證的商家，資料持續擴充中。'}
+        收錄全台 {stats.total.toLocaleString()} 家具可追溯來源的商家資料
         <br>
         <span class="text-white/30">快速、精準、值得信賴</span>
       </p>
 
       <!-- Search bar -->
-      <div class="flex gap-3 max-w-xl mx-auto">
-        <div class="flex-1 relative">
+      <form class="grid sm:grid-cols-[160px_1fr_auto] gap-3 max-w-3xl mx-auto" on:submit|preventDefault={searchDirectory}>
+        <select bind:value={searchCategory} required aria-label="商家類別" class="px-4 py-4 rounded-card text-sm bg-white/5 border border-white/10 text-white focus:outline-none focus:border-gold/50">
+          <option value="" disabled>先選類別</option>
+          {#each categories as category}<option value={category.slug}>{category.name}</option>{/each}
+        </select>
+        <div class="relative">
           <svg class="absolute left-4 top-1/2 -translate-y-1/2 w-4 h-4 text-white/30" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-4.35-4.35M11 19a8 8 0 100-16 8 8 0 000 16z"/>
           </svg>
@@ -142,10 +129,11 @@
             class="w-full pl-11 pr-5 py-4 rounded-card text-sm bg-white/5 border border-white/10 text-white placeholder-white/25 focus:outline-none focus:border-gold/50 focus:bg-white/[0.07] transition-all"
           />
         </div>
-        <a href="/directory?q={searchQuery}" class="btn-primary px-7 py-4">
+        <button type="submit" class="btn-primary px-7 py-4 justify-center">
           搜尋
-        </a>
-      </div>
+        </button>
+      </form>
+      <p class="text-xs text-white/25 mt-3">為避免一次下載大量資料，請先選擇類別再搜尋。</p>
 
       <!-- Quick city links -->
       {#if cityList.length}
@@ -172,6 +160,10 @@
     </div>
   </div>
 </section>
+
+<style>
+  select option { color: #111; }
+</style>
 
 <!-- ===== STATS SECTION ===== -->
 <section class="relative -mt-12 z-10">
