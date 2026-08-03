@@ -1,14 +1,14 @@
 <script>
   import { onMount, tick } from 'svelte';
-  import { page } from '$app/stores';
+  import staticIndexData from '../../../static/data/index.json';
 
   // ─── State ──────────────────────────────────────────────────────────────────
+  let allBusinesses = [];
   let businesses = [];
-  let loading = true;
+  let loading = false;
   let loadingCategory = false;
 
-  let indexData = null;
-  let categoryList = [];
+  const indexData = staticIndexData;
 
   // Filters
   let searchQuery = '';
@@ -39,19 +39,12 @@
     business: '💼', retail: '🛍️', transport: '⛽',
     industrial: '🏭',
   };
-  // SVG icon names (Lucide icons via CDN, fallback to emoji)
-  const categorySvgIcon = {
-    food: 'utensils-crossed',
-    beauty: 'scissors',
-    fitness: 'dumbbell',
-    medical: 'heart-pulse',
-    home: 'wrench',
-    education: 'graduation-cap',
-    business: 'briefcase',
-    retail: 'shopping-bag',
-    transport: 'fuel',
-    industrial: 'factory',
-  };
+  const categoryList = Object.entries(indexData.categories).map(([slug, name]) => ({
+    slug,
+    name,
+    icon: categoryIcons[slug] || '🏪',
+    count: indexData.category_counts[slug] || 0,
+  })).sort((a, b) => b.count - a.count);
   // Category color palette (Tailwind bg/text classes)
   const categoryColor = {
     food: 'bg-orange-500/20 text-orange-300 border-orange-500/30',
@@ -66,37 +59,21 @@
     industrial: 'bg-stone-500/20 text-stone-300 border-stone-500/30',
   };
 
-  // ─── Load index ─────────────────────────────────────────────────────────────
+  // ─── Sync initial filters ───────────────────────────────────────────────────
   onMount(async () => {
-    try {
-      const res = await fetch('/data/index.json');
-      indexData = await res.json();
-      categoryList = Object.entries(indexData.categories).map(([slug, name]) => ({
-        slug,
-        name,
-        icon: categoryIcons[slug] || '🏪',
-        count: indexData.category_counts[slug] || 0,
-      })).sort((a, b) => b.count - a.count);
+    const params = new URLSearchParams(window.location.search);
+    if (params.get('category')) selectedCategory = params.get('category');
+    if (params.get('city')) selectedCity = params.get('city');
+    if (params.get('q')) searchQuery = params.get('q');
+    if (params.get('page')) currentPage = parseInt(params.get('page')) || 1;
 
-      // Sync from URL
-      const params = new URLSearchParams(window.location.search);
-      if (params.get('category')) selectedCategory = params.get('category');
-      if (params.get('city')) selectedCity = params.get('city');
-      if (params.get('q')) searchQuery = params.get('q');
-      if (params.get('page')) currentPage = parseInt(params.get('page')) || 1;
-
-      if (selectedCategory) await loadCategory(selectedCategory, true);
-    } catch (e) {
-      console.error('Failed to load index:', e);
-    } finally {
-      loading = false;
-      initialLoadDone = true;
-    }
+    if (selectedCategory) await loadCategory(selectedCategory, true);
+    initialLoadDone = true;
   });
 
   // ─── Category loader ─────────────────────────────────────────────────────────
   async function loadCategory(slug, fromUrl = false) {
-    if (!slug) { businesses = []; totalFiltered = 0; return; }
+    if (!slug) { allBusinesses = []; businesses = []; totalFiltered = 0; return; }
     loadingCategory = true;
     selectedCategory = slug;
     currentPage = fromUrl ? (parseInt(new URLSearchParams(window.location.search).get('page')) || 1) : 1;
@@ -134,14 +111,13 @@
         }
       }
 
-      businesses = allBiz.map(b => ({
+      allBusinesses = allBiz.map(b => ({
         ...b,
         city: b.city || '',
         region: b.region || '',
       }));
 
       applyFilters(false);
-      totalFiltered = businesses.length;
 
       if (!fromUrl) pushUrl();
     } catch (e) {
@@ -153,7 +129,7 @@
 
   // ─── Filter & sort ──────────────────────────────────────────────────────────
   function applyFilters(push = true) {
-    let result = [...businesses];
+    let result = [...allBusinesses];
 
     if (selectedCity) {
       result = result.filter(b =>
@@ -225,19 +201,12 @@
   // ─── City counts (from loaded data) ─────────────────────────────────────────
   $: cityBreakdown = (() => {
     const counts = {};
-    for (const b of businesses) {
+    for (const b of allBusinesses) {
       if (b.city) counts[b.city] = (counts[b.city] || 0) + 1;
     }
     return Object.entries(counts).sort((a, b) => b[1] - a[1]);
   })();
 
-  // ─── All cities for filter (from index) ─────────────────────────────────────
-  $: availableCities = (() => {
-    if (!indexData?.city_counts) return [];
-    return Object.entries(indexData.city_counts)
-      .sort((a, b) => b[1] - a[1])
-      .filter(([city]) => city); // filter empty
-  })();
 </script>
 
 <svelte:head>
@@ -273,7 +242,7 @@
       <!-- Back to categories -->
       {#if selectedCategory}
         <button
-          on:click={() => { selectedCategory = ''; selectedCity = ''; searchQuery = ''; businesses = []; totalFiltered = 0; pushUrl(); }}
+          on:click={() => { selectedCategory = ''; selectedCity = ''; searchQuery = ''; allBusinesses = []; businesses = []; totalFiltered = 0; pushUrl(); }}
           class="flex items-center gap-1.5 text-sm text-white/40 hover:text-gold transition-colors shrink-0"
         >
           <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/></svg>
@@ -302,7 +271,7 @@
       <!-- Category pills -->
       <div class="flex flex-wrap gap-1.5 max-w-[600px]">
         <button
-          on:click={() => { selectedCategory = ''; selectedCity = ''; searchQuery = ''; businesses = []; totalFiltered = 0; pushUrl(); }}
+          on:click={() => { selectedCategory = ''; selectedCity = ''; searchQuery = ''; allBusinesses = []; businesses = []; totalFiltered = 0; pushUrl(); }}
           class="px-3 py-1.5 rounded-lg text-xs font-semibold border transition-all shrink-0 whitespace-nowrap
             {!selectedCategory ? 'bg-gold/20 border-gold/50 text-gold shadow-[0_0_8px_rgba(200,168,75,0.3)]' : 'bg-white/5 border-white/10 text-white/50 hover:border-white/20 hover:text-white/70'}"
         >

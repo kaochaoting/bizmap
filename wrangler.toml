@@ -1,0 +1,8 @@
+name = "bizmap"
+compatibility_date = "2026-04-18"
+pages_build_output_dir = ".svelte-kit/cloudflare"
+compatibility_flags = ["nodejs_compat"]
+
+[[kv_namespaces]]
+binding = "BIZMAP_KV"
+id = "976272a6fade4a658303c637a977628a"
