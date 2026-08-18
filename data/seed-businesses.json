@@ -13,7 +13,7 @@
     "category_code": "63",
     "status": "active",
     "source": "seed",
-    "last_updated": "2026-08-17T19:01:22.033222+00:00",
+    "last_updated": "2026-08-18T19:01:10.158135+00:00",
     "metadata": {
       "note": "種子資料 - Twinkle Hub 離線備用"
     }
@@ -32,7 +32,7 @@
     "category_code": "63",
     "status": "active",
     "source": "seed",
-    "last_updated": "2026-08-17T19:01:22.033233+00:00",
+    "last_updated": "2026-08-18T19:01:10.158145+00:00",
     "metadata": {
       "note": "種子資料 - Twinkle Hub 離線備用"
     }
@@ -51,7 +51,7 @@
     "category_code": "72",
     "status": "active",
     "source": "seed",
-    "last_updated": "2026-08-17T19:01:22.033239+00:00",
+    "last_updated": "2026-08-18T19:01:10.158151+00:00",
     "metadata": {
       "note": "示範資料 - Bizmap 初始種子",
       "region": "臺北"
@@ -71,7 +71,7 @@
     "category_code": "C",
     "status": "active",
     "source": "seed",
-    "last_updated": "2026-08-17T19:01:22.033245+00:00",
+    "last_updated": "2026-08-18T19:01:10.158156+00:00",
     "metadata": {
       "note": "示範資料 - Bizmap 初始種子",
       "region": "新北"
@@ -91,7 +91,7 @@
     "category_code": "53",
     "status": "active",
     "source": "seed",
-    "last_updated": "2026-08-17T19:01:22.033251+00:00",
+    "last_updated": "2026-08-18T19:01:10.158161+00:00",
     "metadata": {
       "note": "示範資料 - Bizmap 初始種子",
       "region": "桃園"
@@ -111,7 +111,7 @@
     "category_code": "56",
     "status": "active",
     "source": "seed",
-    "last_updated": "2026-08-17T19:01:22.033256+00:00",
+    "last_updated": "2026-08-18T19:01:10.158166+00:00",
     "metadata": {
       "note": "示範資料 - Bizmap 初始種子",
       "region": "臺中"
@@ -131,7 +131,7 @@
     "category_code": "90",
     "status": "active",
     "source": "seed",
-    "last_updated": "2026-08-17T19:01:22.033262+00:00",
+    "last_updated": "2026-08-18T19:01:10.158171+00:00",
     "metadata": {
       "note": "示範資料 - Bizmap 初始種子",
       "region": "臺南"
@@ -151,7 +151,7 @@
     "category_code": "47",
     "status": "active",
     "source": "seed",
-    "last_updated": "2026-08-17T19:01:22.033267+00:00",
+    "last_updated": "2026-08-18T19:01:10.158176+00:00",
     "metadata": {
       "note": "示範資料 - Bizmap 初始種子",
       "region": "高雄"
@@ -171,7 +171,7 @@
     "category_code": "03",
     "status": "active",
     "source": "seed",
-    "last_updated": "2026-08-17T19:01:22.033272+00:00",
+    "last_updated": "2026-08-18T19:01:10.158181+00:00",
     "metadata": {
       "note": "示範資料 - Bizmap 初始種子",
       "region": "基隆"
@@ -191,7 +191,7 @@
     "category_code": "26",
     "status": "active",
     "source": "seed",
-    "last_updated": "2026-08-17T19:01:22.033277+00:00",
+    "last_updated": "2026-08-18T19:01:10.158186+00:00",
     "metadata": {
       "note": "示範資料 - Bizmap 初始種子",
       "region": "新竹"
@@ -211,7 +211,7 @@
     "category_code": "08",
     "status": "active",
     "source": "seed",
-    "last_updated": "2026-08-17T19:01:22.033282+00:00",
+    "last_updated": "2026-08-18T19:01:10.158190+00:00",
     "metadata": {
       "note": "示範資料 - Bizmap 初始種子",
       "region": "嘉義"
@@ -231,7 +231,7 @@
     "category_code": "79",
     "status": "active",
     "source": "seed",
-    "last_updated": "2026-08-17T19:01:22.033288+00:00",
+    "last_updated": "2026-08-18T19:01:10.158195+00:00",
     "metadata": {
       "note": "示範資料 - Bizmap 初始種子",
       "region": "宜蘭"
@@ -251,7 +251,7 @@
     "category_code": "76",
     "status": "active",
     "source": "seed",
-    "last_updated": "2026-08-17T19:01:22.033293+00:00",
+    "last_updated": "2026-08-18T19:01:10.158200+00:00",
     "metadata": {
       "note": "示範資料 - Bizmap 初始種子",
       "region": "花蓮"
@@ -271,7 +271,7 @@
     "category_code": "79",
     "status": "active",
     "source": "seed",
-    "last_updated": "2026-08-17T19:01:22.033298+00:00",
+    "last_updated": "2026-08-18T19:01:10.158205+00:00",
     "metadata": {
       "note": "示範資料 - Bizmap 初始種子",
       "region": "臺東"
@@ -291,7 +291,7 @@
     "category_code": "01",
     "status": "active",
     "source": "seed",
-    "last_updated": "2026-08-17T19:01:22.033303+00:00",
+    "last_updated": "2026-08-18T19:01:10.158209+00:00",
     "metadata": {
       "note": "示範資料 - Bizmap 初始種子",
       "region": "苗栗"
@@ -311,7 +311,7 @@
     "category_code": "C",
     "status": "active",
     "source": "seed",
-    "last_updated": "2026-08-17T19:01:22.033308+00:00",
+    "last_updated": "2026-08-18T19:01:10.158214+00:00",
     "metadata": {
       "note": "示範資料 - Bizmap 初始種子",
       "region": "彰化"
@@ -331,7 +331,7 @@
     "category_code": "79",
     "status": "active",
     "source": "seed",
-    "last_updated": "2026-08-17T19:01:22.033313+00:00",
+    "last_updated": "2026-08-18T19:01:10.158219+00:00",
     "metadata": {
       "note": "示範資料 - Bizmap 初始種子",
       "region": "南投"
@@ -351,7 +351,7 @@
     "category_code": "01",
     "status": "active",
     "source": "seed",
-    "last_updated": "2026-08-17T19:01:22.033318+00:00",
+    "last_updated": "2026-08-18T19:01:10.158224+00:00",
     "metadata": {
       "note": "示範資料 - Bizmap 初始種子",
       "region": "雲林"
@@ -371,7 +371,7 @@
     "category_code": "08",
     "status": "active",
     "source": "seed",
-    "last_updated": "2026-08-17T19:01:22.033323+00:00",
+    "last_updated": "2026-08-18T19:01:10.158228+00:00",
     "metadata": {
       "note": "示範資料 - Bizmap 初始種子",
       "region": "嘉義"
@@ -391,7 +391,7 @@
     "category_code": "03",
     "status": "active",
     "source": "seed",
-    "last_updated": "2026-08-17T19:01:22.033328+00:00",
+    "last_updated": "2026-08-18T19:01:10.158233+00:00",
     "metadata": {
       "note": "示範資料 - Bizmap 初始種子",
       "region": "屏東"
@@ -411,7 +411,7 @@
     "category_code": "79",
     "status": "active",
     "source": "seed",
-    "last_updated": "2026-08-17T19:01:22.033333+00:00",
+    "last_updated": "2026-08-18T19:01:10.158238+00:00",
     "metadata": {
       "note": "示範資料 - Bizmap 初始種子",
       "region": "澎湖"
@@ -431,7 +431,7 @@
     "category_code": "79",
     "status": "active",
     "source": "seed",
-    "last_updated": "2026-08-17T19:01:22.033338+00:00",
+    "last_updated": "2026-08-18T19:01:10.158242+00:00",
     "metadata": {
       "note": "示範資料 - Bizmap 初始種子",
       "region": "金門"
